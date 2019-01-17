@@ -1,4 +1,5 @@
-https://travis-ci.org/FelixsGit/IV1201-Project.svg?branch=master
+[![Build Status](https://travis-ci.org/FelixsGit/IV1201-Project.svg?branch=master)](https://travis-ci.org/FelixsGit/IV1201-Project)
+
 ## Github workflow
 
 ### Getting started
