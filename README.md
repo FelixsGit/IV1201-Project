@@ -1,3 +1,4 @@
+https://travis-ci.org/FelixsGit/IV1201-Project.svg?branch=master
 ## Github workflow
 
 ### Getting started
