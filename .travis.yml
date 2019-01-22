@@ -10,5 +10,5 @@ env:
     - MYSQL_PORT_3306_TCP_ADDR=localhost
     - MYSQL_PORT_3306_TCP_PORT=3306
 before_script:
-  - mysql -e "CREATE DATABASE `recruitment-db`;" -u root
+  - mysql -e "CREATE DATABASE recruitmentdb;" -u root
 #  - mysql recruitment-db < src/main/scripts/db/create-recruitment-db-mysql.sql -u root
