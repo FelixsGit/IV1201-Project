@@ -1,7 +1,9 @@
 package se.kth.iv1201.recruitmentsystem.presentation;
 
 import net.jcip.annotations.NotThreadSafe;
+import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
@@ -15,6 +17,9 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 @SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
 @EnableAutoConfiguration
@@ -45,5 +50,11 @@ public class ApplicationControllerTest implements TestExecutionListener {
     void setup() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(webappContext).build();
 
+    }
+
+    @Test
+    void testTest() {
+        //sendGetRequest(mockMvc, "").andExpect(status().is3xxRedirection()).andExpect(header().exists("Location"));
+        MatcherAssert.assertThat(3, is(3));
     }
 }
