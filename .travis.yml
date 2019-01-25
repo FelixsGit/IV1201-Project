@@ -1,1 +1,14 @@
+sudo: required
 language: java
+jdk:
+- oraclejdk8
+- oraclejdk11
+addons:
+  mysql: '8.0.13'
+env:
+  global:
+    - MYSQL_PORT_3306_TCP_ADDR=localhost
+    - MYSQL_PORT_3306_TCP_PORT=3306
+before_script:
+  - mysql -e "CREATE DATABASE recruitmentdb;" -u root
+#  - mysql recruitment-db < src/main/scripts/db/create-recruitment-db-mysql.sql -u root
