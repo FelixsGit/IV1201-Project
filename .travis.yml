@@ -12,3 +12,6 @@ env:
 before_script:
   - mysql -e "CREATE DATABASE recruitmentdb;" -u root
 #  - mysql recruitment-db < src/main/scripts/db/create-recruitment-db-mysql.sql -u root
+
+before_install:
+  - chmod +x mvnw
