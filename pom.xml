@@ -13,6 +13,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>recruitment-system</name>
 	<description>System for handling job applications.</description>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
