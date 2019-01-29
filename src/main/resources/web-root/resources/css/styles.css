@@ -1,0 +1,32 @@
+header {
+    position: relative;
+    height: 100px;
+    margin-top: 10px;
+    font-size: 4em;
+    text-align: center;
+    color: #938E94;
+    letter-spacing: .1em;
+    font-family: 'Cabin';font-size: 22px;
+}
+
+footer {
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding-top: 10px;
+    position: relative;
+    width: 80%;
+    margin: auto;
+    top: 20px;
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: center;
+}
+
+#default_content {
+    position: relative;
+    width: 800px;
+    margin: auto;
+    font-family: 'Cabin';font-size: 14px;
+}
+
+body {background-color: #F8F8F8;}
