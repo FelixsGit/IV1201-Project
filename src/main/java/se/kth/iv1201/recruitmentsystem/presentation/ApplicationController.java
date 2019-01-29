@@ -1,14 +1,17 @@
 package se.kth.iv1201.recruitmentsystem.presentation;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
 
 @Controller
+@Scope("session")
 public class ApplicationController {
 
 
@@ -35,11 +38,11 @@ public class ApplicationController {
     }
 
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
-    public String registerUser(@Valid RegistrationForm form, BindingResult bindingResult, Model model) {
-        if(!bindingResult.hasErrors()) {
-            /**Stuff*/
+    public String registerUser(@Valid @ModelAttribute RegistrationForm form, BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors()) {
             return REGISTER_PAGE_URL;
         }
+        /**Stuff*/
         model.addAttribute(new RegistrationForm());
         return REGISTER_PAGE_URL;
     }

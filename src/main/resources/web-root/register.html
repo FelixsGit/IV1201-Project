@@ -9,49 +9,51 @@
     <div class = "register">
         <a href="/login">Already have a account</a>
         <br>
-        <form action="#" th:action="@{/registration}" th:object="${registrationForm}" method="post">
+        <br>
+        <form action="#" th:action="@{/register}" th:object="${registrationForm}" method="post">
             <p>Name</p>
             <input type="text" th:field="*{name}" />
-            <br>
             <span class="error"
                   th:if="${#fields.hasErrors('name')}"
-                  th:errors="*{name}"
+                  th:errors="*{name}">
             </span>
+            <br>
             <p>Surname</p>
             <input type="text" th:field="*{surname}" />
-            <br>
             <span class="error"
-                  th:if="${#fields.hasErrors('surname)}"
-                  th:errors="*{surname}"
+                  th:if="${#fields.hasErrors('surname')}"
+                  th:errors="*{surname}">
             </span>
+            <br>
             <p>Email</p>
             <input type="text" th:field="*{email}" />
-            <br>
             <span class="error"
                   th:if="${#fields.hasErrors('email')}"
-                  th:errors="*{email}"
+                  th:errors="*{email}">
             </span>
+            <br>
             <p>Date of birth</p>
             <input type="text" th:field="*{ssn}" />
-            <br>
             <span class="error"
                   th:if="${#fields.hasErrors('ssn')}"
-                  th:errors="*{ssn}"
+                  th:errors="*{ssn}">
             </span>
+            <br>
             <p>Username</p>
             <input type="text" th:field="*{username}" />
-            <br>
             <span class="error"
                   th:if="${#fields.hasErrors('username')}"
-                  th:errors="*{username}"
+                  th:errors="*{username}">
             </span>
+            <br>
             <p>Password</p>
             <input type="text" th:field="*{password}" />
-            <br>
             <span class="error"
                   th:if="${#fields.hasErrors('password')}"
-                  th:errors="*{password}"
+                  th:errors="*{password}">
             </span>
+            <br>
+            <br>
             <input type="submit" value="Register" />
             <br>
         </form>

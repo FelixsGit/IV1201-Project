@@ -20,13 +20,20 @@ footer {
     font-size: 0.8em;
     font-style: italic;
     text-align: center;
+    color: #938E94;
 }
 
-#default_content {
+main {
     position: relative;
     width: 800px;
     margin: auto;
-    font-family: 'Cabin';font-size: 14px;
+    font-family: 'Cabin';
+    font-size: 14px;
 }
 
 body {background-color: #F8F8F8;}
+
+.error {
+    color: red;
+    font-size: 80%;
+}

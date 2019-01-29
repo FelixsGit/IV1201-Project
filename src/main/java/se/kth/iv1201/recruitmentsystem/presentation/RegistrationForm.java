@@ -1,26 +1,27 @@
 package se.kth.iv1201.recruitmentsystem.presentation;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class RegistrationForm {
-    private final String errMsg = "Needs to be filled in";
+    //private final String errMsg = "Needs to be filled in";
 
-    @NotBlank(message = errMsg)
+    @NotEmpty(message = "please enter a name")
     private String name;
 
-    @NotBlank(message = errMsg)
+    @NotEmpty(message = "please enter a surname")
     private String surname;
 
-    @NotBlank(message = errMsg)
+    @NotEmpty(message = "please enter a email")
     private String email;
 
-    @NotBlank(message = errMsg)
+    @NotEmpty(message = "please enter a password")
     private String password;
 
-    @NotBlank(message = errMsg)
+    @NotEmpty(message = "please enter a username")
     private String username;
 
-    @NotBlank(message = errMsg)
+    @NotEmpty(message = "please enter date of birth")
     private String ssn;
 
     public String getUsername() {
