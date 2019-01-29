@@ -6,7 +6,57 @@
 </head>
 <body>
 <main layout:fragment="content">
-    <div id="default_content">Add register form here!</div>
+    <div class = "register">
+        <a href="/login">Already have a account</a>
+        <br>
+        <form action="#" th:action="@{/registration}" th:object="${registrationForm}" method="post">
+            <p>Name</p>
+            <input type="text" th:field="*{name}" />
+            <br>
+            <span class="error"
+                  th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}"
+            </span>
+            <p>Surname</p>
+            <input type="text" th:field="*{surname}" />
+            <br>
+            <span class="error"
+                  th:if="${#fields.hasErrors('surname)}"
+                  th:errors="*{surname}"
+            </span>
+            <p>Email</p>
+            <input type="text" th:field="*{email}" />
+            <br>
+            <span class="error"
+                  th:if="${#fields.hasErrors('email')}"
+                  th:errors="*{email}"
+            </span>
+            <p>Date of birth</p>
+            <input type="text" th:field="*{ssn}" />
+            <br>
+            <span class="error"
+                  th:if="${#fields.hasErrors('ssn')}"
+                  th:errors="*{ssn}"
+            </span>
+            <p>Username</p>
+            <input type="text" th:field="*{username}" />
+            <br>
+            <span class="error"
+                  th:if="${#fields.hasErrors('username')}"
+                  th:errors="*{username}"
+            </span>
+            <p>Password</p>
+            <input type="text" th:field="*{password}" />
+            <br>
+            <span class="error"
+                  th:if="${#fields.hasErrors('password')}"
+                  th:errors="*{password}"
+            </span>
+            <input type="submit" value="Register" />
+            <br>
+        </form>
+        <br>
+    </div>
 </main>
 </body>
 </html>
