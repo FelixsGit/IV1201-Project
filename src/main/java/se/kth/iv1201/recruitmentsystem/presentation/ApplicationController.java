@@ -50,7 +50,7 @@ public class ApplicationController {
      * @return
      */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
-    public String registerUser(@Valid @ModelAttribute RegistrationForm form, BindingResult bindingResult, Model model) {
+    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
             return REGISTER_PAGE_URL;
         }
