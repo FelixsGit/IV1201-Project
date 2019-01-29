@@ -29,6 +29,11 @@ public class ApplicationController {
         return "redirect:" + REGISTER_PAGE_URL;
     }
 
+    /**
+     * A get request for the registration page.
+     * @param model Model objects used in the registration page.
+     * @return The registration page url.
+     */
     @GetMapping(REGISTER_PAGE_URL)
     public String showRegisterView(Model model) {
         if(!model.containsAttribute(REGISTER_FORM_OBJ_NAME)) {
@@ -37,6 +42,13 @@ public class ApplicationController {
         return REGISTER_PAGE_URL;
     }
 
+    /**
+     * The registration form has been submitted.
+     * @param registrationForm Content of the registration form.
+     * @param bindingResult Validation result for the registration form.
+     * @param model Model objects used by the registration page.
+     * @return
+     */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
     public String registerUser(@Valid @ModelAttribute RegistrationForm form, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
