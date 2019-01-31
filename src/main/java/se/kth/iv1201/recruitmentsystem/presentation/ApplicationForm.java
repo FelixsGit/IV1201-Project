@@ -4,17 +4,17 @@ import javax.validation.constraints.NotEmpty;
 
 public class ApplicationForm {
 
-    @NotEmpty(message = "Please choose a are of expertise")
-    String expertise;
+    @NotEmpty(message = "Please choose an area of expertise")
+    private String expertise;
 
     @NotEmpty(message = "Please select a from-date")
-    String fromDate;
+    private String fromDate;
 
     @NotEmpty(message = "Please select a to-date")
-    String toDate;
+    private String toDate;
 
     @NotEmpty(message = "Please fill in how many years of experience you have")
-    String yearsOfExperience;
+    private String yearsOfExperience;
 
     public String getExpertise() {
         return expertise;

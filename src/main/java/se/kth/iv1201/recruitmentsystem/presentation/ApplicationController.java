@@ -88,7 +88,7 @@ public class ApplicationController {
         }
         /**Stuff*/
         model.addAttribute(new RegistrationForm());
-        return REGISTER_PAGE_URL;
+        return LOGIN_PAGE_URL;
     }
 
     /**

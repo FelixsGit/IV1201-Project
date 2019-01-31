@@ -34,7 +34,7 @@
             </span>
             <br>
             <p>Date of birth</p>
-            <input type="text" th:field="*{ssn}" />
+            <input type="text" placeholder="Example 19950422-XXXX" th:field="*{ssn}" />
             <span class="error"
                   th:if="${#fields.hasErrors('ssn')}"
                   th:errors="*{ssn}">
@@ -48,7 +48,7 @@
             </span>
             <br>
             <p>Password</p>
-            <input type="text" th:field="*{password}" />
+            <input type="password" th:field="*{password}" />
             <span class="error"
                   th:if="${#fields.hasErrors('password')}"
                   th:errors="*{password}">

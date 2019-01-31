@@ -10,12 +10,21 @@
         <h1>Enter information to login</h1>
         <a href="/register">I dont have an account</a>
         <br>
+        <br>
         <form action="#" th:action="@{/login}" th:object="${loginForm}" method="post">
             <p>Username</p>
             <input type="text" th:field="*{username}" />
+            <span class="error"
+                  th:if="${#fields.hasErrors('username')}"
+                  th:errors="*{username}">
+            </span>
             <br>
             <p>Password</p>
-            <input type="text" th:field="*{password}" />
+            <input type="password" th:field="*{password}" />
+            <span class="error"
+                  th:if="${#fields.hasErrors('password')}"
+                  th:errors="*{password}">
+            </span>
             <br>
             <br>
             <input type="submit" value="Login" />
