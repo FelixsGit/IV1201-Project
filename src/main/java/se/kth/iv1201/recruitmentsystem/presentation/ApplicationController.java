@@ -19,6 +19,7 @@ public class ApplicationController {
     static final String REGISTER_PAGE_URL = "register";
     static final String LOGIN_PAGE_URL = "login";
     static final String MODIFYAPPLICATION_PAGE_URL = "modifyApplication";
+
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
     private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
