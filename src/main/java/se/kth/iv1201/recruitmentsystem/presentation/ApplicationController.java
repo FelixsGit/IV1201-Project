@@ -18,8 +18,10 @@ public class ApplicationController {
     static final String DEFAULT_PAGE_URL = "/";
     static final String REGISTER_PAGE_URL = "register";
     static final String LOGIN_PAGE_URL = "login";
+    static final String APPLICATION_PAGE_URL = "apply";
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
+    private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
 
     ///////////////////////////////////GET MAPPINGS/////////////////////////////////////////
     /**
@@ -30,6 +32,7 @@ public class ApplicationController {
     public String showDefaultView() {
         return "redirect:" + REGISTER_PAGE_URL;
     }
+
     /**
      * A get request for the registration page.
      * @param model Model objects used in the registration page.
@@ -50,10 +53,23 @@ public class ApplicationController {
      */
     @GetMapping(LOGIN_PAGE_URL)
     public String showLoginView(Model model){
-        if(model.containsAttribute(LOGIN_FORM_OBJ_NAME)){
+        if(!model.containsAttribute(LOGIN_FORM_OBJ_NAME)){
             model.addAttribute(new LoginForm());
         }
         return LOGIN_PAGE_URL;
+    }
+
+    /**
+     * A get request for the application page.
+     * @param model Model objects used in the application page.
+     * @return The application page url.
+     */
+    @GetMapping(APPLICATION_PAGE_URL)
+    public String showApplicationView(Model model) {
+        if(model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
+            model.addAttribute(new ApplicationForm());
+        }
+        return APPLICATION_PAGE_URL;
     }
 
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
@@ -62,7 +78,7 @@ public class ApplicationController {
      * @param registrationForm Content of the registration form.
      * @param bindingResult Validation result for the registration form.
      * @param model Model objects used by the registration page.
-     * @return
+     * @return The registration page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
     public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) {
@@ -76,10 +92,10 @@ public class ApplicationController {
 
     /**
      * The login form has been submitted.
-     * @param loginForm  Content of the login form.
+     * @param loginForm Content of the login form.
      * @param bindingResult Validation result for the login form.
      * @param model Model objects used by the login page.
-     * @return
+     * @return The login page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + LOGIN_PAGE_URL)
     public String loginUser(@Valid @ModelAttribute LoginForm loginForm, BindingResult bindingResult, Model model){
@@ -93,4 +109,20 @@ public class ApplicationController {
         return LOGIN_PAGE_URL;
     }
 
+    /**
+     * The application from has been submitted.
+     * @param applicationForm Content of the application form.
+     * @param bindingResult Validation result fro the application form.
+     * @param model Model objects used by the application page.
+     * @return The application page url.
+     */
+    @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
+    public String apply(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors()) {
+            return APPLICATION_PAGE_URL;
+        }
+        /**stuff*/
+        model.addAttribute(new ApplicationForm());
+        return APPLICATION_PAGE_URL;
+    }
 }
