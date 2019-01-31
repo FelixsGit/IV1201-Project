@@ -13,14 +13,36 @@ public class CompetenceProfile {
 
     @Column(name = "person")
     // TODO reference? name?
+    @ManyToOne
     private Person person;
 
-    // TODO reference? name?
     @Column(name = "competence")
+    // TODO reference? name?
+    @ManyToOne
     private Competence competence;
 
     @Column(name = "years_of_experience")
     private int years_of_experience;
+
+    /**
+     * Required by JPA, do not use.
+     */
+    protected CompetenceProfile() {
+
+    }
+
+    /**
+     * Creates new CompetenceProfile about specified competence belonging
+     * to the specified person.
+     * @param person
+     * @param competence
+     * @param years_of_experience
+     */
+    public CompetenceProfile(Person person, Competence competence, int years_of_experience) {
+        this.person = person;
+        this.competence = competence;
+        this.years_of_experience = years_of_experience;
+    }
 
     public long getCompetence_profile_id() {
         return competence_profile_id;

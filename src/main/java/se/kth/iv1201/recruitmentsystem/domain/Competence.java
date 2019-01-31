@@ -14,6 +14,21 @@ public class Competence {
     @Column(name = "name")
     private String name;
 
+    /**
+     * Required by JPA, do not use.
+     */
+    protected Competence() {
+
+    }
+
+    /**
+     * Creates new instance of Competence, reuse existing in database when possible!
+     * @param name The name of the Competence.
+     */
+    public Competence(String name) {
+        this.name = name;
+    }
+
     public long getCompetence_id() {
         return competence_id;
     }

@@ -31,10 +31,39 @@ public class Person {
     @NotNull(message = "Role missing")
     // TODO reference?
     //@OneToOne(mappedBy = "person", cascade =  CascadeType.ALL)
+    @ManyToOne
     private Role role;
 
     @Column(name = "username")
     private String username;
+
+    /**
+     * Required by JPA, do not use.
+     */
+    protected Person() {
+
+    }
+
+    /**
+     * Creates a new person with specified properties.
+     * @param name The name of the person
+     * @param surname The surname of the person
+     * @param ssn The social security number of the person
+     * @param email The email belonging to the person
+     * @param password The password belonging to the person
+     * @param role The role of the person
+     * @param username The username belonging to the person
+     */
+    public Person(String name, String surname, String ssn, String email, String password,
+                  @NotNull(message = "Role missing") Role role, String username) {
+        this.name = name;
+        this.surname = surname;
+        this.ssn = ssn;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.username = username;
+    }
 
     public long getPerson_id() {
         return person_id;

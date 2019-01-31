@@ -15,6 +15,20 @@ public class Role {
     @Column(name = "name")
     private String name;
 
+    /**
+     * Required by JPA, do not use.
+     */
+    protected Role() {
+
+    }
+
+    /**
+     * Creates a new Role, reuse from database when possible!
+     * @param name The role name
+     */
+    public Role(String name) {
+        this.name = name;
+    }
 
     public long getRole_id() {
         return role_id;
