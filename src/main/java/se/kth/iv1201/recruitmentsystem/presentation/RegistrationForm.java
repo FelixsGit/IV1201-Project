@@ -1,10 +1,8 @@
 package se.kth.iv1201.recruitmentsystem.presentation;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class RegistrationForm {
-    //private final String errMsg = "Needs to be filled in";
 
     @NotEmpty(message = "please enter a name")
     private String name;
