@@ -18,7 +18,7 @@ public class ApplicationController {
     static final String DEFAULT_PAGE_URL = "/";
     static final String REGISTER_PAGE_URL = "register";
     static final String LOGIN_PAGE_URL = "login";
-    static final String APPLICATION_PAGE_URL = "apply";
+    static final String MODIFYAPPLICATION_PAGE_URL = "modifyApplication";
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
     private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
@@ -64,12 +64,12 @@ public class ApplicationController {
      * @param model Model objects used in the application page.
      * @return The application page url.
      */
-    @GetMapping(APPLICATION_PAGE_URL)
-    public String showApplicationView(Model model) {
+    @GetMapping(MODIFYAPPLICATION_PAGE_URL)
+    public String showModifyApplicationView(Model model) {
         if(model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
-        return APPLICATION_PAGE_URL;
+        return MODIFYAPPLICATION_PAGE_URL;
     }
 
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
@@ -95,18 +95,16 @@ public class ApplicationController {
      * @param loginForm Content of the login form.
      * @param bindingResult Validation result for the login form.
      * @param model Model objects used by the login page.
-     * @return The login page url.
+     * @return The ModifyApplication page url
      */
     @PostMapping(DEFAULT_PAGE_URL + LOGIN_PAGE_URL)
     public String loginUser(@Valid @ModelAttribute LoginForm loginForm, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
             return LOGIN_PAGE_URL;
         }
-        System.out.println(loginForm.getUsername());
-        System.out.println(loginForm.getUsername());
         /**Stuff*/
         model.addAttribute(new LoginForm());
-        return LOGIN_PAGE_URL;
+        return MODIFYAPPLICATION_PAGE_URL ;
     }
 
     /**
@@ -116,13 +114,13 @@ public class ApplicationController {
      * @param model Model objects used by the application page.
      * @return The application page url.
      */
-    @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String apply(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {
+    @PostMapping(DEFAULT_PAGE_URL + MODIFYAPPLICATION_PAGE_URL)
+    public String modifyApplication(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
-            return APPLICATION_PAGE_URL;
+            return MODIFYAPPLICATION_PAGE_URL;
         }
         /**stuff*/
         model.addAttribute(new ApplicationForm());
-        return APPLICATION_PAGE_URL;
+        return MODIFYAPPLICATION_PAGE_URL;
     }
 }
