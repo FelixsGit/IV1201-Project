@@ -37,7 +37,7 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
         return viewResolver;
     }
 
-    @Bean(name = "currencyConverterTemplateEngine")
+    @Bean(name = "recruitmentSystemTemplateEngine")
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
