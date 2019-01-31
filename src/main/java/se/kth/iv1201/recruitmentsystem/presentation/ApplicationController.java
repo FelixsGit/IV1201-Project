@@ -21,6 +21,7 @@ public class ApplicationController {
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
 
+    ///////////////////////////////////GET MAPPINGS/////////////////////////////////////////
     /**
      * No page is specified, redirect to the welcome page.
      * @return A response that redirects the browser to the welcome page.
@@ -29,7 +30,6 @@ public class ApplicationController {
     public String showDefaultView() {
         return "redirect:" + REGISTER_PAGE_URL;
     }
-
     /**
      * A get request for the registration page.
      * @param model Model objects used in the registration page.
@@ -56,7 +56,7 @@ public class ApplicationController {
         return LOGIN_PAGE_URL;
     }
 
-
+    ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
     /**
      * The registration form has been submitted.
      * @param registrationForm Content of the registration form.
