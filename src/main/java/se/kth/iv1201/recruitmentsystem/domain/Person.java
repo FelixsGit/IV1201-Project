@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id")
     private long person_id;
 
@@ -27,10 +27,11 @@ public class Person {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "role")
+    //@Column(name = "role")
     @NotNull(message = "Role missing")
     // TODO reference?
     //@OneToOne(mappedBy = "person", cascade =  CascadeType.ALL)
+    @JoinColumn(name = "role_id")
     @ManyToOne
     private Role role;
 

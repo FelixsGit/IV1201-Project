@@ -1,26 +1,28 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "availability")
 public class Availability {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "availability_id")
     private long availability_id;
 
-    @Column(name = "person")
+    //@Column(name = "person")
     //TODO reference? name?
     @OneToOne
+    @JoinColumn(name = "person_id")
     private Person person;
 
     @Column(name = "from_date")
-    private String from_date;
+    private Date from_date;
 
     @Column(name = "to_date")
-    private String to_date;
+    private Date to_date;
 
     /**
      * Required by JPA, do not use.
@@ -35,7 +37,7 @@ public class Availability {
      * @param from_date Availability start date
      * @param to_date Availability end date
      */
-    public Availability(Person person, String from_date, String to_date) {
+    public Availability(Person person, Date from_date, Date to_date) {
         this.person = person;
         this.from_date = from_date;
         this.to_date = to_date;
@@ -57,19 +59,19 @@ public class Availability {
         this.person = person;
     }
 
-    public String getFrom_date() {
+    public Date getFrom_date() {
         return from_date;
     }
 
-    public void setFrom_date(String from_date) {
+    public void setFrom_date(Date from_date) {
         this.from_date = from_date;
     }
 
-    public String getTo_date() {
+    public Date getTo_date() {
         return to_date;
     }
 
-    public void setTo_date(String to_date) {
+    public void setTo_date(Date to_date) {
         this.to_date = to_date;
     }
 }

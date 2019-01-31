@@ -1,28 +1,31 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "competence_profile")
 public class CompetenceProfile {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "competence_profile_id")
     private long competence_profile_id;
 
-    @Column(name = "person")
+    //@Column(name = "person")
     // TODO reference? name?
     @ManyToOne
+    @JoinColumn(name = "person_id")
     private Person person;
 
-    @Column(name = "competence")
+    //@Column(name = "competence")
     // TODO reference? name?
     @ManyToOne
+    @JoinColumn(name = "competence_id")
     private Competence competence;
 
     @Column(name = "years_of_experience")
-    private int years_of_experience;
+    private BigDecimal years_of_experience;
 
     /**
      * Required by JPA, do not use.
@@ -38,7 +41,7 @@ public class CompetenceProfile {
      * @param competence
      * @param years_of_experience
      */
-    public CompetenceProfile(Person person, Competence competence, int years_of_experience) {
+    public CompetenceProfile(Person person, Competence competence, BigDecimal years_of_experience) {
         this.person = person;
         this.competence = competence;
         this.years_of_experience = years_of_experience;
@@ -68,11 +71,11 @@ public class CompetenceProfile {
         this.competence = competence;
     }
 
-    public int getYears_of_experience() {
+    public BigDecimal getYears_of_experience() {
         return years_of_experience;
     }
 
-    public void setYears_of_experience(int years_of_experience) {
+    public void setYears_of_experience(BigDecimal years_of_experience) {
         this.years_of_experience = years_of_experience;
     }
 }
