@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{resources/fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<main layout:fragment="content">
+    <div class = "modifyApplication">
+        <form action="#" th:action="@{/modifyApplication}" th:object="${ApplicationForm}" method="post">
+            <h>Here you can apply for a job!</h>
+            <p>When can you work for us?</p>
+            <h>From</h>
+            <input type="text" placeholder="Example: 2020-04-24" th:field="*{fromDate}" />
+            <span class="error"
+                  th:if="${#fields.hasErrors('fromDate')}"
+                  th:errors="*{fromDate}">
+            </span>
+            <h>To</h>
+            <input type="text" placeholder="Example: 2021-06-21" th:field="*{toDate}" />
+            <span class="error"
+                  th:if="${#fields.hasErrors('toDate')}"
+                  th:errors="*{toDate}">
+            </span>
+            <p>Choose the expertise you have the most of!</p>
+            <select th:field="*{expertise}">
+                <option th:value="hotdog grillmiester" th:text="hotdog grillmiester"></option>
+                <option th:value="carousel administrator" th:text="carousel administrator"></option>
+                <option th:value="spooky-house guy" th:text="spooky-house guy"></option>
+            </select>
+            <br>
+            <p>How many years of experience do you have with this expertise?</p>
+            <input type="text" placeholder="Example: 10" th:field="*{yearsOfExperience}" />
+            <span class="error"
+                  th:if="${#fields.hasErrors('yearsOfExperience')}"
+                  th:errors="*{yearsOfExperience}">
+            </span>
+            <br>
+            <br>
+            <input type="submit" value="Apply for job" />
+        </form>
+    </div>
+</main>
+</body>
+</html>
