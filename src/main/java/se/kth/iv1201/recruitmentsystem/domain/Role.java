@@ -2,17 +2,16 @@ package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
 
-import static se.kth.iv1201.recruitmentsystem.util.Constants.SEQUENCE_NAME;
-import static se.kth.iv1201.recruitmentsystem.util.Constants.SEQUENCE_NAME_KEY;
-
 @Entity
 @Table(name = "role")
-public class Role {
+public class Role implements RoleDTO {
+
+    public static final String RECRUITER = "recruit";
+    public static final String APPLICANT = "applicant";
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "role_gen")
-    @SequenceGenerator(name = "role_gen", sequenceName = "role_seq")
-    @Column(name = "role_id", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
     private long role_id;
 
     @Column(name = "name")

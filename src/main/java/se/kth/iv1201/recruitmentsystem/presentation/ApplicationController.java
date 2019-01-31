@@ -1,5 +1,6 @@
 package se.kth.iv1201.recruitmentsystem.presentation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 
 import javax.validation.Valid;
 
@@ -14,10 +16,12 @@ import javax.validation.Valid;
 @Scope("session")
 public class ApplicationController {
 
-
     static final String DEFAULT_PAGE_URL = "/";
     static final String REGISTER_PAGE_URL = "register";
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
+
+    @Autowired
+    private ApplicationService applicationService;
 
     /**
      * No page is specified, redirect to the welcome page.
