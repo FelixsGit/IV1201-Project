@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Person;
 
 @Repository
-//@Transactional(propagation = Propagation.MANDATORY)
+@Transactional(propagation = Propagation.MANDATORY)
 public interface PersonRepository extends JpaRepository<Person, String> {
 
     /**

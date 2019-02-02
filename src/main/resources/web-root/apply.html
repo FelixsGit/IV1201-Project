@@ -6,38 +6,42 @@
 </head>
 <body>
 <main layout:fragment="content">
-    <div class = "modifyApplication">
-        <form action="#" th:action="@{/modifyApplication}" th:object="${applicationForm}" method="post">
-            <h>Here you can apply for a job!</h>
-            <p>When can you work for us?</p>
-            <h>From</h>
-            <input type="text" placeholder="Example: 2020-04-24" th:field="*{fromDate}" />
+    <div class = "apply">
+        <h>Here you can apply for a job!</h>
+        <p>When can you work for us?</p>
+        <br>
+        <form action="#" th:action="@{/apply}" th:object="${applicationForm}" method="post">
+            <p>From</p>
+            <input type="text" placeholder="Ex: 2019-04-21" th:field="*{fromDate}" />
             <span class="error"
                   th:if="${#fields.hasErrors('fromDate')}"
                   th:errors="*{fromDate}">
             </span>
-            <h>To</h>
-            <input type="text" placeholder="Example: 2021-06-21" th:field="*{toDate}" />
+            To
+            <input type="text" placeholder="Ex: 2020-02-12" th:field="*{toDate}" />
             <span class="error"
                   th:if="${#fields.hasErrors('toDate')}"
                   th:errors="*{toDate}">
             </span>
+            <br>
+            <br>
             <p>Choose the expertise you have the most of!</p>
-            <select th:field="*{expertise}">
-                <option th:value="hotdog grillmiester" th:text="hotdog_grillmiester"></option>
-                <option th:value="carousel administrator" th:text="carousel_administrator"></option>
-                <option th:value="spooky-house_guy" th:text="spooky-house_guy"></option>
+            <select th:field="*{competence}">
+                <option th:value="grill_handler" th:text="grill-handler"></option>
+                <option th:value="carousel_administrator" th:text="carousel-admin"></option>
+                <option th:value="spookyhouse_administratior" th:text="spookyhouse-admin"></option>
             </select>
             <br>
+            <br>
             <p>How many years of experience do you have with this expertise?</p>
-            <input type="text" placeholder="Example: 10" th:field="*{yearsOfExperience}" />
+            <input type="text" th:field="*{yearsOfExperience}" />
             <span class="error"
                   th:if="${#fields.hasErrors('yearsOfExperience')}"
                   th:errors="*{yearsOfExperience}">
             </span>
             <br>
             <br>
-            <input type="submit" value="Apply for job" />
+            <input type="submit" value="send" />
         </form>
     </div>
 </main>

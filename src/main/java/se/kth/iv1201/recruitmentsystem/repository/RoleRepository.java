@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Role;
 
 @Repository
-//@Transactional(propagation = Propagation.MANDATORY)
+@Transactional(propagation = Propagation.MANDATORY)
 public interface RoleRepository extends JpaRepository<Role, String> {
 
     /**

@@ -33,8 +33,8 @@
                   th:errors="*{email}">
             </span>
             <br>
-            <p>Date of birth</p>
-            <input type="text" placeholder="Example 19950422-XXXX" th:field="*{ssn}" />
+            <p>Personal registration number </p>
+            <input type="text" placeholder="Example: 19950422-XXXX" th:field="*{ssn}" />
             <span class="error"
                   th:if="${#fields.hasErrors('ssn')}"
                   th:errors="*{ssn}">
