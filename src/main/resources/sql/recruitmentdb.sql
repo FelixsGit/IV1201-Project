@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 29 jan 2019 kl 13:07
+-- Tid vid skapande: 31 jan 2019 kl 16:04
 -- Serverversion: 10.1.36-MariaDB
 -- PHP-version: 7.2.10
 
@@ -120,6 +120,40 @@ ALTER TABLE `person`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`role_id`);
+
+--
+-- AUTO_INCREMENT för dumpade tabeller
+--
+
+--
+-- AUTO_INCREMENT för tabell `availability`
+--
+ALTER TABLE `availability`
+  MODIFY `availability_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT för tabell `competence`
+--
+ALTER TABLE `competence`
+  MODIFY `competence_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT för tabell `competence_profile`
+--
+ALTER TABLE `competence_profile`
+  MODIFY `competence_profile_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT för tabell `person`
+--
+ALTER TABLE `person`
+  MODIFY `person_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT för tabell `role`
+--
+ALTER TABLE `role`
+  MODIFY `role_id` bigint(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
