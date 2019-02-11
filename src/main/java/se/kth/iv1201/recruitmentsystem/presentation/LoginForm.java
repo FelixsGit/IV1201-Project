@@ -1,12 +1,16 @@
 package se.kth.iv1201.recruitmentsystem.presentation;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 public class LoginForm {
+    private final String msgL = "Please choose a name between 2 and 30";
 
+    @Size(min = 2, max = 30, message = msgL)
     @NotEmpty(message = "Please enter your username")
     private String username;
 
+    @Size(min = 2, max = 30, message = msgL)
     @NotEmpty(message = "Please enter your password")
     private String password;
 
