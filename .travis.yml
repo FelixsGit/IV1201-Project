@@ -10,13 +10,13 @@ env:
     - MYSQL_PORT_3306_TCP_ADDR=localhost
     - MYSQL_PORT_3306_TCP_PORT=3306
 before_script:
-  - sudo mysql -e "CREATE DATABASE recruitmentdb;" -u root -p123
+  - sudo mysql -e "CREATE DATABASE recruitmentdb;" -u root
 #  - mysql recruitment-db < src/main/scripts/db/create-recruitment-db-mysql.sql -u root
 
 before_install:
   - chmod +x mvnw
-  - sudo mysql -e "INSERT INTO mysql.user (Host, User, Password) VALUES ('%', 'root', password('123'));
-    GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION";
+  # - sudo mysql -e "INSERT INTO mysql.user (Host, User, Password) VALUES ('%', 'root', password('123'));
+  #   GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION";
   # - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('123') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
   # - sudo mysql_upgrade -u root -p123
   # - sudo service mysql restart
