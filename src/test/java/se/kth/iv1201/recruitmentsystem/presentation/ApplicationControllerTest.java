@@ -17,6 +17,7 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -33,6 +34,8 @@ import static org.hamcrest.Matchers.is;
 public class ApplicationControllerTest implements TestExecutionListener {
     @Autowired
     private WebApplicationContext webappContext;
+    @Autowired
+    private DBUtil dbUtil;
 
     private MockMvc mockMvc;
 
@@ -49,7 +52,6 @@ public class ApplicationControllerTest implements TestExecutionListener {
     @BeforeEach
     void setup() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(webappContext).build();
-
     }
 
     @Test
