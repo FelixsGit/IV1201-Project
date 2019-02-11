@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Person;
 
 @Repository
+// It is required that a transaction is ongoing when arriving here
 @Transactional(propagation = Propagation.MANDATORY)
 public interface PersonRepository extends JpaRepository<Person, String> {
 

@@ -13,7 +13,8 @@ import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
 
 import javax.annotation.PostConstruct;
 
-// Operations should be transactions and should be rolled back when exceptions occur.
+// Operations should be transactions and should be rolled back when exceptions occur
+// Every method call should result in a new transaction
 @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
 @Service
 public class ApplicationService {
