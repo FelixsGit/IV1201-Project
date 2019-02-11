@@ -1,6 +1,7 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -16,11 +17,14 @@ public class Availability {
     //TODO reference? name?
     @OneToOne
     @JoinColumn(name = "person_id")
+    @NotNull(message = "No person specified")
     private Person person;
 
+    @NotNull(message = "No from date specified")
     @Column(name = "from_date")
     private Date from_date;
 
+    @NotNull(message = "No to date specified")
     @Column(name = "to_date")
     private Date to_date;
 

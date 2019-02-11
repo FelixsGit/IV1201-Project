@@ -1,6 +1,8 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "role")
@@ -14,6 +16,8 @@ public class Role implements RoleDTO {
     @Column(name = "role_id")
     private long role_id;
 
+    @NotNull(message = "No name")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "No numbers")
     @Column(name = "name")
     private String name;
 

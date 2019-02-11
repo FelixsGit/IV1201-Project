@@ -20,7 +20,6 @@ public class Person implements PersonDTO {
     @Column(name = "name")
     private String name;
 
-
     @NotNull(message = "Surname missing")
     @Pattern(regexp = "^[a-zA-Z]+$", message = "Name contains numbers")
     @Column(name = "surname")
@@ -34,7 +33,6 @@ public class Person implements PersonDTO {
     @Column(name = "email")
     private String email;
 
-    
     @Column(name = "password")
     private String password;
 
