@@ -2,6 +2,7 @@ package se.kth.iv1201.recruitmentsystem.presentation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,7 @@ import javax.validation.Valid;
 @Scope("session")
 public class ApplicationController {
 
+    private static final String SECURED = "secured";
     private static final String DEFAULT_PAGE_URL = "/";
     private static final String REGISTER_PAGE_URL = "register";
     private static final String LOGIN_PAGE_URL = "login";
@@ -70,6 +72,7 @@ public class ApplicationController {
      * @param model Model objects used in the Apply page.
      * @return The apply page url.
      */
+    @PreAuthorize("hasAnyRole('applicant')")
     @GetMapping(APPLICATION_PAGE_URL)
     public String showApplyView(Model model) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {

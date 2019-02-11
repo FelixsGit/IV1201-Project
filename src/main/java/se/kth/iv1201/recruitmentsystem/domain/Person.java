@@ -66,6 +66,16 @@ public class Person implements PersonDTO {
         this.username = username;
     }
 
+    public Person(Person person) {
+        this.name = name;
+        this.surname = surname;
+        this.ssn = ssn;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.username = username;
+    }
+
     public long getPerson_id() {
         return person_id;
     }
