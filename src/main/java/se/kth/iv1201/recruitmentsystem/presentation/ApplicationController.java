@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 
+import javax.security.auth.login.LoginException;
 import javax.validation.Valid;
 
 @Controller
@@ -73,12 +74,12 @@ public class ApplicationController {
      * @return The apply page url.
      */
     @PreAuthorize("hasAnyRole('applicant')")
-    @GetMapping(APPLICATION_PAGE_URL)
+    @GetMapping(SECURED + DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String showApplyView(Model model) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
-        return APPLICATION_PAGE_URL;
+        return SECURED + DEFAULT_PAGE_URL + APPLICATION_PAGE_URL;
     }
 
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
@@ -117,7 +118,11 @@ public class ApplicationController {
         if(bindingResult.hasErrors()){
             return LOGIN_PAGE_URL;
         }
-        /**Stuff*/
+        try {
+            applicationService.loginUser(loginForm.getUsername(), loginForm.getPassword());
+        } catch (LoginException e) {
+            System.out.println(e.getMessage());
+        }
         model.addAttribute(new LoginForm());
         return showApplyView(model) ;
     }

@@ -12,6 +12,7 @@ import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
 import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
 
 import javax.annotation.PostConstruct;
+import javax.security.auth.login.LoginException;
 
 // Operations should be transactions and should be rolled back when exceptions occur
 // Every method call should result in a new transaction
@@ -61,6 +62,13 @@ public class ApplicationService {
         // TODO: Handle if error on save?
         personRepository.save(person);
         return person;
+    }
+
+    public void loginUser(String username, String password) throws LoginException{
+        Person person = personRepository.findPersonByUsername(username);
+        if((person == null) || (!password.equals(person.getPassword()))){
+            throw new LoginException("Wrong credentials");
+        }
     }
 
 }

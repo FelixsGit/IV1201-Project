@@ -23,19 +23,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(getPasswordEncoder());
+        auth.userDetailsService(userDetailsService)
+                .passwordEncoder(getPasswordEncoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("**/apply/**").
+        http.authorizeRequests().antMatchers("**/secured/**").
                 authenticated().
                 anyRequest().
                 permitAll().
-                and().formLogin().
-                permitAll();
+                and().formLogin().loginPage("/login").permitAll();
     }
 
     private PasswordEncoder getPasswordEncoder() {

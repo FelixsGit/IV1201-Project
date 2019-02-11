@@ -67,13 +67,13 @@ public class Person implements PersonDTO {
     }
 
     public Person(Person person) {
-        this.name = name;
-        this.surname = surname;
-        this.ssn = ssn;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-        this.username = username;
+        this.name = person.getName();
+        this.surname = person.getSurname();
+        this.ssn = person.getSsn();
+        this.email = person.getEmail();
+        this.password = person.getPassword();
+        this.role = person.getRole();
+        this.username = person.getUsername();
     }
 
     public long getPerson_id() {

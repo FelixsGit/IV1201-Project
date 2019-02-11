@@ -1,15 +1,18 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 public class CustomUserDetails extends Person implements UserDetails {
 
     public CustomUserDetails(final Person person){
         super(person);
     }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
