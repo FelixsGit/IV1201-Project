@@ -1,4 +1,4 @@
-package se.kth.iv1201.recruitmentsystem.presentation;
+package se.kth.iv1201.recruitmentsystem.presentation.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
