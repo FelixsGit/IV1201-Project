@@ -19,12 +19,16 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 @SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"se.kth.iv1201.recruitementsystem"})
+@ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
+// @ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem.repository;"})
 @NotThreadSafe
 
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class,
@@ -40,8 +44,9 @@ public class ApplicationControllerTest implements TestExecutionListener {
     private MockMvc mockMvc;
 
     @Override
-    public void beforeTestClass(TestContext testContext) {
-
+    public void beforeTestClass(TestContext testContext) throws SQLException, IOException, ClassNotFoundException {
+        dbUtil = testContext.getApplicationContext().getBean(DBUtil.class);
+        // enableCreatingEMFWhichIsNeededForTheApplicationContext();
     }
 
     @Override
@@ -59,4 +64,5 @@ public class ApplicationControllerTest implements TestExecutionListener {
         //sendGetRequest(mockMvc, "").andExpect(status().is3xxRedirection()).andExpect(header().exists("Location"));
         MatcherAssert.assertThat(3, is(3));
     }
+
 }

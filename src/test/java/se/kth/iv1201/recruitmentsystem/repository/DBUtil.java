@@ -3,6 +3,8 @@ package se.kth.iv1201.recruitmentsystem.repository;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 @Component
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class DBUtil {
 
     @Autowired
@@ -40,6 +43,5 @@ public class DBUtil {
     private void runScript(BufferedReader bufferedReader) {
         
     }
-
 
 }

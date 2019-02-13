@@ -12,7 +12,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 
 @SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"se.kth.iv1201.recruitementsystem"})
+@ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
 @NotThreadSafe
 
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class, MainTest.class})
