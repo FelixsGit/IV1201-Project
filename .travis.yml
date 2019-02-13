@@ -9,6 +9,8 @@ env:
   global:
     - MYSQL_PORT_3306_TCP_ADDR=localhost
     - MYSQL_PORT_3306_TCP_PORT=3306
+    - MYSQL_DB_USERNAME=root
+    - MYSQL_DB_PASSWORD=
 before_script:
   - sudo mysql -e "CREATE DATABASE recruitmentdb;" -u root
 #  - mysql recruitment-db < src/main/scripts/db/create-recruitment-db-mysql.sql -u root
