@@ -87,17 +87,12 @@ public class ApplicationController {
      * @return The registration page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
-    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model){
+    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) throws UserException {
         if(bindingResult.hasErrors()) {
             return REGISTER_PAGE_URL;
         }
-        try {
-            applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
+        applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
                     registrationForm.getEmail(), registrationForm.getPassword(), "applicant", registrationForm.getUsername());
-        } catch (UserException e) {
-            System.out.println(e.getMessage());
-            return REGISTER_PAGE_URL;
-        }
         model.addAttribute(new RegistrationForm());
         return showLoginView(model);
     }
