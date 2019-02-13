@@ -22,7 +22,6 @@ import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 @SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
@@ -47,6 +46,7 @@ public class ApplicationControllerTest implements TestExecutionListener {
     public void beforeTestClass(TestContext testContext) throws SQLException, IOException, ClassNotFoundException {
         dbUtil = testContext.getApplicationContext().getBean(DBUtil.class);
         // enableCreatingEMFWhichIsNeededForTheApplicationContext();
+        dbUtil.emptyDb();
     }
 
     @Override
