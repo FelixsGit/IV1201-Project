@@ -20,4 +20,6 @@ public interface PersonRepository extends JpaRepository<Person, String> {
 
     //@Override
     //Person save(Person person);
+
+    Person findPersonByEmail(String email);
 }

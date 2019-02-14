@@ -57,6 +57,9 @@ public class ApplicationService {
             throw new UserException("Role name " + roleName + " does not exist in database.");
         if(personRepository.findPersonByUsername(username) != null)
             throw new UserException("Username " + username + " is already taken.");
+        if(personRepository.findPersonByEmail(email) != null) {
+            throw new UserException("Email " + email + " is already in use.");
+        }
         Person person = new Person(name, surname, ssn, email, password, role, username);
         // TODO: Handle if error on save?
         personRepository.save(person);
