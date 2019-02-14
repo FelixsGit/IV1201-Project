@@ -40,7 +40,7 @@ public class ApplicationController {
 
     /**
      * A get request for the loginOk page, this page is used only as a redirect page.
-     * Used when a user have just logged in and is redirected based on his role.
+     * Used when a user have just logged in, and it redirects based on the role on the user.
      * @param request HttpServletRequest object provided by spring
      * @return new url based on role.
      */
@@ -51,6 +51,7 @@ public class ApplicationController {
         }
         return "redirect:"+ HANDLE_APPLICATION_PAGE_URL;
     }
+
     /**
      * No page is specified, redirect to the welcome page.
      * @return A response that redirects the browser to the welcome page.
@@ -109,6 +110,7 @@ public class ApplicationController {
     }
 
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
+
     /**
      * The registration form has been submitted.
      * @param registrationForm Content of the registration form.
@@ -133,41 +135,18 @@ public class ApplicationController {
     }
 
     /**
-     * The login form has been submitted.
-     * @param loginForm Content of the login form.
-     * @param bindingResult Validation result for the login form.
-     * @param model Model objects used by the login page.
-     * @return The Apply page url
-     */
-    @PostMapping(DEFAULT_PAGE_URL + LOGIN_PAGE_URL)
-    public String loginUser(@Valid @ModelAttribute LoginForm loginForm, BindingResult bindingResult, Model model){
-        System.out.println(loginForm.getPassword());
-        if(bindingResult.hasErrors()){
-            return LOGIN_PAGE_URL;
-        }
-        try {
-            applicationService.loginUser(loginForm.getUsername(), loginForm.getPassword());
-        } catch (LoginException e) {
-            System.out.println(e.getMessage());
-        }
-        model.addAttribute(new LoginForm());
-        return showApplyView(model) ;
-    }
-
-    /**
      * The application from has been submitted.
      * @param applicationForm Content of the application form.
      * @param bindingResult Validation result fro the application form.
      * @param model Model objects used by the application page.
      * @return The application page url.
      */
-
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return APPLICATION_PAGE_URL;
         }
-        /**stuff*/
+        //TODO add functionality here
         model.addAttribute(new ApplicationForm());
         return APPLICATION_PAGE_URL;
     }

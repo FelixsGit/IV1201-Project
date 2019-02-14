@@ -63,12 +63,4 @@ public class ApplicationService {
         personRepository.save(person);
         return person;
     }
-
-    public void loginUser(String username, String password) throws LoginException{
-        Person person = personRepository.findPersonByUsername(username);
-        if((person == null) || (!password.equals(person.getPassword()))){
-            throw new LoginException("Wrong credentials");
-        }
-    }
-
 }
