@@ -109,7 +109,7 @@ public class ApplicationController {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.EMAIL_FAIL);
-            System.out.println("Emailfail");
+            //System.out.println("Emailfail");
         } else if (exception.getMessage().toUpperCase().contains("ROLE")){
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.ROLE_FAIL);
         } else {
