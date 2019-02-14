@@ -1,4 +1,4 @@
-package se.kth.iv1201.recruitmentsystem.presentation.application;
+package se.kth.iv1201.recruitmentsystem.presentation.app;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;

@@ -1,4 +1,4 @@
-package se.kth.iv1201.recruitmentsystem.presentation;
+package se.kth.iv1201.recruitmentsystem.presentation.app;
 
 import net.jcip.annotations.NotThreadSafe;
 import org.hamcrest.MatcherAssert;

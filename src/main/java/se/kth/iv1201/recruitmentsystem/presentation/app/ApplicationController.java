@@ -1,11 +1,10 @@
-package se.kth.iv1201.recruitmentsystem.presentation.application;
+package se.kth.iv1201.recruitmentsystem.presentation.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -68,7 +67,7 @@ public class ApplicationController {
     }
 
     /**
-     * A get request for the application page.
+     * A get request for the app page.
      * @param model Model objects used in the Apply page.
      * @return The apply page url.
      */
@@ -135,11 +134,11 @@ public class ApplicationController {
     }
 
     /**
-     * The application from has been submitted.
-     * @param applicationForm Content of the application form.
-     * @param bindingResult Validation result fro the application form.
-     * @param model Model objects used by the application page.
-     * @return The application page url.
+     * The app from has been submitted.
+     * @param applicationForm Content of the app form.
+     * @param bindingResult Validation result fro the app form.
+     * @param model Model objects used by the app page.
+     * @return The app page url.
      */
 
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
