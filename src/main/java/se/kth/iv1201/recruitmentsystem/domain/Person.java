@@ -66,16 +66,6 @@ public class Person implements PersonDTO {
         this.username = username;
     }
 
-    public Person(Person person) {
-        this.name = person.getName();
-        this.surname = person.getSurname();
-        this.ssn = person.getSsn();
-        this.email = person.getEmail();
-        this.password = person.getPassword();
-        this.role = person.getRole();
-        this.username = person.getUsername();
-    }
-
     public long getPerson_id() {
         return person_id;
     }
@@ -139,4 +129,5 @@ public class Person implements PersonDTO {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }

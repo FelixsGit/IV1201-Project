@@ -18,6 +18,4 @@ public interface PersonRepository extends JpaRepository<Person, String> {
      */
     Person findPersonByUsername(String username);
 
-    //@Override
-    //Person save(Person person);
 }

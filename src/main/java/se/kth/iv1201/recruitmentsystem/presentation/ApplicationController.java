@@ -3,6 +3,7 @@ package se.kth.iv1201.recruitmentsystem.presentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,26 +14,43 @@ import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 
 import javax.security.auth.login.LoginException;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
 @Scope("session")
 public class ApplicationController {
 
-    private static final String SECURED = "secured";
     private static final String DEFAULT_PAGE_URL = "/";
     private static final String REGISTER_PAGE_URL = "register";
     private static final String LOGIN_PAGE_URL = "login";
     private static final String APPLICATION_PAGE_URL = "apply";
+    private static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
+    private static final String LOGIN_OK_URL = "loginOk";
 
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
     private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
 
+
     @Autowired
     private ApplicationService applicationService;
 
     ///////////////////////////////////GET MAPPINGS/////////////////////////////////////////
+
+    /**
+     * A get request for the loginOk page, this page is used only as a redirect page.
+     * Used when a user have just logged in and is redirected based on his role.
+     * @param request HttpServletRequest object provided by spring
+     * @return new url based on role.
+     */
+    @GetMapping(DEFAULT_PAGE_URL + LOGIN_OK_URL)
+    public String defaultAfterLogin(HttpServletRequest request) {
+        if (request.isUserInRole("ROLE_applicant")) {
+            return "redirect:" + APPLICATION_PAGE_URL;
+        }
+        return "redirect:"+ HANDLE_APPLICATION_PAGE_URL;
+    }
     /**
      * No page is specified, redirect to the welcome page.
      * @return A response that redirects the browser to the welcome page.
@@ -73,13 +91,21 @@ public class ApplicationController {
      * @param model Model objects used in the Apply page.
      * @return The apply page url.
      */
-    @PreAuthorize("hasAnyRole('applicant')")
-    @GetMapping(SECURED + DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
+    @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String showApplyView(Model model) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
-        return SECURED + DEFAULT_PAGE_URL + APPLICATION_PAGE_URL;
+        return APPLICATION_PAGE_URL;
+    }
+
+    /**
+     * A get request for the application page.
+     * @return TODO  functionality on this page
+     */
+    @GetMapping(DEFAULT_PAGE_URL + HANDLE_APPLICATION_PAGE_URL)
+    public String showHandleApplicationView(){
+        return HANDLE_APPLICATION_PAGE_URL;
     }
 
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
@@ -97,7 +123,7 @@ public class ApplicationController {
         }
         try {
             applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
-                    registrationForm.getEmail(), registrationForm.getPassword(), "applicant", registrationForm.getUsername());
+                    registrationForm.getEmail(), registrationForm.getPassword(), "recruit", registrationForm.getUsername());
         } catch (UserException e) {
             System.out.println(e.getMessage());
             return REGISTER_PAGE_URL;
@@ -115,6 +141,7 @@ public class ApplicationController {
      */
     @PostMapping(DEFAULT_PAGE_URL + LOGIN_PAGE_URL)
     public String loginUser(@Valid @ModelAttribute LoginForm loginForm, BindingResult bindingResult, Model model){
+        System.out.println(loginForm.getPassword());
         if(bindingResult.hasErrors()){
             return LOGIN_PAGE_URL;
         }
