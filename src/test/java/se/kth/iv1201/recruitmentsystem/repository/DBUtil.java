@@ -74,13 +74,19 @@ public class DBUtil {
     }
 
     /**
-     * Drops all tables and creates a new, empty, bank database, by executing the script specified in the property
+     * Drops all tables and creates a new, empty, recruitment database, by executing the script specified in the property
      * <code>se.kth.iv1201.db.createTables</code>. Database driver, url, username and password are read from the following
      * properties: <code>spring.datasource.driver-class-name</code>, <code>spring.datasource.url</code>,
      * <code>spring.datasource.username</code>, <code>spring.datasource.password</code>
      */
     public void emptyDb() throws IOException {
-        runScript(new BufferedReader(new FileReader(env.getProperty("se.kth.iv1201.db.createTables"))));
+        System.out.println("EMPTYDB!");
+        try {
+            runScript(new BufferedReader(new FileReader(env.getProperty("se.kth.iv1201.db.createTables"))));
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
 
     private void setDelimiter(String delimiter, boolean fullLineDelimiter) {

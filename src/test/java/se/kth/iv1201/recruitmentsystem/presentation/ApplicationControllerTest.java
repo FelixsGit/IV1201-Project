@@ -20,14 +20,12 @@ import org.springframework.web.context.WebApplicationContext;
 import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import static org.hamcrest.Matchers.is;
 
 @SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
-// @ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem.repository;"})
 @NotThreadSafe
 
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class,
@@ -43,20 +41,21 @@ public class ApplicationControllerTest implements TestExecutionListener {
     private MockMvc mockMvc;
 
     @Override
-    public void beforeTestClass(TestContext testContext) throws SQLException, IOException, ClassNotFoundException {
+    public void beforeTestClass(TestContext testContext) throws IOException {
         dbUtil = testContext.getApplicationContext().getBean(DBUtil.class);
         // enableCreatingEMFWhichIsNeededForTheApplicationContext();
         dbUtil.emptyDb();
     }
 
     @Override
-    public void afterTestClass(TestContext testContext) {
-
+    public void afterTestClass(TestContext testContext) throws IOException {
+        dbUtil.emptyDb();
     }
 
     @BeforeEach
     void setup() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(webappContext).build();
+        dbUtil.emptyDb();
     }
 
     @Test
