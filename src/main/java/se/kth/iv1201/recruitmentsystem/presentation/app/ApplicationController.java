@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
+import se.kth.iv1201.recruitmentsystem.domain.Role;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
 
@@ -94,7 +95,7 @@ public class ApplicationController {
         }
         try {
             applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
-                    registrationForm.getEmail(), registrationForm.getPassword(), "applicant", registrationForm.getUsername());
+                    registrationForm.getEmail(), registrationForm.getPassword(), Role.APPLICANT, registrationForm.getUsername());
             model.addAttribute(new RegistrationForm());
         } catch (UserException exception) {
             regErrorHandling(exception, model);

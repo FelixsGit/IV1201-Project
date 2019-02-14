@@ -79,7 +79,7 @@ public class DBUtil {
      * properties: <code>spring.datasource.driver-class-name</code>, <code>spring.datasource.url</code>,
      * <code>spring.datasource.username</code>, <code>spring.datasource.password</code>
      */
-    public void emptyDb() throws IOException {
+    public void resetDB() throws IOException {
         try {
             runScript(new BufferedReader(new FileReader(env.getProperty("se.kth.iv1201.db.createTables"))));
         } catch(Exception e) {
