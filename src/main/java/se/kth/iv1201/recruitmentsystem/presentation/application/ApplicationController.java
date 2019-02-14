@@ -5,11 +5,13 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
+import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
 
 import javax.validation.Valid;
 
@@ -87,14 +89,32 @@ public class ApplicationController {
      * @return The registration page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
-    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) throws UserException {
+    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
             return REGISTER_PAGE_URL;
         }
-        applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
+        try {
+            applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
                     registrationForm.getEmail(), registrationForm.getPassword(), "applicant", registrationForm.getUsername());
-        model.addAttribute(new RegistrationForm());
+            model.addAttribute(new RegistrationForm());
+        } catch (UserException exception) {
+            regErrorHandling(exception, model);
+            return REGISTER_PAGE_URL;
+        }
         return showLoginView(model);
+    }
+
+    private void regErrorHandling(UserException exception, Model model) {
+        if(exception.getMessage().toUpperCase().contains("USERNAME")) {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
+        } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.EMAIL_FAIL);
+            System.out.println("Emailfail");
+        } else if (exception.getMessage().toUpperCase().contains("ROLE")){
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.ROLE_FAIL);
+        } else {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
+        }
     }
 
     /**

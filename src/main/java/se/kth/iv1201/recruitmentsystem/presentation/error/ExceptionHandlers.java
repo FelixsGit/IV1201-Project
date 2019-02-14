@@ -1,5 +1,6 @@
 package se.kth.iv1201.recruitmentsystem.presentation.error;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
+import se.kth.iv1201.recruitmentsystem.presentation.application.ApplicationController;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -21,9 +23,12 @@ public class ExceptionHandlers implements ErrorController  {
     public static final String ERROR_PAGE_URL = "error";
     public static final String ERROR_TYPE_KEY = "errorType";
     public static final String GENERIC_ERROR = "generic";
-    public static final String USERNAME_FAIL = "username";
-    public static final String EMAIL_FAIL = "email";
-    public static final String ROLE_FAIL = "role";
+    public static final String USERNAME_FAIL = "Username already taken! Please select another.";
+    public static final String EMAIL_FAIL = "Email already in use! Please select another.";
+    public static final String ROLE_FAIL = "Role does not exist! Please select a feasible one.";
+    //public static final String USERNAME_FAIL = "username";
+    //public static final String EMAIL_FAIL = "email";
+    //public static final String ROLE_FAIL = "role";
 
     @Override
     public String getErrorPath() {
@@ -35,7 +40,7 @@ public class ExceptionHandlers implements ErrorController  {
      *
      * @return An appropriate error page.
      */
-    @ExceptionHandler(UserException.class)
+    /**@ExceptionHandler(UserException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleException(UserException exception, Model model) {
         System.out.println(exception.getMessage());
@@ -51,7 +56,7 @@ public class ExceptionHandlers implements ErrorController  {
             model.addAttribute(ERROR_TYPE_KEY, GENERIC_ERROR);
         }
         return ERROR_PAGE_URL;
-    }
+    }*/
 
     @GetMapping("/"+ ERROR_PATH)
     public String handleHttpError(HttpServletRequest request, HttpServletResponse response, Model model) {
