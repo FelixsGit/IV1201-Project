@@ -11,6 +11,7 @@
         <a href="/login">Already have a account</a>
         <br>
         <br>
+            <p class="error" th:if ="${errorType} != null" th:text = "${errorType}"></p>
         <form action="#" th:action="@{/register}" th:object="${registrationForm}" method="post">
             <p>Name</p>
             <input type="text" th:field="*{name}" />

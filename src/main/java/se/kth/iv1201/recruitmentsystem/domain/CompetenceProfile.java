@@ -1,6 +1,7 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @Entity
@@ -14,16 +15,19 @@ public class CompetenceProfile {
 
     //@Column(name = "person")
     // TODO reference? name?
+    @NotNull(message = "No person specified")
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
 
     //@Column(name = "competence")
     // TODO reference? name?
+    @NotNull(message = "Competence not specified")
     @ManyToOne
     @JoinColumn(name = "competence_id")
     private Competence competence;
 
+    @NotNull(message = "Years_of_experience not specified")
     @Column(name = "years_of_experience")
     private BigDecimal years_of_experience;
 

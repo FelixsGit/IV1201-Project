@@ -1,4 +1,4 @@
-package se.kth.iv1201.recruitmentsystem.presentation;
+package se.kth.iv1201.recruitmentsystem.presentation.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
+import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
 
 import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
@@ -88,7 +89,7 @@ public class ApplicationController {
     }
 
     /**
-     * A get request for the application page.
+     * A get request for the app page.
      * @param model Model objects used in the Apply page.
      * @return The apply page url.
      */
@@ -119,27 +120,40 @@ public class ApplicationController {
      * @return The registration page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
-    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model){
+    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {
             return REGISTER_PAGE_URL;
         }
         try {
             applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
-                    registrationForm.getEmail(), registrationForm.getPassword(), "recruit", registrationForm.getUsername());
-        } catch (UserException e) {
-            System.out.println(e.getMessage());
+                    registrationForm.getEmail(), registrationForm.getPassword(), "applicant", registrationForm.getUsername());
+            model.addAttribute(new RegistrationForm());
+        } catch (UserException exception) {
+            regErrorHandling(exception, model);
             return REGISTER_PAGE_URL;
         }
-        model.addAttribute(new RegistrationForm());
         return showLoginView(model);
     }
 
+    private void regErrorHandling(UserException exception, Model model) {
+        if(exception.getMessage().toUpperCase().contains("USERNAME")) {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
+        } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.EMAIL_FAIL);
+        } else if (exception.getMessage().toUpperCase().contains("ROLE")){
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.ROLE_FAIL);
+        } else {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
+        }
+    }
+
     /**
-     * The application from has been submitted.
-     * @param applicationForm Content of the application form.
-     * @param bindingResult Validation result fro the application form.
-     * @param model Model objects used by the application page.
-     * @return The application page url.
+     * The app from has been submitted.
+     * @param applicationForm Content of the app form.
+     * @param bindingResult Validation result fro the app form.
+     * @param model Model objects used by the app page.
+     * @return The app page url.
+>>>>>>> aa844a625aa83b75c4fa2f1a5d5e6d314d4692c1:src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/ApplicationController.java
      */
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {

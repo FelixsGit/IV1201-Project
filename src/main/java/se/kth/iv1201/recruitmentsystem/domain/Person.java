@@ -1,7 +1,10 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "person")
@@ -12,15 +15,21 @@ public class Person implements PersonDTO {
     @Column(name = "person_id")
     private long person_id;
 
+    @NotNull(message = "Name missing")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Name contains numbers")
     @Column(name = "name")
     private String name;
 
+    @NotNull(message = "Surname missing")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Name contains numbers")
     @Column(name = "surname")
     private String surname;
 
+    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "Incorrect personal number")
     @Column(name = "ssn")
     private String ssn;
 
+    @Email(message = "Incorrect format on email")
     @Column(name = "email")
     private String email;
 
