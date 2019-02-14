@@ -17,10 +17,10 @@ import javax.validation.Valid;
 @Scope("session")
 public class ApplicationController {
 
-    private static final String DEFAULT_PAGE_URL = "/";
-    private static final String REGISTER_PAGE_URL = "register";
-    private static final String LOGIN_PAGE_URL = "login";
-    private static final String APPLICATION_PAGE_URL = "apply";
+    static final String DEFAULT_PAGE_URL = "/";
+    static final String REGISTER_PAGE_URL = "register";
+    static final String LOGIN_PAGE_URL = "login";
+    static final String APPLICATION_PAGE_URL = "apply";
 
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
