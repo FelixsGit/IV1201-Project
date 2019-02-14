@@ -38,6 +38,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ApplicationControllerTest implements TestExecutionListener {
     @Autowired
     private WebApplicationContext webappContext;
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private DBUtil dbUtil;
 

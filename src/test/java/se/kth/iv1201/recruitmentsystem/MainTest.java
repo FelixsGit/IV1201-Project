@@ -24,6 +24,7 @@ import java.sql.SQLException;
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class, MainTest.class})
 public class MainTest implements TestExecutionListener {
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private DBUtil dbUtil;
 
