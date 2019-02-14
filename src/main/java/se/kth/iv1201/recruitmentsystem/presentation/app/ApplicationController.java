@@ -22,12 +22,12 @@ import javax.validation.Valid;
 @Scope("session")
 public class ApplicationController {
 
-    private static final String DEFAULT_PAGE_URL = "/";
-    private static final String REGISTER_PAGE_URL = "register";
-    private static final String LOGIN_PAGE_URL = "login";
-    private static final String APPLICATION_PAGE_URL = "apply";
-    private static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
-    private static final String LOGIN_OK_URL = "loginOk";
+    public static final String DEFAULT_PAGE_URL = "/";
+    public static final String REGISTER_PAGE_URL = "register";
+    public static final String LOGIN_PAGE_URL = "login";
+    public static final String APPLICATION_PAGE_URL = "apply";
+    public static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
+    public static final String LOGIN_OK_URL = "loginOk";
 
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
