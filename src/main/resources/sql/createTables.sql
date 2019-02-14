@@ -21,7 +21,11 @@ SET time_zone = "+00:00";
 --
 -- Databas: `recruitmentdb`
 --
-
+DROP TABLE IF EXISTS `availability`;
+DROP TABLE IF EXISTS `competence`;
+DROP TABLE IF EXISTS `competence_profile`;
+DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `role`;
 -- --------------------------------------------------------
 
 --
