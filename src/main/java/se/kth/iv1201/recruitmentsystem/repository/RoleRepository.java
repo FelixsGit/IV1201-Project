@@ -6,6 +6,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Role;
 
+/**
+ * Handles all database access regarding the <code>Role</code> Entity and it's table.
+ */
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
 public interface RoleRepository extends JpaRepository<Role, String> {

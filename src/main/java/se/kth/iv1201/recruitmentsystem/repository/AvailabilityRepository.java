@@ -7,6 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Availability;
 import se.kth.iv1201.recruitmentsystem.domain.Person;
 
+/**
+ * Handles all database access regarding the <code>Availability</code> Entity and it's table.
+ */
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
 public interface AvailabilityRepository extends JpaRepository<Availability, Person> {
