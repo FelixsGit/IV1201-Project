@@ -6,36 +6,36 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class RegistrationForm {
-    private final String msgL = "Please choose a name between 2 and 30";
+    private final String msgL = "{general-input.msg-length}";
 
     @Size(min = 2, max = 30, message = msgL)
-    @NotEmpty(message = "please enter a name")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "No numbers")
+    @NotEmpty(message = "{reg.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     private String name;
 
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "No numbers")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Size(min = 2, max = 30, message = msgL)
-    @NotEmpty(message = "please enter a surname")
+    @NotEmpty(message = "{Please enter a surname}")
     private String surname;
 
     //@Pattern(regexp = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$",
       //      message = "Please choose an email with a correct format")
     @Size(min = 2, max = 30, message = msgL)
-    @Email(message = "please enter an email of correct a format")
-    @NotEmpty(message = "please enter a email")
+    @Email(message = "{reg.email.incorrect}")
+    @NotEmpty(message = "{reg.email.missing}")
     private String email;
 
     @Size(min = 2, max = 30, message = msgL)
-    @NotEmpty(message = "please enter a password")
+    @NotEmpty(message = "{reg.password.missing}")
     private String password;
 
     @Size(min = 2, max = 30, message = msgL)
-    @NotEmpty(message = "please enter a username")
+    @NotEmpty(message = "{reg.username.missing}")
     private String username;
 
     @Size(min = 2, max = 30, message = msgL)
-    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "Please enter a correct presonal number")
-    @NotEmpty(message = "please enter your social security number")
+    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "{reg.ssn.missing}")
+    @NotEmpty(message = "{reg.ssn.incorrect}")
     private String ssn;
 
     public String getUsername() {
