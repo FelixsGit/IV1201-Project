@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.TestContext;
 import org.springframework.test.context.TestExecutionListener;
@@ -13,9 +14,11 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 
 import javax.validation.ConstraintViolation;
-import javax.xml.validation.Validator;
+import javax.validation.Validator;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.hasItem;
@@ -26,20 +29,13 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasProperty;
 
 
-@SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
-@EnableAutoConfiguration
-@ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
+@SpringBootTest
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class, RegistrationFormTest.class})
 class RegistrationFormTest implements TestExecutionListener {
-    /**private final String msgL = "Please choose a name between 2 and 30";
-    private final String noNum = "No numbers";
-    //private final
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private DBUtil dbUtil;
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private Validator validator;
 
@@ -52,18 +48,34 @@ class RegistrationFormTest implements TestExecutionListener {
     @Test
     void testNullNo() {
         RegistrationForm regForm = new RegistrationForm();
-        regForm.setEmail(null);
-        regForm.setName(null);
-        regForm.setPassword(null);
-        regForm.setSsn(null);
-        regForm.setSurname(null);
-        regForm.setUsername(null);
+        regForm.setEmail("");
+        regForm.setName("");
+        regForm.setPassword("");
+        regForm.setSsn("");
+        regForm.setSurname("");
+        regForm.setUsername("");
+        List<String> expectedMsg = new ArrayList<String>();
+        expectedMsg.add("{reg.email.missing}");
+        expectedMsg.add("{reg.name.missing}");
+        expectedMsg.add("{reg.password.missing}");
+        expectedMsg.add("{reg.ssn.missing}");
+        expectedMsg.add("{reg.surname.missing}");
+        expectedMsg.add("{reg.username.missing}");
+        expectedMsg.add("{general-input.invalid-char}");
+        expectedMsg.add("{general-input.invalid-char}");
+        expectedMsg.add("{general-input.msg-length}");
+        expectedMsg.add("{general-input.msg-length}");
+        expectedMsg.add("{general-input.msg-length}");
+        expectedMsg.add("{general-input.msg-length}");
+        expectedMsg.add("{general-input.msg-length}");
+        expectedMsg.add("{general-input.msg-length}");
+        expectedMsg.add("{reg.ssn.incorrect}");
         Set<ConstraintViolation<RegistrationForm>> result = validator.validate(regForm);
-        assertThat(result.size(), is(6));
-        for(String expected)
-            assertThat(result, hasItem(hasProperty("messageTemplate",
-                equaltTo())));
+        assertThat(result.size(), is(expectedMsg.size()));
+        for(String msg : expectedMsg) {
+            assertThat(result, hasItem(hasProperty("messageTemplate", equalTo(msg))));
+        }
     }
 
-*/
+
 }

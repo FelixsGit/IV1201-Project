@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.TestContext;
@@ -36,9 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-@SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
-@EnableAutoConfiguration
-@ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
+@SpringBootTest
 @NotThreadSafe
 
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class,
