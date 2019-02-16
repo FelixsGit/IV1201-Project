@@ -38,7 +38,7 @@ public class ApplicationService {
     }
 
     /**
-     * Attempts to create a person with specified properties.
+     * Attempts to create a person with specified i18n.
      * @param name The name of the person.
      * @param surname The surname of the person.
      * @param ssn The social security number of the person.

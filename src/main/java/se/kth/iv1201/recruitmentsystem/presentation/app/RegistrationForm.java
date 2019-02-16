@@ -15,7 +15,7 @@ public class RegistrationForm {
 
     @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Size(min = 2, max = 30, message = msgL)
-    @NotEmpty(message = "{Please enter a surname}")
+    @NotEmpty(message = "{reg.surname.missing}")
     private String surname;
 
     //@Pattern(regexp = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$",

@@ -76,7 +76,7 @@ public class DBUtil {
     /**
      * Drops all tables and creates a new, empty, recruitment database, by executing the script specified in the property
      * <code>se.kth.iv1201.sql.createTables</code>. Database driver, url, username and password are read from the following
-     * properties: <code>spring.datasource.driver-class-name</code>, <code>spring.datasource.url</code>,
+     * i18n: <code>spring.datasource.driver-class-name</code>, <code>spring.datasource.url</code>,
      * <code>spring.datasource.username</code>, <code>spring.datasource.password</code>
      */
     public void resetDB() throws IOException {

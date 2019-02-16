@@ -55,7 +55,7 @@ public class Person implements PersonDTO {
     }
 
     /**
-     * Creates a new person with specified properties.
+     * Creates a new person with specified i18n.
      * @param name The name of the person
      * @param surname The surname of the person
      * @param ssn The social security number of the person

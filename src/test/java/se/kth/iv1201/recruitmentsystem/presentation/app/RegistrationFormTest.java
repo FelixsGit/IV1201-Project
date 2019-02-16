@@ -31,9 +31,9 @@ import static org.hamcrest.Matchers.hasProperty;
 @ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
 @TestExecutionListeners(listeners = {DependencyInjectionTestExecutionListener.class, RegistrationFormTest.class})
 class RegistrationFormTest implements TestExecutionListener {
-    private final String msgL = "Please choose a name between 2 and 30";
+    /**private final String msgL = "Please choose a name between 2 and 30";
     private final String noNum = "No numbers";
-    private final
+    //private final
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
@@ -65,5 +65,5 @@ class RegistrationFormTest implements TestExecutionListener {
                 equaltTo())));
     }
 
-
+*/
 }
