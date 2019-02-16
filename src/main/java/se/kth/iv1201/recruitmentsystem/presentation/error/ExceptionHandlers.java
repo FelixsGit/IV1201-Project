@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -52,8 +52,10 @@ public class ExceptionHandlers implements ErrorController  {
         return ERROR_PAGE_URL;
     }*/
 
+
     @GetMapping("/"+ ERROR_PATH)
     public String handleHttpError(HttpServletRequest request, HttpServletResponse response, Model model) {
+        ApplicationController controller = new ApplicationController();
         String statusCode = extractHttpStatusCode(request);
         model.addAttribute(ERROR_TYPE_KEY, statusCode);
         response.setStatus(Integer.parseInt(statusCode));

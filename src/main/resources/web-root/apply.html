@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout "
       layout:decorate="~{resources/fragments/layout}">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
         <h>Here you can apply for a job!</h>
         <p>When can you work for us?</p>
         <br>
+
         <form action="#" th:action="@{/apply}" th:object="${applicationForm}" method="post">
             <p>From</p>
             <input type="text" placeholder="Ex: 2019-04-21" th:field="*{fromDate}" />

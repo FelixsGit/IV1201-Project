@@ -26,10 +26,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * This method creates a new passwordEncoderTest object
+     *
      * @return PasswordEncoderTest object
      */
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new PasswordEncoderTest();
     }
 
@@ -52,6 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * Method to configure security over http
+     *
      * @param http HttpSecurity object provided by spring
      * @throws Exception
      */
@@ -75,30 +77,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //If no login, it will redirect to /login page.
         http.authorizeRequests().antMatchers("/loginOk").access("hasAnyRole('recruit', 'applicant')");
 
-        // Config for Login Form
-        http.authorizeRequests().and().formLogin()
-                // Submit URL of login page.
+        // Config for Login/Logout
+        http.authorizeRequests()
+                .and()
+                .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/loginOk")
                 .usernameParameter("username")
-                .passwordParameter("password");
-
-        // Config Remember Me.
-        http.authorizeRequests().and()
-                .rememberMe().tokenRepository(this.persistentTokenRepository())
-                .tokenValiditySeconds(86400); // 24h
+                .passwordParameter("password")
+                .and()
+                .logout()
+                .permitAll();
     }
-
-    /**
-     * This function is responsible for creating a token and saving it
-     * @return JdbcTokenRepositoryImpl a token to remember the user
-     */
-    @Bean
-    public PersistentTokenRepository persistentTokenRepository() {
-        JdbcTokenRepositoryImpl db = new JdbcTokenRepositoryImpl();
-        db.setDataSource(dataSource);
-        return db;
-    }
-
 }
 

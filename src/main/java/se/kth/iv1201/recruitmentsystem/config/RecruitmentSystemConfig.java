@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -37,6 +38,7 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
         return viewResolver;
     }
 
+    /**
     @Bean(name = "recruitmentSystemTemplateEngine")
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -44,6 +46,16 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
         // Increases performance, but reduces back compatibility?
         templateEngine.setEnableSpringELCompiler(true);
         // Add the layout dialect, which enables reusing layout html pages.
+        templateEngine.addDialect(new LayoutDialect());
+        return templateEngine;
+    }
+**/
+    @Bean(name = "recruitmentSystemTemplateEngine")
+    public SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(templateResolver());
+        templateEngine.setEnableSpringELCompiler(true);
+        templateEngine.addDialect(new SpringSecurityDialect());
         templateEngine.addDialect(new LayoutDialect());
         return templateEngine;
     }

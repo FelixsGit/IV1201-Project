@@ -6,13 +6,21 @@ header {
     text-align: center;
     color: #938E94;
     letter-spacing: .1em;
-    font-family: 'Cabin';font-size: 22px;
+    font-family: 'Cabin';
+    font-size: 22px;
+}
+
+information {
+    position:relative;
+    left: 200px;
+    font-family: 'Cabin';
+    font-size: 14px;
 }
 
 footer {
     border-top-style: solid;
     border-top-width: 1px;
-    padding-top: 10px;
+    padding-top: 40px;
     position: relative;
     width: 80%;
     margin: auto;
