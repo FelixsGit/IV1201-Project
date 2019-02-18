@@ -37,6 +37,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+//@SpringJUnitWebConfig(initializers = ConfigFileApplicationContextInitializer.class)
+//@EnableAutoConfiguration
+//@ComponentScan(basePackages = {"se.kth.iv1201.recruitmentsystem"})
 @SpringBootTest
 @NotThreadSafe
 
@@ -51,20 +54,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ApplicationControllerTest implements TestExecutionListener {
     @Autowired
     private WebApplicationContext webappContext;
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private DBUtil dbUtil;
 
     private MockMvc mockMvc;
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private PersonRepository personRepository;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
         dbUtil = testContext.getApplicationContext().getBean(DBUtil.class);
-        // enableCreatingEMFWhichIsNeededForTheApplicationContext();
         dbUtil.resetDB();
     }
 
@@ -77,12 +79,6 @@ public class ApplicationControllerTest implements TestExecutionListener {
     void setup() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(webappContext).build();
         dbUtil.resetDB();
-    }
-
-    @Test
-    void testTest() {
-        //sendGetRequest(mockMvc, "").andExpect(status().is3xxRedirection()).andExpect(header().exists("Location"));
-        assertThat(3, is(3));
     }
 
     @Test

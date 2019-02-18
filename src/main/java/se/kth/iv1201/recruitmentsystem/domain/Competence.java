@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "competence")
-public class Competence {
+public class Competence implements CompetenceDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

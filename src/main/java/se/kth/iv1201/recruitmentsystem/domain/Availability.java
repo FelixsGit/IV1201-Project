@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "availability")
-public class Availability {
+public class Availability implements AvailabilityDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
