@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{resources/fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<main layout:fragment="content">
+    <div class = "updateAccount">
+        <h1>Enter information to login</h1>
+        <a href="/register">I dont have an account</a>
+        <br>
+        <br>
+        <form action="#" th:action="@{/updateAccount}" th:object="${updateAccountForm}" method="post">
+            <p>Please enter your mail, so we can send you a link</p>
+            <input type="text" th:field="*{email}" />
+        <input type="submit" value="Send" />
+        <br>
+        </form>
+    </div>
+</main>
+</body>
+</html>
