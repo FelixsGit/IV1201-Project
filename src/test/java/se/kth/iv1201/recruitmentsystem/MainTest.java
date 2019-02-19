@@ -31,7 +31,7 @@ public class MainTest implements TestExecutionListener {
     @Override
     public void beforeTestClass(TestContext testContext) throws SQLException, IOException, ClassNotFoundException {
         dbUtil = testContext.getApplicationContext().getBean(DBUtil.class);
-        dbUtil.emptyDb();
+        dbUtil.resetDB();
     }
 
 }
