@@ -36,10 +36,7 @@ public class Person implements PersonDTO {
     @Column(name = "password")
     private String password;
 
-    //@Column(name = "role")
     @NotNull(message = "Role missing")
-    // TODO reference?
-    //@OneToOne(mappedBy = "person", cascade =  CascadeType.ALL)
     @JoinColumn(name = "role_id")
     @ManyToOne
     private Role role;
