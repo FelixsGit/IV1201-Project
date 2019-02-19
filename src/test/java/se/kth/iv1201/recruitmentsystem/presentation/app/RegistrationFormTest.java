@@ -45,19 +45,24 @@ class RegistrationFormTest implements TestExecutionListener {
         dbUtil.resetDB();
     }
 
-    String validName = "Adrian";
-    String validSurname = "Zander";
-    String validEmail = "adrian.t.zander@gmail.com";
-    String validSsn = "19970215-7695";
-    String validUsername = "Acander5";
-    String validPassword = "123";
+    private final String VALID_NAME = "Adrian";
+    private final String VALID_SURNAME = "Zander";
+    private final String VALID_EMAIL = "adrian.t.zander@gmail.com";
+    private final String VALID_SSN = "19970215-7695";
+    private final String VALID_USERNAME = "Acander5";
+    private final String VALID_PASSWORD = "123";
 
-    String invalidName = "Adrian4";
-    String invalidSurname = "Zander1";
-    String invalidEmail = "adrian.t.zander@@gmail.com";
-    String invalidSsn = "19970215";
-    String invalidUsername = "A";
-    String invalidPassword = "1";
+    private final String INVALID_NAME = "Adrian4";
+    private final String INVALID_SURNAME = "Zander1";
+    private final String INVALID_EMAIL = "adrian.t.zander@@gmail.com";
+    private final String INVALID_SSN = "19970215";
+    private final String INVALID_USERNAME = "A";
+    private final String INVALID_PASSWORD = "1";
+
+    private final String INVALID_CHAR_MSG = "{general-input.invalid-char}";
+    private final String INVALID_LENGTH_MSG = "{general-input.msg-length}";
+    private final String INVALID_EMAIL_MSG = "{reg.email.incorrect}";
+    private final String INVALID_SSN_MSG = "{reg.ssn.incorrect}";
 
     @Test
     void testNullNo() {
@@ -91,51 +96,57 @@ class RegistrationFormTest implements TestExecutionListener {
         }
     }
 
-    /**private RegistrationForm createValidRegForm() {
+    private RegistrationForm createValidRegForm() {
         RegistrationForm regForm = new RegistrationForm();
-        regForm.setName(validName);
-        regForm.setSurname(validSurname);
-        regForm.setEmail(validEmail);
-        regForm.setSsn(validSsn);
-        regForm.setUsername(validUsername);
-        regForm.setPassword(validPassword);
+        regForm.setName(VALID_NAME);
+        regForm.setSurname(VALID_SURNAME);
+        regForm.setEmail(VALID_EMAIL);
+        regForm.setSsn(VALID_SSN);
+        regForm.setUsername(VALID_USERNAME);
+        regForm.setPassword(VALID_PASSWORD);
         return regForm;
     }
 
-    private void testInvalidInputName(String input, String... correctValidationMsg) {
+    @Test
+    public void testInvalidInputName() {
         RegistrationForm regForm = createValidRegForm();
-        regForm.setName(input);
-        assertInput(validator.validate(regForm), correctValidationMsg);
+        regForm.setName(INVALID_NAME);
+        assertInput(validator.validate(regForm), INVALID_CHAR_MSG);
     }
 
-    public void testInvalidInputSurname(String input, String... correctValidationMsg) {
+    @Test
+    public void testInvalidInputSurname() {
         RegistrationForm regForm = createValidRegForm();
-        regForm.setSurname(input);
-        assertInput(validator.validate(regForm), correctValidationMsg);
+        regForm.setSurname(INVALID_SURNAME);
+        assertInput(validator.validate(regForm), INVALID_CHAR_MSG);
     }
 
-    private void testInvalidInputEmail(String input, String... correctValidationMsg) {
+    @Test
+    public void testInvalidInputEmail() {
         RegistrationForm regForm = createValidRegForm();
-        regForm.setEmail(input);
-        assertInput(validator.validate(regForm), correctValidationMsg);
+        regForm.setEmail(INVALID_EMAIL);
+        assertInput(validator.validate(regForm), INVALID_EMAIL_MSG);
     }
 
-    private void testInvalidInputSsn(String input, String... correctValidationMsg) {
+    @Test
+    public void testInvalidInputSsn() {
         RegistrationForm regForm = createValidRegForm();
-        regForm.setSsn(input);
-        assertInput(validator.validate(regForm), correctValidationMsg);
+        regForm.setSsn(INVALID_SSN);
+        assertInput(validator.validate(regForm), INVALID_SSN_MSG);
     }
 
-    private void testInvalidInputUsername(String input, String... correctValidationMsg) {
+    @Test
+    public void testInvalidInputUsername() {
         RegistrationForm regForm = createValidRegForm();
-        regForm.setUsername(input);
-        assertInput(validator.validate(regForm), correctValidationMsg);
+        regForm.setUsername(INVALID_USERNAME);
+        assertInput(validator.validate(regForm), INVALID_LENGTH_MSG);
     }
 
-    private void testInvalidInputPassword(String input, String... correctValidationMsg) {
+    @Test
+    public void testInvalidInputPassword() {
         RegistrationForm regForm = createValidRegForm();
-        regForm.setPassword(input);
-        assertInput(validator.validate(regForm), correctValidationMsg);
+        regForm.setPassword(INVALID_PASSWORD);
+        assertInput(validator.validate(regForm), INVALID_LENGTH_MSG);
     }
 
     private void assertInput(Set<ConstraintViolation<RegistrationForm>> result, String... correctValidationMsg) {
@@ -144,6 +155,5 @@ class RegistrationFormTest implements TestExecutionListener {
             assertThat(result, hasItem(hasProperty("messageTemplate", equalTo(msg))));
         }
     }
-*/
 
 }
