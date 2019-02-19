@@ -106,7 +106,7 @@ public class ApplicationController {
     }
 
     /**
-     * A get request for the app page.
+     * A get request for the apply page.
      * @param model Model objects used in the Apply page.
      * @return The apply page url.
      */
