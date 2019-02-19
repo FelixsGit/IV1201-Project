@@ -17,7 +17,7 @@ public class Role implements RoleDTO {
     private long role_id;
 
     @NotNull(message = "No name")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "No numbers")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "name")
     private String name;
 
