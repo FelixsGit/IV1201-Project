@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "competence_profile")
-public class CompetenceProfile {
+public class CompetenceProfile implements CompetenceProfileDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
