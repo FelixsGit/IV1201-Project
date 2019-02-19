@@ -16,7 +16,7 @@ public class Role implements RoleDTO {
     @Column(name = "role_id")
     private long role_id;
 
-    @NotNull(message = "No name")
+    @NotNull(message = "{role.name.missing}")
     @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "name")
     private String name;
