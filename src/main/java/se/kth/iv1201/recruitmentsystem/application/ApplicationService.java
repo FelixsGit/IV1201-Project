@@ -28,6 +28,10 @@ public class ApplicationService {
     @Autowired
     private RoleRepository roleRepository;
 
+    public PersonDTO findPerson(String username){
+        return personRepository.findPersonByUsername(username);
+    }
+
     /**
      * Attempts to create a person with specified i18n.
      * @param name The name of the person.

@@ -1,6 +1,5 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
-import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
+import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
 import se.kth.iv1201.recruitmentsystem.domain.Role;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
@@ -29,6 +29,7 @@ public class ApplicationController {
     public static final String LOGIN_PAGE_URL = "login";
     public static final String APPLICATION_PAGE_URL = "apply";
     public static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
+    public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication";
     public static final String LOGIN_OK_URL = "loginOk";
     public static final String UPDATE_ACCOUNT_URL = "updateAccount";
 
@@ -36,10 +37,14 @@ public class ApplicationController {
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
     private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
     private static String UPDATE_ACCOUNT_FORM_OBJ_NAME = "UpdateAccountForm";
+    private static String HANDLE_APPLICATION_OBJ_NAME = "handleApplicationForm";
+    private static String SEARCH_APPLICATION_OBJ_NAME = "searchApplicationForm";
 
 
     @Autowired
     private ApplicationService applicationService;
+
+    private PersonDTO person;
 
     ///////////////////////////////////GET MAPPINGS/////////////////////////////////////////
 
@@ -54,7 +59,7 @@ public class ApplicationController {
         if (request.isUserInRole("ROLE_applicant")) {
             return "redirect:" + APPLICATION_PAGE_URL;
         }
-        return "redirect:"+ HANDLE_APPLICATION_PAGE_URL;
+        return "redirect:"+ SEARCH_APPLICATION_PAGE_URL;
     }
 
     @GetMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
@@ -106,10 +111,13 @@ public class ApplicationController {
      * @return The apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String showApplyView(Model model) {
+    public String showApplyView(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
+        PersonDTO person = applicationService.findPerson(request.getUserPrincipal().getName());
+        updateAccountForm.setEmail(person.getEmail());
+        updateAccountForm.setSsn(person.getSsn());
         return APPLICATION_PAGE_URL;
     }
 
@@ -118,8 +126,30 @@ public class ApplicationController {
      * @return TODO  functionality on this page
      */
     @GetMapping(DEFAULT_PAGE_URL + HANDLE_APPLICATION_PAGE_URL)
-    public String showHandleApplicationView(){
+    public String showHandleApplicationView(Model model){
+        if(!model.containsAttribute(HANDLE_APPLICATION_OBJ_NAME)) {
+            model.addAttribute(new HandleApplicationForm());
+        }
         return HANDLE_APPLICATION_PAGE_URL;
+    }
+
+
+    /**
+     * A get request for the searchApplication page.
+     * @param updateAccountForm Content of the updateAccountForm
+     * @param model Model object that is used in the searchApplication page.
+     * @param request HttpServletRequest object provided by spring
+     * @return TODO
+     */
+    @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
+    public String showSearchApplicationView(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
+        if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
+            model.addAttribute(new SearchApplicationForm());
+        }
+        person = applicationService.findPerson(request.getUserPrincipal().getName());
+        updateAccountForm.setEmail(person.getEmail());
+        updateAccountForm.setSsn(person.getSsn());
+        return SEARCH_APPLICATION_PAGE_URL;
     }
 
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
@@ -147,6 +177,14 @@ public class ApplicationController {
         return showLoginView(model);
     }
 
+    /**
+     * The updateAccountForm that is used by the updateAccount page.
+     * This form is just a dummy form for future development....
+     * @param updateAccountForm Content of the updateAccountForm
+     * @param bindingResult Validation result for the updateAccount page.
+     * @param model object used by the updateAccount page.
+     * @return login page.
+     */
     @PostMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
     public String updateAccount(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, BindingResult bindingResult, Model model) {
         if(bindingResult.hasErrors()) {

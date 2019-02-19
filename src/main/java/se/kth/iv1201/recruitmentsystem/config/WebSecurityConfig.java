@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // handleApplication page requires login as recruiter(2)
         //if no login, it will redirect to /login page.
-        http.authorizeRequests().antMatchers("/handleApplication").access("hasRole('recruit')");
+        http.authorizeRequests().antMatchers("/searchApplication", "/handleApplication").access("hasRole('recruit')");
 
         //loginOk redirect page, this page is reached right after login and will redirect the user based on his role
         //If no login, it will redirect to /login page.
