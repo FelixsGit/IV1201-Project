@@ -66,8 +66,8 @@ class PersonTest implements TestExecutionListener {
 
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
-        roleInstance =   new Role("Dancer");
-        personInstance = new Person("Adrian", "Zander", "19970215-7695", "adrian.t.zander@gmail.com", "123",
+        roleInstance =   roleRepository.findRoleByName("applicant");
+        personInstance = new Person("Adrian", "Zander", "19970215-1625", "adrian.t.zander@gmail.com", "123",
                 roleInstance, "Acander5");
         dbUtil.resetDB();
     }
@@ -81,7 +81,7 @@ class PersonTest implements TestExecutionListener {
 
     private void testInvalidPerson(Person person, String... expectedMsgs) {
         try {
-            //startNewTransaction();
+            startNewTransaction();
             personRepository.save(person);
         } catch (TransactionSystemException exc) {
             Set<ConstraintViolation<?>> result =

@@ -63,7 +63,7 @@ class RoleTest implements TestExecutionListener {
 
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
-        instance = new Role("Dancer");
+        instance = roleRepository.findRoleByName("recruit");
         dbUtil.resetDB();
     }
 
@@ -76,7 +76,7 @@ class RoleTest implements TestExecutionListener {
 
     private void testInvalidRole(Role role, String... expectedMsgs) {
         try {
-            //startNewTransaction();
+            startNewTransaction();
             roleRepository.save(role);
         } catch (TransactionSystemException exc) {
             Set<ConstraintViolation<?>> result =
