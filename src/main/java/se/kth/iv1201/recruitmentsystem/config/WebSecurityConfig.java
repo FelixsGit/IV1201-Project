@@ -1,16 +1,11 @@
 package se.kth.iv1201.recruitmentsystem.config;
 
-import javax.sql.DataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
-import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
-import se.kth.iv1201.recruitmentsystem.security.CustomUserDetailsService;
 
 /**
  * This class is responsible for granting different authorities to different url's.
@@ -20,9 +15,6 @@ import se.kth.iv1201.recruitmentsystem.security.CustomUserDetailsService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    @Autowired
-    private DataSource dataSource;
 
     /**
      * This method creates a new passwordEncoderTest object

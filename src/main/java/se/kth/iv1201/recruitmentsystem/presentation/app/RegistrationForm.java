@@ -7,6 +7,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+/**
+ * A bean for the Registration form.
+ */
 public class RegistrationForm {
     private final String msgL = "{general-input.msg-length}";
 

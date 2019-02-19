@@ -21,6 +21,10 @@ import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+
+/**
+ *This controller class handles all http request to content root.
+ */
 @Controller
 @Scope("session")
 public class ApplicationController {
@@ -138,6 +142,12 @@ public class ApplicationController {
         return showLoginView(model);
     }
 
+    /**
+     *This private method is used  for mapping different error messages depending on
+     * the fields in the registration form.
+     * @param exception the exception
+     * @param model registration model  filled in by the user
+     */
     private void regErrorHandling(UserException exception, Model model) {
         if(exception.getMessage().toUpperCase().contains("USERNAME")) {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);

@@ -47,18 +47,6 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
         return viewResolver;
     }
 
-    /**
-    @Bean(name = "recruitmentSystemTemplateEngine")
-    public SpringTemplateEngine templateEngine() {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
-        // Increases performance, but reduces back compatibility?
-        templateEngine.setEnableSpringELCompiler(true);
-        // Add the layout dialect, which enables reusing layout html pages.
-        templateEngine.addDialect(new LayoutDialect());
-        return templateEngine;
-    }
-**/
     @Bean(name = "recruitmentSystemTemplateEngine")
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
