@@ -7,12 +7,11 @@
 <body>
 <main layout:fragment="content">
     <div class = "updateAccount">
-        <h1>Enter information to login</h1>
-        <a href="/register">I dont have an account</a>
+        <a href="/register">I want to make a new account</a>
         <br>
         <br>
         <form action="#" th:action="@{/updateAccount}" th:object="${updateAccountForm}" method="post">
-            <p>Please enter your mail, so we can send you a link</p>
+            <p>Please enter your mail, so we can send you a link to reset your password/username</p>
             <input type="text" th:field="*{email}" />
         <input type="submit" value="Send" />
         <br>

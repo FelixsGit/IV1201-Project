@@ -1,23 +1,18 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.Role;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
-
-import javax.security.auth.login.LoginException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -35,10 +30,12 @@ public class ApplicationController {
     public static final String APPLICATION_PAGE_URL = "apply";
     public static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
     public static final String LOGIN_OK_URL = "loginOk";
+    public static final String UPDATE_ACCOUNT_URL = "updateAccount";
 
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
     private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
+    private static String UPDATE_ACCOUNT_FORM_OBJ_NAME = "UpdateAccountForm";
 
 
     @Autowired
@@ -58,6 +55,14 @@ public class ApplicationController {
             return "redirect:" + APPLICATION_PAGE_URL;
         }
         return "redirect:"+ HANDLE_APPLICATION_PAGE_URL;
+    }
+
+    @GetMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
+    public String showUpdateAccountView(Model model){
+        if(!model.containsAttribute(UPDATE_ACCOUNT_FORM_OBJ_NAME)){
+            model.addAttribute(new UpdateAccountForm());
+        }
+        return UPDATE_ACCOUNT_URL;
     }
 
     /**
@@ -139,6 +144,15 @@ public class ApplicationController {
             regErrorHandling(exception, model);
             return REGISTER_PAGE_URL;
         }
+        return showLoginView(model);
+    }
+
+    @PostMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
+    public String updateAccount(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, BindingResult bindingResult, Model model) {
+        if(bindingResult.hasErrors()) {
+            return UPDATE_ACCOUNT_URL;
+        }
+        //Add code here to send mail to user
         return showLoginView(model);
     }
 
