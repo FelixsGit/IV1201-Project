@@ -36,8 +36,8 @@ public class RegistrationForm {
     private String username;
 
     @Size(min = 2, max = 30, message = msgL)
-    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "{reg.ssn.missing}")
-    @NotEmpty(message = "{reg.ssn.incorrect}")
+    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "{reg.ssn.incorrect}")
+    @NotEmpty(message = "{reg.ssn.missing}")
     private String ssn;
 
     public String getUsername() {
