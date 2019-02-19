@@ -51,7 +51,7 @@ class PersonTest implements TestExecutionListener {
     private RoleRepository roleRepository;
 
     private Person personInstance;
-    private Role roleInstance;
+    //private Role roleInstance;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -66,26 +66,28 @@ class PersonTest implements TestExecutionListener {
 
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
-        roleInstance =   roleRepository.findRoleByName("applicant");
+        dbUtil.resetDB();
+        Role roleInstance = new Role(Role.APPLICANT);
+        roleRepository.save(roleInstance);
         personInstance = new Person("Adrian", "Zander", "19970215-1625", "adrian.t.zander@gmail.com", "123",
                 roleInstance, "Acander5");
-        dbUtil.resetDB();
+        //dbUtil.resetDB();
     }
 
     @Test
     @Rollback
     void testMissingName() {
         personInstance.setName(null);
-        testInvalidPerson(personInstance, "{person.name.missing}", "{general-input.invalid-char}");
+        testInvalidPerson(personInstance, "{person.name.missing}");
     }
 
     private void testInvalidPerson(Person person, String... expectedMsgs) {
         try {
-            startNewTransaction();
             personRepository.save(person);
-        } catch (TransactionSystemException exc) {
-            Set<ConstraintViolation<?>> result =
-                    ((ConstraintViolationException)exc.getCause().getCause()).getConstraintViolations();
+            startNewTransaction();
+        } catch (ConstraintViolationException exc) {
+            System.out.println(exc.getConstraintViolations());
+            Set<ConstraintViolation<?>> result = exc.getConstraintViolations();
             assertThat(result.size(), is(expectedMsgs.length));
             for (String expectedMsg : expectedMsgs) {
                 assertThat(result, hasItem(hasProperty("messageTemplate", equalTo(expectedMsg))));

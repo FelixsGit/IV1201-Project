@@ -20,7 +20,7 @@ public class Person implements PersonDTO {
     @Column(name = "name")
     private String name;
 
-    @NotNull(message = "person.surname.missing")
+    @NotNull(message = "{person.surname.missing}")
     @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "surname")
     private String surname;
@@ -36,7 +36,7 @@ public class Person implements PersonDTO {
     @Column(name = "password")
     private String password;
 
-    @NotNull(message = "Role missing")
+    @NotNull(message = "{person.role.missing}")
     @JoinColumn(name = "role_id")
     @ManyToOne
     private Role role;
@@ -62,7 +62,7 @@ public class Person implements PersonDTO {
      * @param username The username belonging to the person
      */
     public Person(String name, String surname, String ssn, String email, String password,
-                  @NotNull(message = "Role missing") Role role, String username) {
+                  @NotNull(message = "{person.role.missing}") Role role, String username) {
         this.name = name;
         this.surname = surname;
         this.ssn = ssn;

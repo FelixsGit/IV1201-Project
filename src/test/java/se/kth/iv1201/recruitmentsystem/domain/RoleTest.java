@@ -63,24 +63,23 @@ class RoleTest implements TestExecutionListener {
 
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
-        instance = roleRepository.findRoleByName("recruit");
         dbUtil.resetDB();
+        instance = new Role(Role.APPLICANT);
     }
 
     @Test
     @Rollback
     void testMissingName() {
         instance.setName(null);
-        testInvalidRole(instance, "{role.name.missing}", "{general-input.invalid-char}");
+        testInvalidRole(instance, "{role.name.missing}");
     }
 
     private void testInvalidRole(Role role, String... expectedMsgs) {
         try {
             startNewTransaction();
             roleRepository.save(role);
-        } catch (TransactionSystemException exc) {
-            Set<ConstraintViolation<?>> result =
-                    ((ConstraintViolationException)exc.getCause().getCause()).getConstraintViolations();
+        } catch (ConstraintViolationException exc) {
+            Set<ConstraintViolation<?>> result = exc.getConstraintViolations();
             assertThat(result.size(), is(expectedMsgs.length));
             for (String expectedMsg : expectedMsgs) {
                 assertThat(result, hasItem(hasProperty("messageTemplate", equalTo(expectedMsg))));
@@ -92,6 +91,5 @@ class RoleTest implements TestExecutionListener {
         TestTransaction.end();
         TestTransaction.start();
     }
-
 
 }
