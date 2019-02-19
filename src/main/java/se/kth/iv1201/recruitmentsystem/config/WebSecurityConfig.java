@@ -55,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         // These pages does not require login
-        http.authorizeRequests().antMatchers("/login", "/register").permitAll();
+        http.authorizeRequests().antMatchers("/login", "/register", "/updateAccount").permitAll();
 
         // /apply page requires login as applicant(1).
         // If no login, it will redirect to /login page.
