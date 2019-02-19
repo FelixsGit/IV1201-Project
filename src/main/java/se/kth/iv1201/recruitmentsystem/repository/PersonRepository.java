@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Person;
 
+import java.util.List;
+
 /**
  * Handles all database access regarding the <code>Person</code> Entity and it's table.
  */
@@ -34,4 +36,10 @@ public interface PersonRepository extends JpaRepository<Person, String> {
      * @return The specified person
      */
     Person findPersonBySsn(String ssn);
+
+    @Override
+    List<Person> findAll();
+
+    @Override
+    Person save(Person person);
 }
