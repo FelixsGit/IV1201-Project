@@ -10,9 +10,7 @@ import se.kth.iv1201.recruitmentsystem.domain.Role;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
 import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
-
 import javax.annotation.PostConstruct;
-import javax.security.auth.login.LoginException;
 
 // Operations should be transactions and should be rolled back when exceptions occur
 // Every method call should result in a new transaction
