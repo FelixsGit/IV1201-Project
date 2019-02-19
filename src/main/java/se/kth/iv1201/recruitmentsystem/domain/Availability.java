@@ -13,8 +13,6 @@ public class Availability implements AvailabilityDTO {
     @Column(name = "availability_id")
     private long availability_id;
 
-    //@Column(name = "person")
-    //TODO reference? name?
     @OneToOne
     @JoinColumn(name = "person_id")
     @NotNull(message = "No person specified")
