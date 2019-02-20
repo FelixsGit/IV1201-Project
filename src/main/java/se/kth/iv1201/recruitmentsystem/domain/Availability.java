@@ -1,26 +1,28 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
 @Table(name = "availability")
-public class Availability {
+public class Availability implements AvailabilityDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "availability_id")
     private long availability_id;
 
-    //@Column(name = "person")
-    //TODO reference? name?
     @OneToOne
     @JoinColumn(name = "person_id")
+    @NotNull(message = "No person specified")
     private Person person;
 
+    @NotNull(message = "No from date specified")
     @Column(name = "from_date")
     private Date from_date;
 
+    @NotNull(message = "No to date specified")
     @Column(name = "to_date")
     private Date to_date;
 

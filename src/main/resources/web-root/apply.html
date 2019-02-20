@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout "
       layout:decorate="~{resources/fragments/layout}">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,22 @@
 <body>
 <main layout:fragment="content">
     <div class = "apply">
+
+        <div th:unless="${updateAccountForm.email}">
+            <p>Your account seems to be missing an email address</p>
+            <p>Please type in your email address here(You only need to do this once).</p>
+            <input type="text"/>
+            <br>
+            <input type="submit" value="send" />
+        </div>
+        <div th:unless="${updateAccountForm.ssn}">
+            <p>Your account seems to be missing a Personal Registration Number</p>
+            <p>Please type in your Personal Registration Number here(You only need to do this once).</p>
+            <input type="text"/>
+            <br>
+            <input type="submit" value="send" />
+        </div>
+
         <h>Here you can apply for a job!</h>
         <p>When can you work for us?</p>
         <br>

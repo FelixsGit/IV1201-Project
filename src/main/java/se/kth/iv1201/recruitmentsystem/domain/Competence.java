@@ -1,16 +1,20 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "competence")
-public class Competence {
+public class Competence implements CompetenceDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "competence_id")
     private long competence_id;
 
+    @NotNull(message = "No name")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Contained numbers")
     @Column(name = "name")
     private String name;
 

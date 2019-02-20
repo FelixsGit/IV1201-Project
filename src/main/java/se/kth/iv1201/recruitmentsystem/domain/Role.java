@@ -1,6 +1,8 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "role")
@@ -14,6 +16,8 @@ public class Role implements RoleDTO {
     @Column(name = "role_id")
     private long role_id;
 
+    @NotNull(message = "{role.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "name")
     private String name;
 

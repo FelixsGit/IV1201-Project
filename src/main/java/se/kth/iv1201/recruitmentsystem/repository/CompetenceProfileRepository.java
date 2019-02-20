@@ -10,6 +10,9 @@ import se.kth.iv1201.recruitmentsystem.domain.Person;
 
 import java.util.List;
 
+/**
+ * Handles all database access regarding the <code>CompetenceProfile</code> Entity and it's table.
+ */
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
 public interface CompetenceProfileRepository extends JpaRepository<CompetenceProfile, String> {

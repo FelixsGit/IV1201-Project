@@ -1,7 +1,10 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
 import javax.persistence.*;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "person")
@@ -12,25 +15,28 @@ public class Person implements PersonDTO {
     @Column(name = "person_id")
     private long person_id;
 
+    @NotNull(message = "{person.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "name")
     private String name;
 
+    @NotNull(message = "{person.surname.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "surname")
     private String surname;
 
+    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "{person.ssn.incorrect}")
     @Column(name = "ssn")
     private String ssn;
 
+    @Email(message = "{person.email.incorrect}")
     @Column(name = "email")
     private String email;
 
     @Column(name = "password")
     private String password;
 
-    //@Column(name = "role")
-    @NotNull(message = "Role missing")
-    // TODO reference?
-    //@OneToOne(mappedBy = "person", cascade =  CascadeType.ALL)
+    @NotNull(message = "{person.role.missing}")
     @JoinColumn(name = "role_id")
     @ManyToOne
     private Role role;
@@ -46,7 +52,7 @@ public class Person implements PersonDTO {
     }
 
     /**
-     * Creates a new person with specified properties.
+     * Creates a new person with specified i18n.
      * @param name The name of the person
      * @param surname The surname of the person
      * @param ssn The social security number of the person
@@ -56,7 +62,7 @@ public class Person implements PersonDTO {
      * @param username The username belonging to the person
      */
     public Person(String name, String surname, String ssn, String email, String password,
-                  @NotNull(message = "Role missing") Role role, String username) {
+                  @NotNull(message = "{person.role.missing}") Role role, String username) {
         this.name = name;
         this.surname = surname;
         this.ssn = ssn;
@@ -129,4 +135,5 @@ public class Person implements PersonDTO {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }

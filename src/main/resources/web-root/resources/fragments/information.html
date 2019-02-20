@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<information id="information" th:fragment="information">
+    <Strong>
+        <div sec:authorize="isAuthenticated()">
+            Logged in as: <span sec:authentication="name">Bob</span>
+            <br>
+            <div sec:authorize="hasRole('ROLE_applicant')">
+                Your role: Applicant
+            </div>
+            <div sec:authorize="hasRole('ROLE_recruit')">
+                Your role: Recruiter
+            </div>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+    </Strong>
+</information>
+</body>
+</html>

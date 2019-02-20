@@ -11,9 +11,14 @@ import se.kth.iv1201.recruitmentsystem.domain.UserException;
 import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
 import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
 
-import javax.annotation.PostConstruct;
-
-// Operations should be transactions and should be rolled back when exceptions occur.
+/**
+ * This class defines tasks that can be performed by the domain layer.
+ *
+ * Each method in this class corresponds to a transaction. The transaction starts
+ * when the presentation layer calls a method and ends when a method returns.
+ * The transaction ends with a commit if everything is well, or with a rollback
+ * if an exception was thrown.
+ */
 @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
 @Service
 public class ApplicationService {
@@ -23,21 +28,12 @@ public class ApplicationService {
     @Autowired
     private RoleRepository roleRepository;
 
-    @PostConstruct
-    public void init() {
-        /* Test code which works but should not be executed every time :)
-        try {
-            PersonDTO pdto = createPerson("Adrian", "Felixsson", "960403-1100", "addefelle@kth.se",
-                    "hemligthemligt", "recruit", "DragonSlayer1337");
-            System.out.println("Person created: " + pdto.getUsername());
-        } catch (UserException e) {
-            e.printStackTrace();
-        }
-        */
+    public PersonDTO findPerson(String username){
+        return personRepository.findPersonByUsername(username);
     }
 
     /**
-     * Attempts to create a person with specified properties.
+     * Attempts to create a person with specified i18n.
      * @param name The name of the person.
      * @param surname The surname of the person.
      * @param ssn The social security number of the person.
@@ -54,12 +50,18 @@ public class ApplicationService {
         Role role = roleRepository.findRoleByName(roleName);
         if(role == null)
             throw new UserException("Role name " + roleName + " does not exist in database.");
+
         if(personRepository.findPersonByUsername(username) != null)
             throw new UserException("Username " + username + " is already taken.");
+
+        if(personRepository.findPersonByEmail(email) != null)
+            throw new UserException("Email " + email + " is already in use.");
+
+        if(personRepository.findPersonBySsn(ssn) != null)
+            throw new UserException("SSN " + ssn + " is already registered.");
+
         Person person = new Person(name, surname, ssn, email, password, role, username);
-        // TODO: Handle if error on save?
         personRepository.save(person);
         return person;
     }
-
 }

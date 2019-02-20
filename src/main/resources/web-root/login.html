@@ -14,22 +14,21 @@
         <form action="#" th:action="@{/login}" th:object="${loginForm}" method="post">
             <p>Username</p>
             <input type="text" th:field="*{username}" />
-            <span class="error"
-                  th:if="${#fields.hasErrors('username')}"
-                  th:errors="*{username}">
-            </span>
             <br>
             <p>Password</p>
             <input type="password" th:field="*{password}" />
-            <span class="error"
-                  th:if="${#fields.hasErrors('password')}"
-                  th:errors="*{password}">
-            </span>
             <br>
-            <br>
+            <div class="error" th:if="${param.logout} "
+                <span th:text="${'You have been logged out!'}"></span>
+            </div>
+            <div class="error" th:if="${param.error} "
+                 th:with="errorMsg=${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
+                <span th:text="${errorMsg}"></span>
+            </div>
             <input type="submit" value="Login" />
             <br>
         </form>
+    <a href="/updateAccount.html">I forgot my username/password</a>
     </div>
 </main>
 </body>

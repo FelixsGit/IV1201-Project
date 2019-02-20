@@ -1,13 +1,20 @@
-package se.kth.iv1201.recruitmentsystem.presentation;
+package se.kth.iv1201.recruitmentsystem.presentation.app;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
+/**
+ * A bean for the Login form.
+ */
 public class LoginForm {
+    private final String msgL = "{general-input.msg-length}";
 
-    @NotEmpty(message = "Please enter your username")
+    @Size(min = 2, max = 30, message = msgL)
+    @NotEmpty(message = "{login.username.missing}")
     private String username;
 
-    @NotEmpty(message = "Please enter your password")
+    @Size(min = 2, max = 30, message = msgL)
+    @NotEmpty(message = "{login.password.missing}")
     private String password;
 
     public String getUsername() {
@@ -27,3 +34,4 @@ public class LoginForm {
     }
 
 }
+

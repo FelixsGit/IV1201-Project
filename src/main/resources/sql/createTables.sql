@@ -21,7 +21,11 @@ SET time_zone = "+00:00";
 --
 -- Databas: `recruitmentdb`
 --
-
+DROP TABLE IF EXISTS `availability`;
+DROP TABLE IF EXISTS `competence`;
+DROP TABLE IF EXISTS `competence_profile`;
+DROP TABLE IF EXISTS `person`;
+DROP TABLE IF EXISTS `role`;
 -- --------------------------------------------------------
 
 --
@@ -154,6 +158,10 @@ ALTER TABLE `person`
 --
 ALTER TABLE `role`
   MODIFY `role_id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+INSERT INTO role (role_id, name) VALUES (1, 'recruit');
+INSERT INTO role (role_id, name) VALUES (2, 'applicant');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
