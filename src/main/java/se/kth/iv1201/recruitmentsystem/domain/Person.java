@@ -15,31 +15,28 @@ public class Person implements PersonDTO {
     @Column(name = "person_id")
     private long person_id;
 
-    @NotNull(message = "Name missing")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Name contains numbers")
+    @NotNull(message = "{person.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "name")
     private String name;
 
-    @NotNull(message = "Surname missing")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Name contains numbers")
+    @NotNull(message = "{person.surname.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{general-input.invalid-char}")
     @Column(name = "surname")
     private String surname;
 
-    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "Incorrect personal number")
+    @Pattern(regexp = "^(19|20)?[0-9]{8}[- ]?[0-9]{4}$", message = "{person.ssn.incorrect}")
     @Column(name = "ssn")
     private String ssn;
 
-    @Email(message = "Incorrect format on email")
+    @Email(message = "{person.email.incorrect}")
     @Column(name = "email")
     private String email;
 
     @Column(name = "password")
     private String password;
 
-    //@Column(name = "role")
-    @NotNull(message = "Role missing")
-    // TODO reference?
-    //@OneToOne(mappedBy = "person", cascade =  CascadeType.ALL)
+    @NotNull(message = "{person.role.missing}")
     @JoinColumn(name = "role_id")
     @ManyToOne
     private Role role;
@@ -65,7 +62,7 @@ public class Person implements PersonDTO {
      * @param username The username belonging to the person
      */
     public Person(String name, String surname, String ssn, String email, String password,
-                  @NotNull(message = "Role missing") Role role, String username) {
+                  @NotNull(message = "{person.role.missing}") Role role, String username) {
         this.name = name;
         this.surname = surname;
         this.ssn = ssn;
