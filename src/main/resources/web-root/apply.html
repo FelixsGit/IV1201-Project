@@ -8,14 +8,14 @@
 <main layout:fragment="content">
     <div class = "apply">
 
-        <div th:unless="${updateAccountForm.email}">
+        <div th:if="${updateAccountForm.email}" >
             <p>Your account seems to be missing an email address</p>
             <p>Please type in your email address here(You only need to do this once).</p>
             <input type="text"/>
             <br>
             <input type="submit" value="send" />
         </div>
-        <div th:unless="${updateAccountForm.ssn}">
+        <div th:if="${updateAccountForm.ssn}">
             <p>Your account seems to be missing a Personal Registration Number</p>
             <p>Please type in your Personal Registration Number here(You only need to do this once).</p>
             <input type="text"/>
