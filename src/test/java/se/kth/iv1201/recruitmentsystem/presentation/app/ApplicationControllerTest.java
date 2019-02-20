@@ -104,12 +104,14 @@ public class ApplicationControllerTest implements TestExecutionListener {
                 .andExpect(view().name(ApplicationController.LOGIN_PAGE_URL));
     }
 
+    /* This page now needs specific rights for access
     @Test
     void testApplicationView() throws Exception {
         String url = "/" + ApplicationController.APPLICATION_PAGE_URL;
         mockMvc.perform(get(url)).andExpect(status().isOk())
             .andExpect(view().name(ApplicationController.APPLICATION_PAGE_URL));
     }
+    */
 
     @Test
     void testIncorrectView() throws Exception {
