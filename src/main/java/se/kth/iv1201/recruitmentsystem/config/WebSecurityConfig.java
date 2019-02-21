@@ -53,20 +53,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
-
-        // These pages does not require login
         http.authorizeRequests().antMatchers("/login", "/register", "/updateAccount").permitAll();
+        http.authorizeRequests().antMatchers("/apply", "/searchApplication", "/handleApplication").fullyAuthenticated();
 
-        // /apply page requires login as applicant(1).
-        // If no login, it will redirect to /login page.
         http.authorizeRequests().antMatchers("/apply").access("hasRole('applicant')");
-
-        // handleApplication page requires login as recruiter(2)
-        //if no login, it will redirect to /login page.
         http.authorizeRequests().antMatchers("/searchApplication", "/handleApplication").access("hasRole('recruit')");
-
-        //loginOk redirect page, this page is reached right after login and will redirect the user based on his role
-        //If no login, it will redirect to /login page.
         http.authorizeRequests().antMatchers("/loginOk").access("hasAnyRole('recruit', 'applicant')");
 
         // Config for Login/Logout
