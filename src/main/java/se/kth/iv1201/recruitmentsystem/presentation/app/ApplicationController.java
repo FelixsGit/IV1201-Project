@@ -111,13 +111,25 @@ public class ApplicationController {
      * @return The apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String showApplyView(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request) {
+    public String showApplyView(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
-        PersonDTO person = applicationService.findPerson(request.getUserPrincipal().getName());
-        updateAccountForm.setEmail(person.getEmail());
-        updateAccountForm.setSsn(person.getSsn());
+        try {
+            applicationService.findPerson(request.getUserPrincipal().getName());
+        }catch(UserException e){
+            if(e.getMessage().equals("missingEmail")){
+                updateAccountForm.setEmail("missingEmail");
+            }
+            if(e.getMessage().equals("missingSsn")){
+                updateAccountForm.setSsn("missingSsn");
+            }
+            if(e.getMessage().equals("missingEmailAndSsn")){
+                updateAccountForm.setSsn("missingSsn");
+                updateAccountForm.setEmail("missingEmail");
+            }
+        }
+        model.addAttribute("updateAccountForm", updateAccountForm);
         return APPLICATION_PAGE_URL;
     }
 
@@ -142,13 +154,25 @@ public class ApplicationController {
      * @return TODO
      */
     @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
-    public String showSearchApplicationView(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
+    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
             model.addAttribute(new SearchApplicationForm());
         }
-        person = applicationService.findPerson(request.getUserPrincipal().getName());
-        updateAccountForm.setEmail(person.getEmail());
-        updateAccountForm.setSsn(person.getSsn());
+        try {
+            applicationService.findPerson(request.getUserPrincipal().getName());
+        }catch(UserException e){
+            if(e.getMessage().equals("missingEmail")){
+                updateAccountForm.setEmail("missingEmail");
+            }
+            if(e.getMessage().equals("missingSsn")){
+                updateAccountForm.setSsn("missingSsn");
+            }
+            if(e.getMessage().equals("missingEmailAndSsn")){
+                updateAccountForm.setSsn("missingSsn");
+                updateAccountForm.setEmail("missingEmail");
+            }
+        }
+        model.addAttribute("updateAccountForm", updateAccountForm);
         return SEARCH_APPLICATION_PAGE_URL;
     }
 

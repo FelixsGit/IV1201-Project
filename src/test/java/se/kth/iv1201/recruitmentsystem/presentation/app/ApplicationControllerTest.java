@@ -48,7 +48,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  should be committed after the test method has completed"*/
 @Commit
 public class ApplicationControllerTest implements TestExecutionListener {
-/**    @Autowired
+    @Autowired
     private WebApplicationContext webappContext;
     //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
@@ -170,5 +170,4 @@ public class ApplicationControllerTest implements TestExecutionListener {
         TestTransaction.end();
         TestTransaction.start();
     }
-*/
 }

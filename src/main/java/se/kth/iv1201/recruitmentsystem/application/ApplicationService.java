@@ -28,8 +28,30 @@ public class ApplicationService {
     @Autowired
     private RoleRepository roleRepository;
 
-    public PersonDTO findPerson(String username){
-        return personRepository.findPersonByUsername(username);
+    /**
+     * Retrieve the logged in user from the database and
+     * casts exceptions depending on null email and or ssn.
+     * @param username of logged in user.
+     * @throws UserException to inform 'controller' that field does not exist.
+     */
+    public void findPerson(String username) throws UserException{
+        PersonDTO person = personRepository.findPersonByUsername(username);
+        try{
+            person.getEmail().length(); //nullpointer trigger
+        }catch(NullPointerException e){
+            try{
+                person.getSsn().length(); //nullpointer trigger
+            }catch(NullPointerException es){
+                throw new UserException("missingEmailAndSsn");
+            }
+
+            throw new UserException("missingEmail");
+        }
+        try{
+            person.getEmail().length(); //nullpointer trigger
+        }catch(NullPointerException e){
+            throw new UserException("missingSsn");
+        }
     }
 
     /**

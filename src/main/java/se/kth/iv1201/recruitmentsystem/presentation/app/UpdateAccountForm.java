@@ -10,8 +10,6 @@ public class UpdateAccountForm {
         this.email = email;
     }
 
-    private String email;
-
     public String getSsn() {
         return ssn;
     }
@@ -20,5 +18,7 @@ public class UpdateAccountForm {
         this.ssn = ssn;
     }
 
+    private String email;
     private String ssn;
+
 }
