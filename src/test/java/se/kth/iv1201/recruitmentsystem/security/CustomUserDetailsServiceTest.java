@@ -77,7 +77,7 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
                 .apply(springSecurity())
                 .build();
         dbUtil.resetDB();
-        Role role = new Role(Role.APPLICANT);
+        Role role = roleRepository.findRoleByName(Role.APPLICANT);
         roleRepository.save(role);
         person = new Person("testName", "testSurname", "19950411-1111",
                 "test@te.se", "123", role, "testUsername");
@@ -110,7 +110,6 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
                 .with(user(person.getUsername())
                     .password(person.getPassword())
                     .roles(person.getRole().getName())))
-                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("apply"));
     }
@@ -127,7 +126,6 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
                 .with(user(person.getUsername())
                         .password(person.getPassword())
                         .roles(Role.RECRUITER)))
-                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("handleApplication"));
     }
