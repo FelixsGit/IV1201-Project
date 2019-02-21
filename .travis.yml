@@ -11,7 +11,7 @@ env:
     - MYSQL_PORT_3306_TCP_PORT=3306
     - MYSQL_DB_USERNAME=root
     - MYSQL_DB_PASSWORD=
-    - MYSQL_DB_URL=jdbc:mysql://localhost:3306/recruitmentdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    - MYSQL_DB_URL="jdbc:mysql://localhost:3306/recruitmentdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
 before_script:
   - sudo mysql -e "CREATE DATABASE recruitmentdb;" -u root
   - mysql recruitmentdb < src/main/resources/sql/createTables.sql -u root
