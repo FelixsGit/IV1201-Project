@@ -27,7 +27,7 @@ public class ApplicationForm {
 
     private String competence;
 
-    @Pattern(regexp = "^[0-9]*$", message = "numbers only")
+    @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "numbers only")
     @Size(max = 10, message = "Please write no more than 10 characters")
     @NotEmpty(message = "please enter your experience")
     private String yearsOfExperience;
