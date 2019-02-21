@@ -115,6 +115,17 @@ public class ApplicationController {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
+        checkForNullValues(updateAccountForm, model, request);
+        return APPLICATION_PAGE_URL;
+    }
+
+    /**
+     * A method that checks if  the user has null in either email and ssn
+     * @param updateAccountForm Content of the updateAccount form
+     * @param model  Model objects used in the Apply page.
+     * @param request  HttpServletRequest object provided by spring.
+     */
+    private void checkForNullValues(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
         try {
             applicationService.findPerson(request.getUserPrincipal().getName());
         }catch(UserException e){
@@ -130,7 +141,6 @@ public class ApplicationController {
             }
         }
         model.addAttribute("updateAccountForm", updateAccountForm);
-        return APPLICATION_PAGE_URL;
     }
 
     /**
@@ -158,21 +168,7 @@ public class ApplicationController {
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
             model.addAttribute(new SearchApplicationForm());
         }
-        try {
-            applicationService.findPerson(request.getUserPrincipal().getName());
-        }catch(UserException e){
-            if(e.getMessage().equals("missingEmail")){
-                updateAccountForm.setEmail("missingEmail");
-            }
-            if(e.getMessage().equals("missingSsn")){
-                updateAccountForm.setSsn("missingSsn");
-            }
-            if(e.getMessage().equals("missingEmailAndSsn")){
-                updateAccountForm.setSsn("missingSsn");
-                updateAccountForm.setEmail("missingEmail");
-            }
-        }
-        model.addAttribute("updateAccountForm", updateAccountForm);
+        checkForNullValues(updateAccountForm, model, request);
         return SEARCH_APPLICATION_PAGE_URL;
     }
 
