@@ -4,6 +4,9 @@ import se.kth.iv1201.recruitmentsystem.domain.Competence;
 
 import java.util.List;
 
+/**
+ * A bean for the CompetenceForm
+ */
 public class CompetenceForm {
 
     public List<Competence> getCompetences() {
