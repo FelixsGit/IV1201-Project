@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
-import se.kth.iv1201.recruitmentsystem.domain.Competence;
-import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
-import se.kth.iv1201.recruitmentsystem.domain.Role;
-import se.kth.iv1201.recruitmentsystem.domain.UserException;
+import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.text.ParseException;
 import java.util.List;
 
 
@@ -231,7 +229,7 @@ public class ApplicationController {
      * @param exception the exception
      * @param model registration model  filled in by the user
      */
-    private void regErrorHandling(UserException exception, Model model) {
+    private void regErrorHandling(Exception exception, Model model) {
         if(exception.getMessage().toUpperCase().contains("USERNAME")) {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
@@ -254,6 +252,12 @@ public class ApplicationController {
     public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request );
+        }
+        try {
+            applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
+                     applicationForm.getYearsOfExperience(), request.getUserPrincipal().getName());
+        } catch (UserException | ApplicationException | ParseException exception) {
+            regErrorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());
         return "/applicationSent";

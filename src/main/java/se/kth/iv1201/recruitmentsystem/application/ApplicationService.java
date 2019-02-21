@@ -5,10 +5,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.*;
-import se.kth.iv1201.recruitmentsystem.repository.CompetenceRepository;
-import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
-import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
+import se.kth.iv1201.recruitmentsystem.repository.*;
 
+import java.math.BigDecimal;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -29,6 +32,10 @@ public class ApplicationService {
     private RoleRepository roleRepository;
     @Autowired
     private CompetenceRepository competenceRepository;
+    @Autowired
+    private AvailabilityRepository availabilityRepository;
+    @Autowired
+    private CompetenceProfileRepository competenceProfileRepository;
 
     /**
      * Retrieve the logged in user from the database and
@@ -58,6 +65,32 @@ public class ApplicationService {
 
     public List<Competence> findCompetences(){
         return competenceRepository.findAll();
+    }
+
+    public void createApplication(String chosenCompetence, String fromDate, String toDate, String yearsOfExperience, String username) throws ParseException, UserException, ApplicationException {
+        Person person = personRepository.findPersonByUsername(username);
+        if(person == null) {
+            throw new UserException("Failed to retrieve person from database.");
+        }
+        Competence competence = competenceRepository.findCompetenceByName(chosenCompetence);
+        if(competence == null){
+            throw new ApplicationException("Failed to retrieve competence from database.");
+        }
+        Date from_date = convertToDate(fromDate);
+        Date to_date = convertToDate(toDate);
+        BigDecimal years_of_experience = new BigDecimal(yearsOfExperience);
+        try {
+            competenceProfileRepository.save(new CompetenceProfile(person, competence, years_of_experience));
+            availabilityRepository.save(new Availability(person, from_date, to_date));
+        }catch(Exception e){
+            throw new ApplicationException("Something went wrong while inserting application into database");
+        }
+    }
+
+    private Date convertToDate(String startingDate) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date convertedDate = sdf.parse(startingDate);
+        return new java.sql.Date(convertedDate.getTime());
     }
 
     /**

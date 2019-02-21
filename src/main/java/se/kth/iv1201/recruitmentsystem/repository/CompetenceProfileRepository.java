@@ -32,4 +32,7 @@ public interface CompetenceProfileRepository extends JpaRepository<CompetencePro
      */
     CompetenceProfile findCompetenceProfileByPersonAndCompetence(Person person, Competence competence);
 
+    @Override
+    CompetenceProfile save(CompetenceProfile competenceProfile);
+
 }

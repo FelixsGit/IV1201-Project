@@ -21,4 +21,6 @@ public interface AvailabilityRepository extends JpaRepository<Availability, Pers
      */
     Availability findAvailabilityByPerson(Person person);
 
+    @Override
+    Availability save(Availability availability);
 }
