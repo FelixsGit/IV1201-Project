@@ -17,6 +17,14 @@ public class ApplicationForm {
     @NotEmpty(message = "please enter a to date")
     private String toDate;
 
+    public String getCompetence() {
+        return competence;
+    }
+
+    public void setCompetence(String competence) {
+        this.competence = competence;
+    }
+
     private String competence;
 
     @Pattern(regexp = "^[0-9]*$", message = "numbers only")
@@ -38,14 +46,6 @@ public class ApplicationForm {
 
     public void setToDate(String toDate) {
         this.toDate = toDate;
-    }
-
-    public String getCompetence() {
-        return competence;
-    }
-
-    public void setCompetence(String competence) {
-        this.competence = competence;
     }
 
     public String getYearsOfExperience() {

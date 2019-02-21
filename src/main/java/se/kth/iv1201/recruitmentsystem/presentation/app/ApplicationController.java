@@ -119,18 +119,20 @@ public class ApplicationController {
     public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
+            model.addAttribute(new UpdateAccountForm());
+            model.addAttribute(new CompetenceForm());
         }
-        checkForNullValues(updateAccountForm, model, request);
-        List<Competence> competences= applicationService.findCompetences();
+        List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
         model.addAttribute("competenceForm", competenceForm);
+        checkForNullValues(updateAccountForm, model, request);
         return APPLICATION_PAGE_URL;
     }
 
     /**
-     * A method that checks if  the user has null in either email and ssn
-     * @param updateAccountForm Content of the updateAccount form
-     * @param model  Model objects used in the Apply page.
+     * A private method that checks if  the user has null in either email and ssn.
+     * @param updateAccountForm Content of the updateAccount form.
+     * @param model Model object used in apply page.
      * @param request  HttpServletRequest object provided by spring.
      */
     private void checkForNullValues(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
@@ -177,6 +179,7 @@ public class ApplicationController {
             model.addAttribute(new SearchApplicationForm());
         }
         checkForNullValues(updateAccountForm, model, request);
+        model.addAttribute("updateAccountForm", updateAccountForm);
         return SEARCH_APPLICATION_PAGE_URL;
     }
 
@@ -246,16 +249,14 @@ public class ApplicationController {
      * @param bindingResult Validation result fro the app form.
      * @param model Model objects used by the app page.
      * @return The app page url.
->>>>>>> aa844a625aa83b75c4fa2f1a5d5e6d314d4692c1:src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/ApplicationController.java
      */
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {
+    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
-            return APPLICATION_PAGE_URL;
+            return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request );
         }
-        //TODO add functionality here
         model.addAttribute(new ApplicationForm());
-        return APPLICATION_PAGE_URL;
+        return "/applicationSent";
     }
 
 }

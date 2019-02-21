@@ -42,13 +42,12 @@
             <br>
             <br>
             <p>Choose the expertise you have the most of!</p>
-            <div th:if="${competenceForm.competences != null}">
-                <select>
-                    <option th:each="item : ${competenceForm.competences}"
-                            th:value="${item.getName()}"
-                            th:text="${item.getName()}">Item description here...</option>
+                <select th:field="*{competence}">
+                    <option th:each="competence : ${competenceForm.competences}"
+                            th:value="${competence.getName()}"
+                            th:text="${competence.getName()}">
+                    </option>
                 </select>
-            </div>
             <br>
             <p>How many years of experience do you have with this expertise?</p>
             <input type="text" th:field="*{yearsOfExperience}" />
@@ -58,7 +57,7 @@
             </span>
             <br>
             <br>
-            <input type="submit" value="send" />
+            <input type="submit" value="Submit Application" />
         </form>
     </div>
 </main>
