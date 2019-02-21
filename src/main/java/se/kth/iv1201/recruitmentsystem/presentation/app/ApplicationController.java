@@ -109,8 +109,11 @@ public class ApplicationController {
 
     /**
      * A get request for the apply page.
-     * @param model Model objects used in the Apply page.
-     * @return The apply page url.
+     * @param updateAccountForm Content of the updateAccountForm
+     * @param competenceForm Content of the competenceForm
+     * @param model Model object used in apply page.
+     * @param request HttpServletRequest object provided by Spring.
+     * @return the apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request) {
