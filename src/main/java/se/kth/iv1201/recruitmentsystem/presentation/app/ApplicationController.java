@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
+import se.kth.iv1201.recruitmentsystem.domain.Competence;
 import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
 import se.kth.iv1201.recruitmentsystem.domain.Role;
 import se.kth.iv1201.recruitmentsystem.domain.UserException;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 
 /**
@@ -111,11 +113,14 @@ public class ApplicationController {
      * @return The apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String showApplyView(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request) {
+    public String showApplyView(final UpdateAccountForm updateAccountForm, final ApplicationForm applicationForm, Model model, HttpServletRequest request) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
         }
         checkForNullValues(updateAccountForm, model, request);
+        List<Competence> competences= applicationService.findCompetences();
+        applicationForm.setCompetences(competences);
+        model.addAttribute("applicationForm", "applicationForm");
         return APPLICATION_PAGE_URL;
     }
 

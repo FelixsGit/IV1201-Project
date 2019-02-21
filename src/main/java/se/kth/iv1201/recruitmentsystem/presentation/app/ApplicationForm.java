@@ -1,9 +1,12 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
 
+import se.kth.iv1201.recruitmentsystem.domain.Competence;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * A bean for the apply application form.
@@ -19,6 +22,16 @@ public class ApplicationForm {
     private String toDate;
 
     private String competence;
+
+    public List<Competence> getCompetences() {
+        return competences;
+    }
+
+    public void setCompetences(List<Competence> competences) {
+        this.competences = competences;
+    }
+
+    private List<Competence> competences;
 
     @Pattern(regexp = "^[0-9]*$", message = "numbers only")
     @Size(max = 10, message = "Please write no more than 10 characters")

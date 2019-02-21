@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import se.kth.iv1201.recruitmentsystem.domain.Person;
-import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
-import se.kth.iv1201.recruitmentsystem.domain.Role;
-import se.kth.iv1201.recruitmentsystem.domain.UserException;
+import se.kth.iv1201.recruitmentsystem.domain.*;
+import se.kth.iv1201.recruitmentsystem.repository.CompetenceRepository;
 import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
 import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
+
+import java.util.List;
 
 /**
  * This class defines tasks that can be performed by the domain layer.
@@ -27,6 +27,8 @@ public class ApplicationService {
     private PersonRepository personRepository;
     @Autowired
     private RoleRepository roleRepository;
+    @Autowired
+    private CompetenceRepository competenceRepository;
 
     /**
      * Retrieve the logged in user from the database and
@@ -52,6 +54,10 @@ public class ApplicationService {
         }catch(NullPointerException e){
             throw new UserException("missingSsn");
         }
+    }
+
+    public List<Competence> findCompetences(){
+        return competenceRepository.findAll();
     }
 
     /**
