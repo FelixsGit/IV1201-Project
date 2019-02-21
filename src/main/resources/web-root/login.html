@@ -7,15 +7,15 @@
 <body>
 <main layout:fragment="content">
     <div class = "login">
-        <h1>Enter information to login</h1>
-        <a href="/register">I dont have an account</a>
+        <h1 th:text="#{login.header}">Enter information to login</h1>
+        <a href="/register" th:text="#{login.reg-link}">I dont have an account</a>
         <br>
         <br>
         <form action="#" th:action="@{/login}" th:object="${loginForm}" method="post">
-            <p>Username</p>
+            <p th:text = "#{login.field.username}">Username</p>
             <input type="text" th:field="*{username}" />
             <br>
-            <p>Password</p>
+            <p th:text = "#{login.field.password}">Password</p>
             <input type="password" th:field="*{password}" />
             <br>
             <div class="error" th:if="${param.logout} "
@@ -25,10 +25,10 @@
                  th:with="errorMsg=${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
                 <span th:text="${errorMsg}"></span>
             </div>
-            <input type="submit" value="Login" />
+            <input type="submit" th:value="#{login.submit}" />
             <br>
         </form>
-    <a href="/updateAccount">I forgot my username/password</a>
+    <a href="/updateAccount.html" th:text="#{login.forget-password-or-username}">I forgot my username/password</a>
     </div>
 </main>
 </body>
