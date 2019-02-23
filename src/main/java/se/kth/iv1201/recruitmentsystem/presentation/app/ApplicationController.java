@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
-import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
-import se.kth.iv1201.recruitmentsystem.domain.Role;
-import se.kth.iv1201.recruitmentsystem.domain.UserException;
+import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.text.ParseException;
+import java.util.List;
 
 
 /**
@@ -107,14 +107,33 @@ public class ApplicationController {
 
     /**
      * A get request for the apply page.
-     * @param model Model objects used in the Apply page.
-     * @return The apply page url.
+     * @param updateAccountForm Content of the updateAccountForm
+     * @param competenceForm Content of the competenceForm
+     * @param model Model object used in apply page.
+     * @param request HttpServletRequest object provided by Spring.
+     * @return the apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String showApplyView(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request) {
+    public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request) {
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
+            model.addAttribute(new UpdateAccountForm());
+            model.addAttribute(new CompetenceForm());
         }
+        List<Competence> competences = applicationService.findCompetences();
+        competenceForm.setCompetences(competences);
+        model.addAttribute("competenceForm", competenceForm);
+        checkForNullValues(updateAccountForm, model, request);
+        return APPLICATION_PAGE_URL;
+    }
+
+    /**
+     * A private method that checks if  the user has null in either email and ssn.
+     * @param updateAccountForm Content of the updateAccount form.
+     * @param model Model object used in apply page.
+     * @param request  HttpServletRequest object provided by spring.
+     */
+    private void checkForNullValues(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
         try {
             applicationService.findPerson(request.getUserPrincipal().getName());
         }catch(UserException e){
@@ -130,7 +149,6 @@ public class ApplicationController {
             }
         }
         model.addAttribute("updateAccountForm", updateAccountForm);
-        return APPLICATION_PAGE_URL;
     }
 
     /**
@@ -158,20 +176,7 @@ public class ApplicationController {
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
             model.addAttribute(new SearchApplicationForm());
         }
-        try {
-            applicationService.findPerson(request.getUserPrincipal().getName());
-        }catch(UserException e){
-            if(e.getMessage().equals("missingEmail")){
-                updateAccountForm.setEmail("missingEmail");
-            }
-            if(e.getMessage().equals("missingSsn")){
-                updateAccountForm.setSsn("missingSsn");
-            }
-            if(e.getMessage().equals("missingEmailAndSsn")){
-                updateAccountForm.setSsn("missingSsn");
-                updateAccountForm.setEmail("missingEmail");
-            }
-        }
+        checkForNullValues(updateAccountForm, model, request);
         model.addAttribute("updateAccountForm", updateAccountForm);
         return SEARCH_APPLICATION_PAGE_URL;
     }
@@ -224,7 +229,7 @@ public class ApplicationController {
      * @param exception the exception
      * @param model registration model  filled in by the user
      */
-    private void regErrorHandling(UserException exception, Model model) {
+    private void regErrorHandling(Exception exception, Model model) {
         if(exception.getMessage().toUpperCase().contains("USERNAME")) {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
@@ -242,16 +247,20 @@ public class ApplicationController {
      * @param bindingResult Validation result fro the app form.
      * @param model Model objects used by the app page.
      * @return The app page url.
->>>>>>> aa844a625aa83b75c4fa2f1a5d5e6d314d4692c1:src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/ApplicationController.java
      */
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model) {
+    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
-            return APPLICATION_PAGE_URL;
+            return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request );
         }
-        //TODO add functionality here
+        try {
+            applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
+                     applicationForm.getYearsOfExperience(), request.getUserPrincipal().getName());
+        } catch (UserException | ApplicationException | ParseException exception) {
+            regErrorHandling(exception, model);
+        }
         model.addAttribute(new ApplicationForm());
-        return APPLICATION_PAGE_URL;
+        return "/applicationSent";
     }
 
 }

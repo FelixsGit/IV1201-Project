@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Competence;
+import se.kth.iv1201.recruitmentsystem.domain.Person;
+
+import java.util.List;
 
 /**
  * Handles all database access regarding the <code>Competence</code> Entity and it's table.
@@ -19,5 +22,12 @@ public interface CompetenceRepository extends JpaRepository<Competence, String> 
      * @return The Competence with the name, or null if none is found.
      */
     Competence findCompetenceByName(String name);
+
+    /**
+     * Fetches a list of all the different competence.
+     * @return the list of all competence.
+     */
+    @Override
+    List<Competence> findAll();
 
 }
