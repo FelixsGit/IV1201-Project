@@ -93,17 +93,10 @@ public class ApplicationServiceTest implements TestExecutionListener {
         applicationService.createApplication(testChosenCompetence, testFromDate, testToDate, testYearsOfExperience, testUsername);
         startNewTransaction();
         Person person = personRepository.findPersonByUsername(testUsername);
-        Availability availability = availabilityRepository.findAvailabilityByPerson(person);
         Competence competence = competenceRepository.findCompetenceByName(testChosenCompetence);
         CompetenceProfile competenceProfile = competenceProfileRepository.findCompetenceProfileByPersonAndCompetence(person, competence);
         assertThat(competenceProfile.getYears_of_experience().toString(), is(testYearsOfExperience));
         assertThat(competenceProfile.getCompetence().getName(), is(testChosenCompetence));
-    }
-
-    private Date convertToDate(String startingDate) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date convertedDate = sdf.parse(startingDate);
-        return new java.sql.Date(convertedDate.getTime());
     }
 
     @Test
