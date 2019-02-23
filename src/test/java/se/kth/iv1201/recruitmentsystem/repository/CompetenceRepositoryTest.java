@@ -75,7 +75,16 @@ public class CompetenceRepositoryTest implements TestExecutionListener {
     }
 
     private void assertCompetenceList(List<Competence> competences) {
-        assertThat(competences, is(this.competenceList));
+        // assertThat(competences, is(this.competenceList));
+        assertThat(competences.size(), is(this.competenceList.size()));
+        for(int i = 0; i < competences.size(); i++) {
+            assertCompetencesEqual(competences.get(i), this.competenceList.get(i));
+        }
+    }
+
+    private void assertCompetencesEqual(Competence competence1, Competence competence2) {
+        assertThat(competence1.getCompetence_id(), is(competence2.getCompetence_id()));
+        assertThat(competence1.getName(), is(competence2.getName()));
     }
 
     private void startNewTransaction() {
