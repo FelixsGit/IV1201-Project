@@ -13,14 +13,14 @@
             <p th:text="#{apply.email.info}">Please type in your email address here(You only need to do this once).</p>
             <input type="text"/>
             <br>
-            <input type="submit" value="send" />
+            <input type="submit" th:value="#{apply.send}" />
         </div>
         <div th:if="${updateAccountForm.ssn}">
             <p th:text="#{apply.ssn.missing}">Your account seems to be missing a Personal Registration Number</p>
             <p th:text="#{apply.ssn.info}">Please type in your Personal Registration Number here(You only need to do this once).</p>
             <input type="text"/>
             <br>
-            <input type="submit" value="send" />
+            <input type="submit" th:value="#{apply.send}" />
         </div>
 
         <h th:text="#{apply.header}">Here you can apply for a job!</h>
@@ -57,7 +57,7 @@
             </span>
             <br>
             <br>
-            <input type="submit" value="Submit Application" />
+            <input type="submit" th:value="#{apply.submit}" />
         </form>
     </div>
 </main>
