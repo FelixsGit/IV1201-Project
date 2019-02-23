@@ -85,7 +85,7 @@ public class ApplicationServiceTest implements TestExecutionListener {
         String testYearsOfExperience = "1.25";
         String testUsername = "felixTester";
         applicationService.createPerson(
-                "testName", "testSurname", "19950417-1252", "FelixTestEmail@test.com", "testPassword", "applicant", testUsername);
+                "testName", "testSurname", "19950417-1252", "FelixTestEmail@test.com", "testPassword", Role.APPLICANT, testUsername);
         applicationService.createApplication(testChosenCompetence, testFromDate, testToDate, testYearsOfExperience, testUsername);
         startNewTransaction();
         Person person = personRepository.findPersonByUsername(testUsername);
