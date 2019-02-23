@@ -10,11 +10,20 @@ header {
     font-size: 22px;
 }
 
+lang {
+
+}
+
 information {
     position:relative;
     left: 20px;
     font-family: 'Cabin';
     font-size: 14px;
+}
+
+.lang {
+    font-size: 70%;
+    font-family: Calibri;
 }
 
 footer {

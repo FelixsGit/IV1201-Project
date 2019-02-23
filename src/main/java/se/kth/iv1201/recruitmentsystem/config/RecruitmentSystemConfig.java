@@ -131,7 +131,7 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
         ReloadableResourceBundleMessageSource resource =
                 new ReloadableResourceBundleMessageSource();
         resource.addBasenames(l10nMsgDir, l10nValidationMsgDir);
-        resource.setDefaultEncoding("UTF-8");
+        resource.setDefaultEncoding("ISO-8859-1");
         resource.setFallbackToSystemLocale(false);
         return resource;
     }

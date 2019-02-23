@@ -8,16 +8,18 @@
 <information id="information" th:fragment="information">
     <Strong>
         <div sec:authorize="isAuthenticated()">
-            Logged in as: <span sec:authentication="name">Bob</span>
+            <span th:text = "#{information.user-status}">Logged in as:</span>
+            <span sec:authentication="name">Bob</span>
             <br>
-            <div sec:authorize="hasRole('ROLE_applicant')">
+            <br>
+            <div th:text = "#{information.role.applicant}" sec:authorize="hasRole('ROLE_applicant')">
                 Your role: Applicant
             </div>
-            <div sec:authorize="hasRole('ROLE_recruit')">
+            <div th:text = "#{information.role.recruiter}" sec:authorize="hasRole('ROLE_recruit')">
                 Your role: Recruiter
             </div>
             <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
+                <input type="submit" th:value="#{information.sign-out}"/>
             </form>
         </div>
     </Strong>
