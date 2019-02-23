@@ -8,10 +8,10 @@
 <body>
 <main layout:fragment="content">
 
-    <h1>You application has been submitted!</h1>
+    <h1 th:text="#{app-sent.header}">You application has been submitted!</h1>
     <br>
     <br>
-    <a href="/apply">Make another application</a>
+    <a href="/apply" th:text="#{app-sent.link}">Make another application</a>
 
 </main>
 </body>
