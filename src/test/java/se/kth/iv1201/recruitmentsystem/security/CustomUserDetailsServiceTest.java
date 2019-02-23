@@ -82,6 +82,7 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
         person = new Person("testName", "testSurname", "19950411-1111",
                 "test@te.se", "123", role, "testUsername");
         personRepository.save(person);
+        startNewTransaction();
     }
 
     @Test
@@ -106,10 +107,13 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
             .andExpect(cookie().exists("JSESSIONID"))
             .andExpect(view().name("/loginOk"));
             */
+        System.out.println("Person found in DB: " + personRepository.findPersonByUsername(person.getUsername()));
+
         mockMvc.perform(get("/apply")
                 .with(user(person.getUsername())
                     .password(person.getPassword())
-                    .roles(person.getRole().getName())))
+                    .roles(Role.APPLICANT)))
+                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("apply"));
     }
