@@ -13,13 +13,14 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.transaction.TestTransaction;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
-import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
-import se.kth.iv1201.recruitmentsystem.domain.Role;
-import se.kth.iv1201.recruitmentsystem.domain.UserException;
-import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
-import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
+import se.kth.iv1201.recruitmentsystem.domain.*;
+import se.kth.iv1201.recruitmentsystem.repository.*;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -47,6 +48,10 @@ public class ApplicationServiceTest implements TestExecutionListener {
     private ApplicationService applicationService;
     @Autowired
     private PersonRepository personRepository;
+    @Autowired
+    private CompetenceRepository competenceRepository;
+    @Autowired
+    private CompetenceProfileRepository competenceProfileRepository;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -64,10 +69,35 @@ public class ApplicationServiceTest implements TestExecutionListener {
         dbUtil.resetDB();
     }
 
+    @Test
+    void testFindCompetences(){
+        List<Competence> competences = applicationService.findCompetences();
+        assertThat(competences.get(0).getName(), is("Korvgrillning"));
+        assertThat(competences.get(1).getName(), is("Karuselldrift"));
+        assertNotNull(competences);
+    }
+
+    @Test
+    void testCreateApplication() throws UserException, ParseException, ApplicationException {
+        String testChosenCompetence = "Korvgrillning";
+        String testFromDate = "2019-04-26";
+        String testToDate = "2020-02-25";
+        String testYearsOfExperience = "1.25";
+        String testUsername = "felixTester";
+        applicationService.createPerson(
+                "testName", "testSurname", "19950417-1252", "FelixTestEmail@test.com", "testPassword", Role.APPLICANT, testUsername);
+        applicationService.createApplication(testChosenCompetence, testFromDate, testToDate, testYearsOfExperience, testUsername);
+        startNewTransaction();
+        Person person = personRepository.findPersonByUsername(testUsername);
+        Competence competence = competenceRepository.findCompetenceByName(testChosenCompetence);
+        CompetenceProfile competenceProfile = competenceProfileRepository.findCompetenceProfileByPersonAndCompetence(person, competence);
+        assertThat(competenceProfile.getYears_of_experience().toString(), is(testYearsOfExperience));
+        assertThat(competenceProfile.getCompetence().getName(), is(testChosenCompetence));
+    }
 
     @Test
     void testCreatePerson() throws UserException {
-        String testName = "testName";
+        String testName = "testUser";
         String testSurname = "testSurname";
         String testEmail = "testEmail@test.com";
         String testPassword = "testPassword";
