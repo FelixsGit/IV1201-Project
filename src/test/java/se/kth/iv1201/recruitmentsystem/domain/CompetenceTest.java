@@ -16,6 +16,7 @@ import org.springframework.test.context.transaction.TestTransaction;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.TransactionSystemException;
 import org.springframework.transaction.annotation.Transactional;
+import se.kth.iv1201.recruitmentsystem.repository.CompetenceRepository;
 import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
 import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
@@ -41,14 +42,14 @@ import static org.hamcrest.Matchers.not;
 @NotThreadSafe
 @Transactional
 @Commit
-class RoleTest implements TestExecutionListener {
+class CompetenceTest implements TestExecutionListener {
     @Autowired
     private DBUtil dbUtil;
 
     @Autowired
-    private RoleRepository roleRepository;
+    private CompetenceRepository competenceRepository;
 
-    private Role instance;
+    private Competence instance;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -64,27 +65,27 @@ class RoleTest implements TestExecutionListener {
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
         dbUtil.resetDB();
-        instance = new Role(Role.APPLICANT);
+        instance = new Competence();
     }
 
     @Test
     @Rollback
     void testMissingName() {
         instance.setName(null);
-        testInvalidRole(instance, "{role.name.missing}");
+        testInvalidCompetence(instance, "{competence.name.missing}");
     }
 
     @Test
     @Rollback
     void testIncorrectName() {
         instance.setName("7472628");
-        testInvalidRole(instance, "{general-input.invalid-char}");
+        testInvalidCompetence(instance, "{competence.name.invalid-char}");
     }
 
-    private void testInvalidRole(Role role, String... expectedMsgs) {
+    private void testInvalidCompetence(Competence competence, String... expectedMsgs) {
         try {
             startNewTransaction();
-            roleRepository.save(role);
+            competenceRepository.save(competence);
         } catch (ConstraintViolationException exc) {
             Set<ConstraintViolation<?>> result = exc.getConstraintViolations();
             assertThat(result.size(), is(expectedMsgs.length));
