@@ -71,6 +71,7 @@ public class ApplicationServiceTest implements TestExecutionListener {
 
     @Test
     void testFindCompetences(){
+        startNewTransaction();
         List<Competence> competences = applicationService.findCompetences();
         assertThat(competences.get(0).getName(), is("Korvgrillning"));
         assertThat(competences.get(1).getName(), is("Karuselldrift"));
@@ -79,6 +80,7 @@ public class ApplicationServiceTest implements TestExecutionListener {
 
     @Test
     void testCreateApplication() throws UserException, ParseException, ApplicationException {
+        startNewTransaction();
         String testChosenCompetence = "Korvgrillning";
         String testFromDate = "2019-04-26";
         String testToDate = "2020-02-25";
