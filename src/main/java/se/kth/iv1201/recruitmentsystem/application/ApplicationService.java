@@ -63,10 +63,25 @@ public class ApplicationService {
         }
     }
 
+    /**
+     * Finds a lists of competences from the db
+     * @return a list of competences from the db
+     */
     public List<Competence> findCompetences(){
         return competenceRepository.findAll();
     }
 
+    /**
+     * This method creates a new application submitted by a applicant.
+     * @param chosenCompetence The chosen competence entered by the applicant
+     * @param fromDate The from date entered by the applicant.
+     * @param toDate The to date entered by the applicant.
+     * @param yearsOfExperience The number of years of experience with the chosen competence entered by the applicant.
+     * @param username The username of the applicant
+     * @throws ParseException Exception of parsing fails
+     * @throws UserException Exception if the person retrieved from the db does not exist.
+     * @throws ApplicationException Exception if the entered competence do not exist in the db, or if something goes wrong.
+     */
     public void createApplication(String chosenCompetence, String fromDate, String toDate, String yearsOfExperience, String username) throws ParseException, UserException, ApplicationException {
         Person person = personRepository.findPersonByUsername(username);
         if(person == null) {

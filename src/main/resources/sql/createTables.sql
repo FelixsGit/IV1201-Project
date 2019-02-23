@@ -162,6 +162,9 @@ ALTER TABLE `role`
 INSERT INTO role (role_id, name) VALUES (1, 'recruit');
 INSERT INTO role (role_id, name) VALUES (2, 'applicant');
 
+INSERT INTO competence (competence_id, name) VALUES (1, 'Korvgrillning');
+INSERT INTO competence (competence_id, name) VALUES (2, 'Karuselldrift');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
