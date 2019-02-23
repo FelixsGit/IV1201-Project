@@ -9,31 +9,31 @@
     <div class = "apply">
 
         <div th:if="${updateAccountForm.email}" >
-            <p>Your account seems to be missing an email address</p>
-            <p>Please type in your email address here(You only need to do this once).</p>
+            <p th:text="#{apply.email.missing}">Your account seems to be missing an email address</p>
+            <p th:text="#{apply.email.info}">Please type in your email address here(You only need to do this once).</p>
             <input type="text"/>
             <br>
-            <input type="submit" value="send" />
+            <input type="submit" th:value="#{apply.send}" />
         </div>
         <div th:if="${updateAccountForm.ssn}">
-            <p>Your account seems to be missing a Personal Registration Number</p>
-            <p>Please type in your Personal Registration Number here(You only need to do this once).</p>
+            <p th:text="#{apply.ssn.missing}">Your account seems to be missing a Personal Registration Number</p>
+            <p th:text="#{apply.ssn.info}">Please type in your Personal Registration Number here(You only need to do this once).</p>
             <input type="text"/>
             <br>
-            <input type="submit" value="send" />
+            <input type="submit" th:value="#{apply.send}" />
         </div>
 
-        <h>Here you can apply for a job!</h>
-        <p>When can you work for us?</p>
+        <h th:text="#{apply.header}">Here you can apply for a job!</h>
+        <p th:text="#{apply.field.time}">When can you work for us?</p>
         <br>
         <form action="#" th:action="@{/apply}" th:object="${applicationForm}" method="post">
-            <p>From</p>
+            <p th:text="#{apply.from}">From</p>
             <input type="text" placeholder="Ex: 2019-04-21" th:field="*{fromDate}" />
             <span class="error"
                   th:if="${#fields.hasErrors('fromDate')}"
                   th:errors="*{fromDate}">
             </span>
-            To
+            <p th:text="#{apply.to}">To</p>
             <input type="text" placeholder="Ex: 2020-02-12" th:field="*{toDate}" />
             <span class="error"
                   th:if="${#fields.hasErrors('toDate')}"
@@ -41,7 +41,7 @@
             </span>
             <br>
             <br>
-            <p>Choose the expertise you have the most of!</p>
+            <p th:text="#{apply.field.expertise}">Choose the expertise you have the most of!</p>
                 <select th:field="*{competence}">
                     <option th:each="competence : ${competenceForm.competences}"
                             th:value="${competence.getName()}"
@@ -49,7 +49,7 @@
                     </option>
                 </select>
             <br>
-            <p>How many years of experience do you have with this expertise?</p>
+            <p th:text="#{apply.field.experience}">How many years of experience do you have with this expertise?</p>
             <input type="text" th:field="*{yearsOfExperience}" />
             <span class="error"
                   th:if="${#fields.hasErrors('yearsOfExperience')}"
@@ -57,7 +57,7 @@
             </span>
             <br>
             <br>
-            <input type="submit" value="Submit Application" />
+            <input type="submit" th:value="#{apply.submit}" />
         </form>
     </div>
 </main>

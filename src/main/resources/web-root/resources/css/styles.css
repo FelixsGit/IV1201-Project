@@ -17,6 +17,11 @@ information {
     font-size: 14px;
 }
 
+.lang {
+    font-size: 70%;
+    font-family: Calibri;
+}
+
 footer {
     border-top-style: solid;
     border-top-width: 1px;

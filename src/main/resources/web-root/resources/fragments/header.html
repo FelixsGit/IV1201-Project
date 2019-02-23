@@ -6,7 +6,10 @@
 </head>
 <body>
 <header id="header" th:fragment="header">
-    <p>Amusement Park </p>
+    <p th:text="#{header.header}">Amusement Park</p>
+    <span class="lang" th:text="#{header.lang.change}"></span>:
+    <a class="lang" id="englishLink" href = "?lang=en" th:text="#{header.lang.en}"></a>
+    <a class="lang" id="swedishLink" href = "?lang=sv" th:text="#{header.lang.sv}"></a>
 </header>
 </body>
 </html>

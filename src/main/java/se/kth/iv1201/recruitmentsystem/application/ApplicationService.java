@@ -38,29 +38,12 @@ public class ApplicationService {
     private CompetenceProfileRepository competenceProfileRepository;
 
     /**
-     * Retrieve the logged in user from the database and
-     * casts exceptions depending on null email and or ssn.
-     * @param username of logged in user.
-     * @throws UserException to inform 'controller' that field does not exist.
+     * Fetches the Person with the specified username.
+     * @param username The username of the user.
+     * @return The PersonDTO of the person found, or null if none found.
      */
-    public void findPerson(String username) throws UserException{
-        PersonDTO person = personRepository.findPersonByUsername(username);
-        try{
-            person.getEmail().length(); //nullpointer trigger
-        }catch(NullPointerException e){
-            try{
-                person.getSsn().length(); //nullpointer trigger
-            }catch(NullPointerException es){
-                throw new UserException("missingEmailAndSsn");
-            }
-
-            throw new UserException("missingEmail");
-        }
-        try{
-            person.getEmail().length(); //nullpointer trigger
-        }catch(NullPointerException e){
-            throw new UserException("missingSsn");
-        }
+    public PersonDTO findPerson(String username) {
+        return personRepository.findPersonByUsername(username);
     }
 
     /**
