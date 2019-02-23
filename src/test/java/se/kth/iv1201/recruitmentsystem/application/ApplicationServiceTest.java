@@ -52,10 +52,6 @@ public class ApplicationServiceTest implements TestExecutionListener {
     private CompetenceRepository competenceRepository;
     @Autowired
     private CompetenceProfileRepository competenceProfileRepository;
-    @Autowired
-    private AvailabilityRepository availabilityRepository;
-
-    private List<Competence> competences;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -75,7 +71,7 @@ public class ApplicationServiceTest implements TestExecutionListener {
 
     @Test
     void testFindCompetences(){
-        competences = applicationService.findCompetences();
+        List<Competence> competences = applicationService.findCompetences();
         assertThat(competences.get(0).getName(), is("Korvgrillning"));
         assertThat(competences.get(1).getName(), is("Karuselldrift"));
         assertNotNull(competences);
