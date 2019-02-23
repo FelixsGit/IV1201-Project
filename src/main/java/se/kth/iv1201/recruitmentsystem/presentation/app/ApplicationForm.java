@@ -17,6 +17,11 @@ public class ApplicationForm {
     @NotEmpty(message = "please enter a to date")
     private String toDate;
 
+    @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "numbers only")
+    @Size(max = 10, message = "Please write no more than 10 characters")
+    @NotEmpty(message = "please enter your experience")
+    private String yearsOfExperience;
+
     public String getCompetence() {
         return competence;
     }
@@ -26,11 +31,6 @@ public class ApplicationForm {
     }
 
     private String competence;
-
-    @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "numbers only")
-    @Size(max = 10, message = "Please write no more than 10 characters")
-    @NotEmpty(message = "please enter your experience")
-    private String yearsOfExperience;
 
     public String getFromDate() {
         return fromDate;
