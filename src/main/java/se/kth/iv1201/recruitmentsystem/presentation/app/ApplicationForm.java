@@ -1,6 +1,5 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -18,31 +17,20 @@ public class ApplicationForm {
     @NotEmpty(message = "please enter a to date")
     private String toDate;
 
+    public String getCompetence() {
+        return competence;
+    }
+
+    public void setCompetence(String competence) {
+        this.competence = competence;
+    }
+
     private String competence;
 
-    @Pattern(regexp = "^[0-9]*$", message = "numbers only")
+    @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "numbers only")
     @Size(max = 10, message = "Please write no more than 10 characters")
     @NotEmpty(message = "please enter your experience")
     private String yearsOfExperience;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSsn() {
-        return ssn;
-    }
-
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
-    }
-
-    private String email;
-    private String ssn;
 
     public String getFromDate() {
         return fromDate;
@@ -58,14 +46,6 @@ public class ApplicationForm {
 
     public void setToDate(String toDate) {
         this.toDate = toDate;
-    }
-
-    public String getCompetence() {
-        return competence;
-    }
-
-    public void setCompetence(String competence) {
-        this.competence = competence;
     }
 
     public String getYearsOfExperience() {

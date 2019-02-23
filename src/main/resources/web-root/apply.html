@@ -42,12 +42,12 @@
             <br>
             <br>
             <p>Choose the expertise you have the most of!</p>
-            <select th:field="*{competence}">
-                <option th:value="grill_handler" th:text="grill-handler"></option>
-                <option th:value="carousel_administrator" th:text="carousel-admin"></option>
-                <option th:value="spookyhouse_administratior" th:text="spookyhouse-admin"></option>
-            </select>
-            <br>
+                <select th:field="*{competence}">
+                    <option th:each="competence : ${competenceForm.competences}"
+                            th:value="${competence.getName()}"
+                            th:text="${competence.getName()}">
+                    </option>
+                </select>
             <br>
             <p>How many years of experience do you have with this expertise?</p>
             <input type="text" th:field="*{yearsOfExperience}" />
@@ -57,7 +57,7 @@
             </span>
             <br>
             <br>
-            <input type="submit" value="send" />
+            <input type="submit" value="Submit Application" />
         </form>
     </div>
 </main>
