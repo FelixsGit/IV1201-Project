@@ -9,6 +9,8 @@
     <Strong>
         <div sec:authorize="isAuthenticated()">
             <span th:text = "#{information.user-status}">Logged in as:</span>
+            <span sec:authentication="name">Bob</span>
+            <br>
             <br>
             <div th:text = "#{information.role.applicant}" sec:authorize="hasRole('ROLE_applicant')">
                 Your role: Applicant
