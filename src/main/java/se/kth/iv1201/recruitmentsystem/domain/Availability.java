@@ -15,14 +15,14 @@ public class Availability implements AvailabilityDTO {
 
     @OneToOne
     @JoinColumn(name = "person_id")
-    @NotNull(message = "No person specified")
+    @NotNull(message = "{availability.person.missing}")
     private Person person;
 
-    @NotNull(message = "No from date specified")
+    @NotNull(message = "{availability.from-date.missing}")
     @Column(name = "from_date")
     private Date from_date;
 
-    @NotNull(message = "No to date specified")
+    @NotNull(message = "{availability.to-date.missing}")
     @Column(name = "to_date")
     private Date to_date;
 

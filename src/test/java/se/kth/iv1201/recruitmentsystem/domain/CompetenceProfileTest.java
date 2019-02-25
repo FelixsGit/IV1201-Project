@@ -94,6 +94,7 @@ class CompetenceProfileTest implements TestExecutionListener {
 
     private void createCompetenceProfile() {
         competenceProfileInstance = new CompetenceProfile(personInstance, competenceInstance, BigDecimal.ONE);
+        //competenceProfileRepository.save(competenceProfileInstance);
     }
 
     @Test
