@@ -68,6 +68,12 @@ class RoleTest implements TestExecutionListener {
     }
 
     @Test
+    void testCompetenceProfileIdIsGenerated() {
+        roleRepository.save(instance);
+        assertThat(instance.getRole_id(), is(not(0L)));
+    }
+
+    @Test
     @Rollback
     void testMissingName() {
         instance.setName(null);

@@ -75,6 +75,12 @@ class PersonTest implements TestExecutionListener {
     }
 
     @Test
+    void testCompetenceProfileIdIsGenerated() {
+        personRepository.save(personInstance);
+        assertThat(personInstance.getPerson_id(), is(not(0L)));
+    }
+
+    @Test
     @Rollback
     void testMissingName() {
         personInstance.setName(null);

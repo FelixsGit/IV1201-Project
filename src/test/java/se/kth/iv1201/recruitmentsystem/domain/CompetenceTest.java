@@ -65,7 +65,13 @@ class CompetenceTest implements TestExecutionListener {
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
         dbUtil.resetDB();
-        instance = new Competence();
+        instance = new Competence("recruiter");
+    }
+
+    @Test
+    void testCompetenceProfileIdIsGenerated() {
+        competenceRepository.save(instance);
+        assertThat(instance.getCompetence_id(), is(not(0L)));
     }
 
     @Test
