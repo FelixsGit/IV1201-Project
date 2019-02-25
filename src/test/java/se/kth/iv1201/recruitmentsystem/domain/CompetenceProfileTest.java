@@ -50,11 +50,15 @@ class CompetenceProfileTest implements TestExecutionListener {
     private CompetenceRepository competenceRepository;
 
     @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
     private PersonRepository personRepository;
 
     private CompetenceProfile competenceProfileInstance;
     private Person personInstance;
-    private Competence competence;
+    private Competence competenceInstance;
+    private Role roleInstance;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -70,36 +74,47 @@ class CompetenceProfileTest implements TestExecutionListener {
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
         dbUtil.resetDB();
-        personInstance = new Person();
+        createPerson();
+        createCompetence();
+        createCompetenceProfile();
+    }
+
+    private void createPerson() {
+        roleInstance = new Role(Role.APPLICANT);
+        roleRepository.save(roleInstance);
+        personInstance = new Person("Adrian", "Zander", "19970215-1625", "adrian.t.zander@gmail.com", "123",
+                roleInstance, "Acander5");
         personRepository.save(personInstance);
-        competence = new Competence();
-        competenceRepository.save(competence);
-        //Continue here!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        instance = new CompetenceProfile();
-        instance.setPerson(new Person());
-        instance.setCompetence(new Competence());
-        instance.setYears_of_experience(BigDecimal.ONE);
+    }
+
+    private void createCompetence() {
+        competenceInstance = new Competence("Korv");
+        competenceRepository.save(competenceInstance);
+    }
+
+    private void createCompetenceProfile() {
+        competenceProfileInstance = new CompetenceProfile(personInstance, competenceInstance, BigDecimal.ONE);
     }
 
     @Test
     @Rollback
     void testMissingPerson() {
-        instance.setPerson(null);
-        testInvalidCompetenceProfile(instance, "{competence-profile.person.missing}");
+        competenceProfileInstance.setPerson(null);
+        testInvalidCompetenceProfile(competenceProfileInstance, "{competence-profile.person.missing}");
     }
 
     @Test
     @Rollback
     void testMissingCompetence() {
-        instance.setCompetence(null);
-        testInvalidCompetenceProfile(instance, "{competence-profile.competence.missing}");
+        competenceProfileInstance.setCompetence(null);
+        testInvalidCompetenceProfile(competenceProfileInstance, "{competence-profile.competence.missing}");
     }
 
     @Test
     @Rollback
     void testMissingExp() {
-        instance.setYears_of_experience(null);
-        testInvalidCompetenceProfile(instance, "{competence-profile.exp.missing}");
+        competenceProfileInstance.setYears_of_experience(null);
+        testInvalidCompetenceProfile(competenceProfileInstance, "{competence-profile.exp.missing}");
     }
 
     private void testInvalidCompetenceProfile(CompetenceProfile competenceProfile, String... expectedMsgs) {
