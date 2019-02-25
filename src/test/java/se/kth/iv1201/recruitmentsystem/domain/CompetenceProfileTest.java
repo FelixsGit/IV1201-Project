@@ -98,6 +98,12 @@ class CompetenceProfileTest implements TestExecutionListener {
     }
 
     @Test
+    void testCompetenceProfileIdIsGenerated() {
+        competenceProfileRepository.save(competenceProfileInstance);
+        assertThat(competenceProfileInstance.getCompetence_profile_id(), is(not(0L)));
+    }
+
+    @Test
     @Rollback
     void testMissingPerson() {
         competenceProfileInstance.setPerson(null);

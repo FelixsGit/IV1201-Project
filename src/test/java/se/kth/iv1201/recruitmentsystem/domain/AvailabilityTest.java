@@ -84,6 +84,12 @@ class AvailabilityTest implements TestExecutionListener {
         personRepository.save(personInstance);
     }
 
+    @Test
+    void testAvailabilityIdIsGenerated() {
+        availabilityRepository.save(availabilityInstance);
+        assertThat(availabilityInstance.getAvailability_id(), is(not(0L)));
+    }
+
     @Rollback
     @Test
     void testMissingPerson() {
