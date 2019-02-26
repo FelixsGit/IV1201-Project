@@ -206,7 +206,7 @@ public class ApplicationController {
                     registrationForm.getEmail(), registrationForm.getPassword(), Role.APPLICANT, registrationForm.getUsername());
             model.addAttribute(new RegistrationForm());
         } catch (UserException exception) {
-            regErrorHandling(exception, model);
+            errorHandling(exception, model);
             return REGISTER_PAGE_URL;
         }
         return showLoginView(model);
@@ -237,7 +237,8 @@ public class ApplicationController {
      * @param exception the exception
      * @param model registration model  filled in by the user
      */
-    private void regErrorHandling(Exception exception, Model model) {
+    private void errorHandling(Exception exception, Model model) {
+        logException(exception);
         if(exception.getMessage().toUpperCase().contains("USERNAME")) {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
@@ -247,6 +248,10 @@ public class ApplicationController {
         } else {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
         }
+    }
+
+    private void logException(Exception exception) {
+        LOGGER.error("Exception {}: {}", exception.getClass().getName(), exception.getMessage());
     }
 
     /**
@@ -267,7 +272,7 @@ public class ApplicationController {
             applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
                      applicationForm.getYearsOfExperience(), request.getUserPrincipal().getName());
         } catch (UserException | ApplicationException | ParseException exception) {
-            regErrorHandling(exception, model);
+            errorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());
         return "/applicationSent";
