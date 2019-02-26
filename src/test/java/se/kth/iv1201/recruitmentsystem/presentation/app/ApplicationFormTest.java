@@ -40,7 +40,7 @@ public class ApplicationFormTest implements TestExecutionListener {
 
     private final String INVALID_YEARS_OF_EXPERIENCE = "abc";
     private final String INVALID_TO_FROM_DATE = "abc";
-    private final String INVALID_YEARS_OF_EXPERIENCE_LENGTH = "100";
+    private final String INVALID_YEARS_OF_EXPERIENCE_LENGTH = "12345678901";
     private final String VALID_YEARS_OF_EXPERIENCE= "1";
     private final String VALID_TO_DATE = "2020-02-13";
     private final String VALID_FROM_DATE = "2021-02-14";

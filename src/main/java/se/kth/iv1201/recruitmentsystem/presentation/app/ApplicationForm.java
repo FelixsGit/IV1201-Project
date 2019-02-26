@@ -18,7 +18,7 @@ public class ApplicationForm {
     private String toDate;
 
     @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "{application.years-of-exp.incorrect}")
-    @Size(max = 2, message = "{application.years-of-exp.length}")
+    @Size(max = 10, message = "{application.years-of-exp.length}")
     @NotEmpty(message = "{application.years-of-exp.missing}")
     private String yearsOfExperience;
 
