@@ -69,7 +69,7 @@ class CompetenceTest implements TestExecutionListener {
     }
 
     @Test
-    void testCompetenceProfileIdIsGenerated() {
+    void testCompetenceIdIsGenerated() {
         competenceRepository.save(instance);
         assertThat(instance.getCompetence_id(), is(not(0L)));
     }

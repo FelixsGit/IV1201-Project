@@ -75,7 +75,7 @@ class PersonTest implements TestExecutionListener {
     }
 
     @Test
-    void testCompetenceProfileIdIsGenerated() {
+    void testPersonIdIsGenerated() {
         personRepository.save(personInstance);
         assertThat(personInstance.getPerson_id(), is(not(0L)));
     }

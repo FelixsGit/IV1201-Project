@@ -68,7 +68,7 @@ class RoleTest implements TestExecutionListener {
     }
 
     @Test
-    void testCompetenceProfileIdIsGenerated() {
+    void testRoleIdIsGenerated() {
         roleRepository.save(instance);
         assertThat(instance.getRole_id(), is(not(0L)));
     }
