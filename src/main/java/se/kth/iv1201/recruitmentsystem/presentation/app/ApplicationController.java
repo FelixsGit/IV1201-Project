@@ -251,7 +251,7 @@ public class ApplicationController {
     }
 
     private void logException(Exception exception) {
-        LOGGER.error("Exception {}: {}", exception.getClass().getName(), exception.getMessage());
+        LOGGER.info("Exception {}: {}", exception.getClass().getName(), exception.getMessage());
     }
 
     /**
