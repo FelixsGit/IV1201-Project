@@ -9,17 +9,17 @@ import javax.validation.constraints.Size;
  */
 public class ApplicationForm {
 
-    @Pattern(regexp = "^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$", message = "Please enter a correct date format")
-    @NotEmpty(message = "please enter a from date")
+    @Pattern(regexp = "^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$", message = "{application.from-date.incorrect}")
+    @NotEmpty(message = "{application.from-date.missing}")
     private String fromDate;
 
-    @Pattern(regexp = "^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$", message = "Please enter a correct date format")
-    @NotEmpty(message = "please enter a to date")
+    @Pattern(regexp = "^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$", message = "{application.to-date.incorrect}")
+    @NotEmpty(message = "{application.to-date.missing}")
     private String toDate;
 
-    @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "numbers only")
-    @Size(max = 10, message = "Please write no more than 10 characters")
-    @NotEmpty(message = "please enter your experience")
+    @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+", message = "{application.years-of-exp.incorrect}")
+    @Size(max = 2, message = "{application.years-of-exp.length}")
+    @NotEmpty(message = "{application.years-of-exp.missing}")
     private String yearsOfExperience;
 
     public String getCompetence() {
