@@ -16,14 +16,14 @@ import org.springframework.test.context.transaction.TestTransaction;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.TransactionSystemException;
 import org.springframework.transaction.annotation.Transactional;
-import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
-import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
-import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
+import se.kth.iv1201.recruitmentsystem.repository.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.containsString;
@@ -41,14 +41,22 @@ import static org.hamcrest.Matchers.not;
 @NotThreadSafe
 @Transactional
 @Commit
-class RoleTest implements TestExecutionListener {
+class AvailabilityTest implements TestExecutionListener {
     @Autowired
     private DBUtil dbUtil;
 
     @Autowired
     private RoleRepository roleRepository;
 
-    private Role instance;
+    @Autowired
+    private PersonRepository personRepository;
+
+    @Autowired
+    private AvailabilityRepository availabilityRepository;
+
+    private Availability availabilityInstance;
+    private Person personInstance;
+    private Role roleInstance;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -64,33 +72,49 @@ class RoleTest implements TestExecutionListener {
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
         dbUtil.resetDB();
-        instance = new Role(Role.APPLICANT);
+        createPerson();
+        availabilityInstance = new Availability(personInstance, new Date(), new Date());
+    }
+
+    private void createPerson() {
+        roleInstance = new Role(Role.APPLICANT);
+        roleRepository.save(roleInstance);
+        personInstance = new Person("Adrian", "Zander", "19970215-1625", "adrian.t.zander@gmail.com", "123",
+                roleInstance, "Acander5");
+        personRepository.save(personInstance);
     }
 
     @Test
-    void testRoleIdIsGenerated() {
-        roleRepository.save(instance);
-        assertThat(instance.getRole_id(), is(not(0L)));
+    void testAvailabilityIdIsGenerated() {
+        availabilityRepository.save(availabilityInstance);
+        assertThat(availabilityInstance.getAvailability_id(), is(not(0L)));
     }
 
-    @Test
     @Rollback
-    void testMissingName() {
-        instance.setName(null);
-        testInvalidRole(instance, "{role.name.missing}");
-    }
-
     @Test
-    @Rollback
-    void testIncorrectName() {
-        instance.setName("7472628");
-        testInvalidRole(instance, "{general-input.invalid-char}");
+    void testMissingPerson() {
+        availabilityInstance.setPerson(null);
+        testInvalidAvailability(availabilityInstance, "{availability.person.missing}");
     }
 
-    private void testInvalidRole(Role role, String... expectedMsgs) {
+    @Rollback
+    @Test
+    void testMissingToDate() {
+        availabilityInstance.setTo_date(null);
+        testInvalidAvailability(availabilityInstance, "{availability.to-date.missing}");
+    }
+
+    @Rollback
+    @Test
+    void testMissingFromDate() {
+        availabilityInstance.setFrom_date(null);
+        testInvalidAvailability(availabilityInstance, "{availability.from-date.missing}");
+    }
+
+    private void testInvalidAvailability(Availability availability, String... expectedMsgs) {
         try {
             startNewTransaction();
-            roleRepository.save(role);
+            availabilityRepository.save(availability);
         } catch (ConstraintViolationException exc) {
             Set<ConstraintViolation<?>> result = exc.getConstraintViolations();
             assertThat(result.size(), is(expectedMsgs.length));

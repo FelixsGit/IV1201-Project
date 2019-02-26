@@ -13,8 +13,8 @@ public class Competence implements CompetenceDTO {
     @Column(name = "competence_id")
     private long competence_id;
 
-    @NotNull(message = "No name")
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Contained numbers")
+    @NotNull(message = "{competence.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{competence.name.invalid-char}")
     @Column(name = "name")
     private String name;
 
