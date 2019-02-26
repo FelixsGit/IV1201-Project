@@ -1,5 +1,7 @@
 package se.kth.iv1201.recruitmentsystem.presentation.error;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @ControllerAdvice
 public class ExceptionHandlers implements ErrorController  {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandlers.class);
     static final String ERROR_PATH = "failure";
     public static final String ERROR_PAGE_URL = "error";
     public static final String ERROR_TYPE_KEY = "errorType";
@@ -58,6 +61,7 @@ public class ExceptionHandlers implements ErrorController  {
 
     @GetMapping("/"+ ERROR_PATH)
     public String handleHttpError(HttpServletRequest request, HttpServletResponse response, Model model) {
+        LOGGER.debug("Http error handler gott Http status: {}", request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE));
         ApplicationController controller = new ApplicationController();
         String statusCode = extractHttpStatusCode(request);
         model.addAttribute(ERROR_TYPE_KEY, statusCode);

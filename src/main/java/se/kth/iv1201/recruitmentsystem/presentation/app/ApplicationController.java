@@ -1,5 +1,7 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -32,7 +34,7 @@ public class ApplicationController {
     public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication";
     public static final String LOGIN_OK_URL = "loginOk";
     public static final String UPDATE_ACCOUNT_URL = "updateAccount";
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationController.class);
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
     private static String APPLICATION_FORM_OBJ_NAME = "applicationForm";
@@ -56,6 +58,7 @@ public class ApplicationController {
      */
     @GetMapping(DEFAULT_PAGE_URL + LOGIN_OK_URL)
     public String defaultAfterLogin(HttpServletRequest request) {
+        LOGGER.trace("Call to default after login view.");
         if (request.isUserInRole("ROLE_applicant")) {
             return "redirect:" + APPLICATION_PAGE_URL;
         }
@@ -64,6 +67,7 @@ public class ApplicationController {
 
     @GetMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
     public String showUpdateAccountView(Model model){
+        LOGGER.trace("Call to update account view.");
         if(!model.containsAttribute(UPDATE_ACCOUNT_FORM_OBJ_NAME)){
             model.addAttribute(new UpdateAccountForm());
         }
@@ -76,6 +80,7 @@ public class ApplicationController {
      */
     @GetMapping(DEFAULT_PAGE_URL)
     public String showDefaultView() {
+        LOGGER.trace("Call to context root.");
         return "redirect:" + REGISTER_PAGE_URL;
     }
 
@@ -86,6 +91,7 @@ public class ApplicationController {
      */
     @GetMapping(REGISTER_PAGE_URL)
     public String showRegisterView(Model model) {
+        LOGGER.trace("Call to registration view.");
         if(!model.containsAttribute(REGISTER_FORM_OBJ_NAME)) {
             model.addAttribute(new RegistrationForm());
         }
@@ -99,6 +105,7 @@ public class ApplicationController {
      */
     @GetMapping(LOGIN_PAGE_URL)
     public String showLoginView(Model model){
+        LOGGER.trace("Call to login view.");
         if(!model.containsAttribute(LOGIN_FORM_OBJ_NAME)){
             model.addAttribute(new LoginForm());
         }
@@ -115,6 +122,7 @@ public class ApplicationController {
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request) {
+        LOGGER.trace("Call to application view.");
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
             model.addAttribute(new UpdateAccountForm());
@@ -149,6 +157,7 @@ public class ApplicationController {
      */
     @GetMapping(DEFAULT_PAGE_URL + HANDLE_APPLICATION_PAGE_URL)
     public String showHandleApplicationView(Model model){
+        LOGGER.trace("Call to handle application view.");
         if(!model.containsAttribute(HANDLE_APPLICATION_OBJ_NAME)) {
             model.addAttribute(new HandleApplicationForm());
         }
@@ -184,6 +193,8 @@ public class ApplicationController {
      */
     @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
     public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) {
+        LOGGER.trace("Post of registration data.");
+        LOGGER.trace("Form data: " + registrationForm);
         if(bindingResult.hasErrors()) {
             return REGISTER_PAGE_URL;
         }
@@ -192,7 +203,7 @@ public class ApplicationController {
                     registrationForm.getEmail(), registrationForm.getPassword(), Role.APPLICANT, registrationForm.getUsername());
             model.addAttribute(new RegistrationForm());
         } catch (UserException exception) {
-            regErrorHandling(exception, model);
+            errorHandling(exception, model);
             return REGISTER_PAGE_URL;
         }
         return showLoginView(model);
@@ -208,6 +219,8 @@ public class ApplicationController {
      */
     @PostMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
     public String updateAccount(@Valid @ModelAttribute UpdateAccountForm updateAccountForm, BindingResult bindingResult, Model model) {
+        LOGGER.trace("Post of update account data.");
+        LOGGER.trace("Form data: " + updateAccountForm);
         if(bindingResult.hasErrors()) {
             return UPDATE_ACCOUNT_URL;
         }
@@ -221,7 +234,8 @@ public class ApplicationController {
      * @param exception the exception
      * @param model registration model  filled in by the user
      */
-    private void regErrorHandling(Exception exception, Model model) {
+    private void errorHandling(Exception exception, Model model) {
+        logException(exception);
         if(exception.getMessage().toUpperCase().contains("USERNAME")) {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("EMAIL")){
@@ -233,6 +247,10 @@ public class ApplicationController {
         }
     }
 
+    private void logException(Exception exception) {
+        LOGGER.info("Exception {}: {}", exception.getClass().getName(), exception.getMessage());
+    }
+
     /**
      * The app from has been submitted.
      * @param applicationForm Content of the app form.
@@ -242,6 +260,8 @@ public class ApplicationController {
      */
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
     public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request) {
+        LOGGER.trace("Post user application data.");
+        LOGGER.trace("Form data: " + applicationForm);
         if (bindingResult.hasErrors()) {
             return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request );
         }
@@ -249,7 +269,7 @@ public class ApplicationController {
             applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
                      applicationForm.getYearsOfExperience(), request.getUserPrincipal().getName());
         } catch (UserException | ApplicationException | ParseException exception) {
-            regErrorHandling(exception, model);
+            errorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());
         return "/applicationSent";
