@@ -83,7 +83,6 @@ public class ApplicationFormTest implements TestExecutionListener {
         applicationForm.setYearsOfExperience(INVALID_YEARS_OF_EXPERIENCE);
         List<String> expectedMsg = new ArrayList<>();
         expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_MSG);
-        expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_LENGTH_MSG);
         assertInput(validator.validate(applicationForm), expectedMsg);
     }
 
