@@ -26,6 +26,8 @@ public class ExceptionHandlers implements ErrorController  {
     public static final String USERNAME_FAIL = "Username already taken! Please select another.";
     public static final String EMAIL_FAIL = "Email already in use! Please select another.";
     public static final String ROLE_FAIL = "Role does not exist! Please select a feasible one.";
+    public static final String PERSON_FAIL = "Your profile can not be found in the database.";
+    public static final String COMPETENCE_FAIL = "Invalid competence";
     //public static final String USERNAME_FAIL = "username";
     //public static final String EMAIL_FAIL = "email";
     //public static final String ROLE_FAIL = "role";

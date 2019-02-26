@@ -203,7 +203,7 @@ public class ApplicationController {
                     registrationForm.getEmail(), registrationForm.getPassword(), Role.APPLICANT, registrationForm.getUsername());
             model.addAttribute(new RegistrationForm());
         } catch (UserException exception) {
-            errorHandling(exception, model);
+            registrationErrorHandling(exception, model);
             return REGISTER_PAGE_URL;
         }
         return showLoginView(model);
@@ -228,13 +228,7 @@ public class ApplicationController {
         return showLoginView(model);
     }
 
-    /**
-     *This private method is used  for mapping different error messages depending on
-     * the fields in the registration form.
-     * @param exception the exception
-     * @param model registration model  filled in by the user
-     */
-    private void errorHandling(Exception exception, Model model) {
+    private void registrationErrorHandling(Exception exception, Model model) {
         logException(exception);
         if(exception.getMessage().toUpperCase().contains("USERNAME")) {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.USERNAME_FAIL);
@@ -269,10 +263,21 @@ public class ApplicationController {
             applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
                      applicationForm.getYearsOfExperience(), request.getUserPrincipal().getName());
         } catch (UserException | ApplicationException | ParseException exception) {
-            errorHandling(exception, model);
+            applicationErrorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());
         return "/applicationSent";
+    }
+
+    private void applicationErrorHandling(Exception exception, Model model) {
+        logException(exception);
+        if(exception.getMessage().toUpperCase().contains("PERSON")) {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.PERSON_FAIL);
+        } else if (exception.getMessage().toUpperCase().contains("COMPETENCE")){
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.COMPETENCE_FAIL);
+        } else {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
+        }
     }
 
 }

@@ -62,17 +62,16 @@ public class ApplicationService {
      * @param yearsOfExperience The number of years of experience with the chosen competence entered by the applicant.
      * @param username The username of the applicant
      * @throws ParseException Exception of parsing fails
-     * @throws UserException Exception if the person retrieved from the db does not exist.
      * @throws ApplicationException Exception if the entered competence do not exist in the db, or if something goes wrong.
      */
     public void createApplication(String chosenCompetence, String fromDate, String toDate, String yearsOfExperience, String username) throws ParseException, UserException, ApplicationException {
         Person person = personRepository.findPersonByUsername(username);
         if(person == null) {
-            throw new UserException("Failed to retrieve person from database.");
+            throw new ApplicationException("Person with username " + username + " can not be found in database");
         }
         Competence competence = competenceRepository.findCompetenceByName(chosenCompetence);
         if(competence == null){
-            throw new ApplicationException("Failed to retrieve competence from database.");
+            throw new ApplicationException("Competence " + chosenCompetence+ "could not be retrieved from database.");
         }
         Date from_date = convertToDate(fromDate);
         Date to_date = convertToDate(toDate);
@@ -119,7 +118,11 @@ public class ApplicationService {
             throw new UserException("SSN " + ssn + " is already registered.");
 
         Person person = new Person(name, surname, ssn, email, password, role, username);
-        personRepository.save(person);
+        try {
+            personRepository.save(person);
+        } catch (Exception exception) {
+            throw new UserException("Something went wrong when saving profile in database");
+        }
         return person;
     }
 }
