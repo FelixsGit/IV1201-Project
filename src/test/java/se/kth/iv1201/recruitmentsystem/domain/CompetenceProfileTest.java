@@ -1,6 +1,5 @@
 package se.kth.iv1201.recruitmentsystem.domain;
 
-
 import net.jcip.annotations.NotThreadSafe;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,13 +15,12 @@ import org.springframework.test.context.transaction.TestTransaction;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.TransactionSystemException;
 import org.springframework.transaction.annotation.Transactional;
-import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
-import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
-import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
+import se.kth.iv1201.recruitmentsystem.repository.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.Set;
 
@@ -41,14 +39,26 @@ import static org.hamcrest.Matchers.not;
 @NotThreadSafe
 @Transactional
 @Commit
-class RoleTest implements TestExecutionListener {
+class CompetenceProfileTest implements TestExecutionListener {
     @Autowired
     private DBUtil dbUtil;
 
     @Autowired
+    private CompetenceProfileRepository competenceProfileRepository;
+
+    @Autowired
+    private CompetenceRepository competenceRepository;
+
+    @Autowired
     private RoleRepository roleRepository;
 
-    private Role instance;
+    @Autowired
+    private PersonRepository personRepository;
+
+    private CompetenceProfile competenceProfileInstance;
+    private Person personInstance;
+    private Competence competenceInstance;
+    private Role roleInstance;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -64,33 +74,60 @@ class RoleTest implements TestExecutionListener {
     @BeforeEach
     void setup() throws SQLException, IOException, ClassNotFoundException {
         dbUtil.resetDB();
-        instance = new Role(Role.APPLICANT);
+        createPerson();
+        createCompetence();
+        createCompetenceProfile();
+    }
+
+    private void createPerson() {
+        roleInstance = new Role(Role.APPLICANT);
+        roleRepository.save(roleInstance);
+        personInstance = new Person("Adrian", "Zander", "19970215-1625", "adrian.t.zander@gmail.com", "123",
+                roleInstance, "Acander5");
+        personRepository.save(personInstance);
+    }
+
+    private void createCompetence() {
+        competenceInstance = new Competence("Korv");
+        competenceRepository.save(competenceInstance);
+    }
+
+    private void createCompetenceProfile() {
+        competenceProfileInstance = new CompetenceProfile(personInstance, competenceInstance, BigDecimal.ONE);
+        //competenceProfileRepository.save(competenceProfileInstance);
     }
 
     @Test
-    void testRoleIdIsGenerated() {
-        roleRepository.save(instance);
-        assertThat(instance.getRole_id(), is(not(0L)));
+    void testCompetenceProfileIdIsGenerated() {
+        competenceProfileRepository.save(competenceProfileInstance);
+        assertThat(competenceProfileInstance.getCompetence_profile_id(), is(not(0L)));
     }
 
     @Test
     @Rollback
-    void testMissingName() {
-        instance.setName(null);
-        testInvalidRole(instance, "{role.name.missing}");
+    void testMissingPerson() {
+        competenceProfileInstance.setPerson(null);
+        testInvalidCompetenceProfile(competenceProfileInstance, "{competence-profile.person.missing}");
     }
 
     @Test
     @Rollback
-    void testIncorrectName() {
-        instance.setName("7472628");
-        testInvalidRole(instance, "{general-input.invalid-char}");
+    void testMissingCompetence() {
+        competenceProfileInstance.setCompetence(null);
+        testInvalidCompetenceProfile(competenceProfileInstance, "{competence-profile.competence.missing}");
     }
 
-    private void testInvalidRole(Role role, String... expectedMsgs) {
+    @Test
+    @Rollback
+    void testMissingExp() {
+        competenceProfileInstance.setYears_of_experience(null);
+        testInvalidCompetenceProfile(competenceProfileInstance, "{competence-profile.exp.missing}");
+    }
+
+    private void testInvalidCompetenceProfile(CompetenceProfile competenceProfile, String... expectedMsgs) {
         try {
             startNewTransaction();
-            roleRepository.save(role);
+            competenceProfileRepository.save(competenceProfile);
         } catch (ConstraintViolationException exc) {
             Set<ConstraintViolation<?>> result = exc.getConstraintViolations();
             assertThat(result.size(), is(expectedMsgs.length));
@@ -106,3 +143,4 @@ class RoleTest implements TestExecutionListener {
     }
 
 }
+

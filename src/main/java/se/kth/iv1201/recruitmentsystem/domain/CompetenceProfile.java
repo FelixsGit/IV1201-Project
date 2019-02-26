@@ -15,19 +15,19 @@ public class CompetenceProfile implements CompetenceProfileDTO {
 
     //@Column(name = "person")
     // TODO reference? name?
-    @NotNull(message = "No person specified")
+    @NotNull(message = "{competence-profile.person.missing}")
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
 
     //@Column(name = "competence")
     // TODO reference? name?
-    @NotNull(message = "Competence not specified")
+    @NotNull(message = "{competence-profile.competence.missing}")
     @ManyToOne
     @JoinColumn(name = "competence_id")
     private Competence competence;
 
-    @NotNull(message = "Years_of_experience not specified")
+    @NotNull(message = "{competence-profile.exp.missing}")
     @Column(name = "years_of_experience")
     private BigDecimal years_of_experience;
 
