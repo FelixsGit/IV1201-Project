@@ -164,21 +164,24 @@ public class ApplicationController {
         return HANDLE_APPLICATION_PAGE_URL;
     }
 
-
     /**
      * A get request for the searchApplication page.
      * @param updateAccountForm Content of the updateAccountForm
+     * @param searchApplicationForm Content of the searchApplicationForm
      * @param model Model object that is used in the searchApplication page.
      * @param request HttpServletRequest object provided by spring
      * @return TODO
      */
     @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
-    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
+    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplicationForm searchApplicationForm, Model model, HttpServletRequest request){
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
             model.addAttribute(new SearchApplicationForm());
         }
+        List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
+        searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
         model.addAttribute("updateAccountForm", updateAccountForm);
+        model.addAttribute("searchApplicationForm", searchApplicationForm);
         return SEARCH_APPLICATION_PAGE_URL;
     }
 
