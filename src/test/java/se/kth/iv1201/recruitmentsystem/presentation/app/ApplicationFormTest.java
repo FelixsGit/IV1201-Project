@@ -12,7 +12,6 @@ import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -51,7 +50,7 @@ public class ApplicationFormTest implements TestExecutionListener {
     private final String INVALID_TO_DATE_MSG = "{application.to-date.incorrect}";
     private final String TO_DATE_MISSING_MSG = "{application.to-date.missing}";
     private final String INVALID_YEARS_OF_EXPERIENCE_MSG = "{application.years-of-exp.incorrect}";
-    private final String INVALID_YEARS_OF_EXPERIENCE_LENGHT_MSG = "{application.years-of-exp.length}";
+    private final String INVALID_YEARS_OF_EXPERIENCE_LENGTH_MSG = "{application.years-of-exp.length}";
     private final String YEARS_OF_EXPERIENCE_MISSING_MSG = "{application.years-of-exp.missing}";
 
     @Test
@@ -78,14 +77,13 @@ public class ApplicationFormTest implements TestExecutionListener {
         return applicationForm;
     }
 
-
     @Test
     public void testInvalidYearsOfExperience(){
         ApplicationForm applicationForm = createValidApplicationForm();
         applicationForm.setYearsOfExperience(INVALID_YEARS_OF_EXPERIENCE);
         List<String> expectedMsg = new ArrayList<>();
         expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_MSG);
-        expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_LENGHT_MSG);
+        expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_LENGTH_MSG);
         assertInput(validator.validate(applicationForm), expectedMsg);
     }
 
@@ -94,7 +92,7 @@ public class ApplicationFormTest implements TestExecutionListener {
         ApplicationForm applicationForm = createValidApplicationForm();
         applicationForm.setYearsOfExperience(INVALID_YEARS_OF_EXPERIENCE_LENGTH);
         List<String> expectedMsg = new ArrayList<>();
-        expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_LENGHT_MSG);
+        expectedMsg.add(INVALID_YEARS_OF_EXPERIENCE_LENGTH_MSG);
         assertInput(validator.validate(applicationForm), expectedMsg);
     }
 

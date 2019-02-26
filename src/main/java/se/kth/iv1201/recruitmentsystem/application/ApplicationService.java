@@ -105,7 +105,6 @@ public class ApplicationService {
      */
     public PersonDTO createPerson(String name, String surname, String ssn, String email,
                                   String password, String roleName, String username) throws UserException {
-
         Role role = roleRepository.findRoleByName(roleName);
         if(role == null)
             throw new UserException("Role name " + roleName + " does not exist in database.");

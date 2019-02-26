@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.context.TestContext;
 import org.springframework.test.context.TestExecutionListener;
@@ -18,15 +19,21 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
+import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.Person;
+import se.kth.iv1201.recruitmentsystem.domain.Role;
 import se.kth.iv1201.recruitmentsystem.repository.DBUtil;
 import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
+import se.kth.iv1201.recruitmentsystem.repository.RoleRepository;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 import static junit.framework.TestCase.assertNull;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
+import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
@@ -55,10 +62,15 @@ public class ApplicationControllerTest implements TestExecutionListener {
     private DBUtil dbUtil;
 
     private MockMvc mockMvc;
+    private Person person;
 
     //@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private PersonRepository personRepository;
+    @Autowired
+    private ApplicationService applicationService;
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Override
     public void beforeTestClass(TestContext testContext) throws IOException {
@@ -75,6 +87,7 @@ public class ApplicationControllerTest implements TestExecutionListener {
     void setup() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(webappContext).build();
         dbUtil.resetDB();
+        startNewTransaction();
     }
 
     @Test
@@ -99,15 +112,6 @@ public class ApplicationControllerTest implements TestExecutionListener {
         mockMvc.perform(get(url)).andExpect(status().isOk())
                 .andExpect(view().name(ApplicationController.LOGIN_PAGE_URL));
     }
-
-    /* This page now needs specific rights for access
-    @Test
-    void testApplicationView() throws Exception {
-        String url = "/" + ApplicationController.APPLICATION_PAGE_URL;
-        mockMvc.perform(get(url)).andExpect(status().isOk())
-            .andExpect(view().name(ApplicationController.APPLICATION_PAGE_URL));
-    }
-    */
 
     @Test
     void testIncorrectView() throws Exception {

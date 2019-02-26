@@ -134,10 +134,7 @@ public class ApplicationController {
      * @param request  HttpServletRequest object provided by spring.
      */
     private void checkForNullValues(final UpdateAccountForm updateAccountForm, Model model, HttpServletRequest request){
-
         PersonDTO person = applicationService.findPerson(request.getUserPrincipal().getName());
-        System.out.println("Person found in service, with name: " + person + ", " + request.getUserPrincipal().getName());
-
         if(person.getEmail() == null)
             updateAccountForm.setEmail("missingEmail");
         if(person.getSsn() == null)
