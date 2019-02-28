@@ -34,6 +34,7 @@ public class ApplicationController {
     public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication";
     public static final String LOGIN_OK_URL = "loginOk";
     public static final String UPDATE_ACCOUNT_URL = "updateAccount";
+    public static final String APPLICATION_SENT_URL = "applicationSent";
     private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationController.class);
     private static String REGISTER_FORM_OBJ_NAME = "registrationForm";
     private static String LOGIN_FORM_OBJ_NAME = "loginForm";
@@ -45,8 +46,6 @@ public class ApplicationController {
 
     @Autowired
     private ApplicationService applicationService;
-
-    private PersonDTO person;
 
     ///////////////////////////////////GET MAPPINGS/////////////////////////////////////////
 
@@ -185,6 +184,12 @@ public class ApplicationController {
         return SEARCH_APPLICATION_PAGE_URL;
     }
 
+    @GetMapping(DEFAULT_PAGE_URL + APPLICATION_SENT_URL)
+    public String showApplicationSentView(){
+        LOGGER.trace("User posted application");
+        return APPLICATION_SENT_URL;
+    }
+
     ///////////////////////////////////POST MAPPINGS/////////////////////////////////////////
 
     /**
@@ -269,7 +274,7 @@ public class ApplicationController {
             applicationErrorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());
-        return "/applicationSent.html";
+        return showApplicationSentView();
     }
 
     private void applicationErrorHandling(Exception exception, Model model) {
