@@ -18,8 +18,9 @@ was conducted with a local mariaDB database running MYSQL. Therefore it is impor
 variables to match their own environment-configuration. This is done in the Travis.yml and in the Application.properties files. 
 
 ### Usage
-The webpage are straight forward to understand and could be understood by english and swedish reading users. The application are using
-the framework thymeleaf for generating views. Another framework that are beeing used are JPA for the server database communication. Authentication and Authorization are handled by spring security, and logging are handled by Spring logger. To fully understand the application one needs basic knowledge in these framework. 
+The webpage are straight forward to understand and could be understood by english and swedish reading users. 
+
+The application are using the framework thymeleaf for generating views. Another framework that are beeing used are JPA for the server database communication. Authentication and Authorization are handled by spring security, and logging are handled by Spring logger. To fully understand the application one needs basic knowledge in these framework. 
 For simplification lets follow the register functionality throughout the system.
 
 -->The user visits the url /register.
@@ -27,7 +28,9 @@ Here the user can fill out the form with the necessary information.
 ![register](https://user-images.githubusercontent.com/28272254/53576663-7fed1600-3b74-11e9-9846-65ec9039320c.PNG)
 
 -->The information filled in by the user gets saved in an RegistrationForm Object
-Found here: https://github.com/FelixsGit/IV1201-Project/blob/master/src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/RegistrationForm.java
+Found here: 
+
+https://github.com/FelixsGit/IV1201-Project/blob/master/src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/RegistrationForm.java
 
 -->The following method, seen below in the ApplicationController class will then be invoked.  
 
