@@ -87,28 +87,6 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
 
     @Test
     void testAccessApplyWithLoggedInUser() throws Exception {
-        /*
-        String url = "/login";
-        MultiValueMap<String, String> params = getMultiValueMap();
-        params.add("username", person.getUsername());
-        params.add("password", person.getPassword());
-        mockMvc.perform(post(url).params(params))
-                .andExpect(status().isOk())
-                .andExpect(view().name("/loginOk"));
-                */
-
-        /*
-        RequestBuilder requestBuilder = post("/login")
-                .param("username", person.getUsername())
-                .param("password", person.getPassword());
-        mockMvc.perform(requestBuilder)
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(cookie().exists("JSESSIONID"))
-            .andExpect(view().name("/loginOk"));
-            */
-        System.out.println("Person found in DB: " + personRepository.findPersonByUsername(person.getUsername()));
-
         mockMvc.perform(get("/apply")
                 .with(user(person.getUsername())
                     .password(person.getPassword())
@@ -137,6 +115,22 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
     @Test
     void testAccessHandleApplicationWithoutLoggedInUser() throws Exception {
         mockMvc.perform(get("/handleApplication"))
+                .andExpect(status().is3xxRedirection());
+    }
+
+    @Test
+    void testAccessSearchApplicationWithLoggedInUser() throws Exception {
+        mockMvc.perform(get("/searchApplication")
+                .with(user(person.getUsername())
+                        .password(person.getPassword())
+                        .roles(Role.RECRUITER)))
+                .andExpect(status().isOk())
+                .andExpect(view().name("searchApplication"));
+    }
+
+    @Test
+    void testAccessSearchApplicationWithoutLoggedInUser() throws Exception {
+        mockMvc.perform(get("/searchApplication"))
                 .andExpect(status().is3xxRedirection());
     }
 
