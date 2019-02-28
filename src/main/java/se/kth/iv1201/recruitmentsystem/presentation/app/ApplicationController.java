@@ -269,7 +269,7 @@ public class ApplicationController {
             applicationErrorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());
-        return "/applicationSent";
+        return "/applicationSent.html";
     }
 
     private void applicationErrorHandling(Exception exception, Model model) {
