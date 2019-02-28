@@ -98,3 +98,15 @@
  
 [1;32m2019-02-28 11:26:18,498[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
  
+[1;32m2019-02-28 11:26:52,164[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.security.CustomUserDetailsServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting CustomUserDetailsServiceTest on DESKTOP-1L7G4EE with PID 17136 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 11:26:52,164[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.security.CustomUserDetailsServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 11:26:52,164[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.security.CustomUserDetailsServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 11:27:05,411[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.security.CustomUserDetailsServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted CustomUserDetailsServiceTest in 14.887 seconds (JVM running for 20.525)[0;39m 
+ 
+[1;32m2019-02-28 11:27:11,035[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:160] [1;35mCall to handle application view.[0;39m 
+ 
+[1;32m2019-02-28 11:27:21,705[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+ 

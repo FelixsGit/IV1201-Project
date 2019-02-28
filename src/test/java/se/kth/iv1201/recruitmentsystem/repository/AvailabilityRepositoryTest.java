@@ -98,6 +98,9 @@ public class AvailabilityRepositoryTest implements TestExecutionListener {
         assertThrows(IllegalTransactionStateException.class, () -> {
             instance.findAvailabilityByPerson(person);
         });
+        assertThrows(IllegalTransactionStateException.class, () -> {
+            instance.findAll();
+        });
     }
 
     private void assertAvailability(Availability availability) {
