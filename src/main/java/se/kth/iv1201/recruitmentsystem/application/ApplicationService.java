@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.util.StringUtils;
 import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.repository.*;
 
@@ -12,6 +13,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -88,6 +90,32 @@ public class ApplicationService {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date convertedDate = sdf.parse(startingDate);
         return new java.sql.Date(convertedDate.getTime());
+    }
+
+    /**
+     * This method retrieves the necessary data needed to display an application from the db.
+     * The data is stored in an DTO object.
+     * @return A list of ApplicationDTO objects
+     */
+    public List<ApplicationDTO> getAllApplications(){
+        List<Person> persons = personRepository.findAll();
+        List<ApplicationDTO> applicationDTOS = new ArrayList<>();
+        for(int i = 0; i < persons.size(); i++ ){
+            Person person = persons.get(i);
+            List<Availability> availabilities = availabilityRepository.findAvailabilitiesByPerson(person);
+            List<CompetenceProfile> competenceProfiles = competenceProfileRepository.findCompetenceProfilesByPerson(person);
+            for(int j = 0; j < availabilities.size(); j++){
+                Availability availability = availabilities.get(j);
+                CompetenceProfile competenceProfile = competenceProfiles.get(j);
+                String author = person.getUsername();
+                String fromDate = availability.getFrom_date().toString().substring(0, 10);
+                String toDate = availability.getTo_date().toString().substring(0, 10);
+                String competence = competenceProfile.getCompetence().getName();
+                String yearsOfExperience = competenceProfile.getYears_of_experience().toString();
+                applicationDTOS.add(new ApplicationDTO(author, competence, fromDate, toDate, yearsOfExperience));
+            }
+        }
+        return applicationDTOS;
     }
 
     /**

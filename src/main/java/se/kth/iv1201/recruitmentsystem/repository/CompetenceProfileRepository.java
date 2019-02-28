@@ -24,6 +24,14 @@ public interface CompetenceProfileRepository extends JpaRepository<CompetencePro
      */
     List<CompetenceProfile> findCompetenceProfilesByCompetence(Competence competence);
 
+
+    /**
+     * Fetches all competence profiles in the db from the entered person.
+     * @param person The person object.
+     * @return a list of competence profiles matching the entered person.
+     */
+    List<CompetenceProfile> findCompetenceProfilesByPerson(Person person);
+
     /**
      * Fetches a competence profile identified uniquely by person and competence.
      * @param person The person owning the competence profile.
@@ -31,6 +39,7 @@ public interface CompetenceProfileRepository extends JpaRepository<CompetencePro
      * @return Returns the competence profile found, or null if none found.
      */
     CompetenceProfile findCompetenceProfileByPersonAndCompetence(Person person, Competence competence);
+
 
     @Override
     CompetenceProfile save(CompetenceProfile competenceProfile);

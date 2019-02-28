@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{resources/fragments/layout}">
+      layout:decorate="~{resources/fragments/layout}" >
 <head>
     <meta charset="UTF-8">
 </head>
 <body>
-
 <main layout:fragment="content">
 
     <div th:if="${updateAccountForm.email}">
@@ -22,6 +21,21 @@
         <br>
         <input type="submit" value="send" />
     </div>
+    <p>These are all the applications!</p>
+    <table th:field="*{applicationDTO}">
+        <ul th:each="applicationDTO : ${searchApplicationForm.applicationDTOList}">
+            <br>
+            <div>
+                <li th:text="'Author: ' + ${applicationDTO.getAuthor()}" >Author: </li>
+                <li th:text="'Competence: ' + ${applicationDTO.getCompetence()}" >Competence: </li>
+                <li th:text="'Can work from: ' + ${applicationDTO.getFromDate()}" >Can work from: </li>
+                <li th:text="'Can work to: ' + ${applicationDTO.getToDate()}" >Can work to: </li>
+                <li th:text="'Years of experience: ' + ${applicationDTO.getYearsOfExperience()}" >Years of experience: </li>
+            </div>
+            <br>
+        </ul>
+    </table>
+
 
 </main>
 </body>
