@@ -1,16 +1,76 @@
-[1;32m2019-02-26 16:20:16,372[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on LAPTOP-IK24FOC2 with PID 16484 (C:\Users\adria\IdeaProjects\Architecture_and_Design_of_Global_Applications\IV1201-Project\target\classes started by adria in C:\Users\adria\IdeaProjects\Architecture_and_Design_of_Global_Applications\IV1201-Project)[0;39m 
+[1;32m2019-02-28 10:25:21,995[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 16260 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-26 16:20:16,377[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-02-28 10:25:22,010[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-26 16:20:16,378[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-02-28 10:25:22,010[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-26 16:20:23,426[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 7.861 seconds (JVM running for 9.218)[0;39m 
+[1;32m2019-02-28 10:25:27,993[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 6.967 seconds (JVM running for 10.996)[0;39m 
  
-[1;32m2019-02-26 16:24:42,219[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on LAPTOP-IK24FOC2 with PID 12508 (C:\Users\adria\IdeaProjects\Architecture_and_Design_of_Global_Applications\IV1201-Project\target\classes started by adria in C:\Users\adria\IdeaProjects\Architecture_and_Design_of_Global_Applications\IV1201-Project)[0;39m 
+[1;32m2019-02-28 10:25:34,803[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [619] milliseconds.[0;39m 
  
-[1;32m2019-02-26 16:24:42,223[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-02-28 10:25:34,871[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
  
-[1;32m2019-02-26 16:24:42,225[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-02-28 10:25:44,201[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-26 16:24:49,204[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 7.803 seconds (JVM running for 9.677)[0;39m 
+[1;32m2019-02-28 10:25:57,806[0;39m TRACE [http-nio-8080-exec-8] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:61] [1;35mCall to default after login view.[0;39m 
+ 
+[1;32m2019-02-28 10:32:34,771[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:83] [1;35mCall to context root.[0;39m 
+ 
+[1;32m2019-02-28 10:46:24,217[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-02-28 10:46:28,807[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-02-28 10:46:31,756[0;39m TRACE [http-nio-8080-exec-10] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
+ 
+[1;32m2019-02-28 10:46:33,659[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-02-28 10:46:36,499[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-02-28 10:48:54,792[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-1L7G4EE with PID 6328 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 10:48:54,792[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 10:48:54,808[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 10:49:08,593[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 14.394 seconds (JVM running for 17.403)[0;39m 
+ 
+[1;32m2019-02-28 10:51:19,228[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-1L7G4EE with PID 2604 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 10:51:19,228[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 10:51:19,244[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 10:51:32,388[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 14.628 seconds (JVM running for 19.971)[0;39m 
+ 
+[1;32m2019-02-28 10:59:58,458[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-1L7G4EE with PID 19912 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 10:59:58,462[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 10:59:58,462[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 11:00:11,045[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 13.948 seconds (JVM running for 18.904)[0;39m 
+ 
+[1;32m2019-02-28 11:01:28,350[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-1L7G4EE with PID 5420 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 11:01:28,350[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 11:01:28,365[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 11:01:41,937[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 15.161 seconds (JVM running for 20.025)[0;39m 
+ 
+[1;32m2019-02-28 11:04:47,317[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-1L7G4EE with PID 4896 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 11:04:47,317[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 11:04:47,321[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 11:05:00,634[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 14.802 seconds (JVM running for 19.272)[0;39m 
+ 
+[1;32m2019-02-28 11:06:50,944[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-1L7G4EE with PID 20360 (started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-02-28 11:06:50,944[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-02-28 11:06:50,944[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-02-28 11:07:02,724[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 13.417 seconds (JVM running for 17.871)[0;39m 
  
