@@ -24,6 +24,8 @@ For simplification lets follow the register functionality throughout the system.
 
 -->The user visits the url /register.
 Here the user can fill out the form with the necessary information.
+![register](https://user-images.githubusercontent.com/28272254/53576663-7fed1600-3b74-11e9-9846-65ec9039320c.PNG)
+
 
 
 ### Contributing
