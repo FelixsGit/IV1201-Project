@@ -1,4 +1,4 @@
-Travis: [![Build Status](https://travis-ci.org/FelixsGit/IV1201-Project.svg?branch=master)](https://travis-ci.org/FelixsGit/IV1201-Project)
+[![Build Status](https://travis-ci.org/FelixsGit/IV1201-Project.svg?branch=master)](https://travis-ci.org/FelixsGit/IV1201-Project)
 
 ## RecruitmentSystem
 
@@ -11,11 +11,15 @@ and apply for jobs. Likewise the 'company employees' can login and review these 
 This project was a mandatory requirement in passing the course. For higer grades additional options and 
 functionality could be added, for example secruity, testing and logging. 
 
-### Table of Contents
-
 ### Installation
+To install this project one can simply clone or download it by clicking the green box with the text 'clone or download'.
+This project uses Spring with maven repositories and with travis CI for integration testing. Besides that the development 
+was conducted with a local mariaDB database. Therefore it is important for forking or cloning users to change these variables
+to match their own development tools.  
 
 ### Usage
+
+
 
 ### Contributing
 
