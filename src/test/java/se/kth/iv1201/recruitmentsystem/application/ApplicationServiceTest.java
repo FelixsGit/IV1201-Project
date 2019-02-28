@@ -79,6 +79,26 @@ public class ApplicationServiceTest implements TestExecutionListener {
     }
 
     @Test
+    void testGetApplications() throws UserException, ParseException, ApplicationException {
+        startNewTransaction();
+        String testChosenCompetence = "Korvgrillning";
+        String testFromDate = "2019-04-26";
+        String testToDate = "2020-02-25";
+        String testYearsOfExperience = "1.25";
+        String testUsername = "felixTester";
+        applicationService.createPerson(
+                "testName", "testSurname", "19950417-1252", "FelixTestEmail@test.com", "testPassword", Role.APPLICANT, testUsername);
+        applicationService.createApplication(testChosenCompetence, testFromDate, testToDate, testYearsOfExperience, testUsername);
+        startNewTransaction();
+        List<ApplicationDTO> applicationDTOS = applicationService.getAllApplications();
+        assertNotNull(applicationDTOS);
+        ApplicationDTO testSubjectDTO = applicationDTOS.get(0);
+        assertThat(testSubjectDTO.getAuthor(), is(testUsername));
+        assertThat(testSubjectDTO.getCompetence(), is(testChosenCompetence));
+        assertThat(testSubjectDTO.getYearsOfExperience(), is(testYearsOfExperience));
+    }
+
+    @Test
     void testCreateApplication() throws UserException, ParseException, ApplicationException {
         startNewTransaction();
         String testChosenCompetence = "Korvgrillning";
