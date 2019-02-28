@@ -22,7 +22,9 @@ The webpage are straight forward to understand and could be understood by englis
 the framework thymeleaf for generating views. Another framework that are beeing used are JPA for the server database communication. Authentication and Authorization are handled by spring security, and logging are handled by Spring logger. To fully understand the application one needs basic knowledge in these framework. 
 For simplification lets follow the register functionality throughout the system.
 
--->The user visits the url /register. Here the user can fill out the form with the necessary information.
+-->The user visits the url /register.
+Here the user can fill out the form with the necessary information.
+
 
 ### Contributing
 
