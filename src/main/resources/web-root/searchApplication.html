@@ -8,29 +8,29 @@
 <main layout:fragment="content">
 
     <div th:if="${updateAccountForm.email}">
-        <p>Your account seems to be missing an email address</p>
-        <p>Please type in your email address here(You only need to do this once).</p>
+        <p th:text="#{search-app.email.missing}">Your account seems to be missing an email address</p>
+        <p th:text="#{search-app.email.input}">Please type in your email address here(You only need to do this once).</p>
         <input type="text"/>
         <br>
         <input type="submit" value="send" />
     </div>
     <div th:if="${updateAccountForm.ssn}">
-        <p>Your account seems to be missing a Personal Registration Number</p>
-        <p>Please type in your Personal Registration Number here(You only need to do this once).</p>
+        <p th:text="#{search-app.ssn.missing}">Your account seems to be missing a Personal Registration Number</p>
+        <p th:text="#{search-app.ssn.input}">Please type in your Personal Registration Number here(You only need to do this once).</p>
         <input type="text"/>
         <br>
         <input type="submit" value="send" />
     </div>
-    <p>These are all the applications!</p>
+    <p th:text="#{search-app.applications}">These are all the applications!</p>
     <table th:field="*{applicationDTO}">
         <ul th:each="applicationDTO : ${searchApplicationForm.applicationDTOList}">
             <br>
             <div>
-                <li th:text="'Author: ' + ${applicationDTO.getAuthor()}" >Author: </li>
-                <li th:text="'Competence: ' + ${applicationDTO.getCompetence()}" >Competence: </li>
-                <li th:text="'Can work from: ' + ${applicationDTO.getFromDate()}" >Can work from: </li>
-                <li th:text="'Can work to: ' + ${applicationDTO.getToDate()}" >Can work to: </li>
-                <li th:text="'Years of experience: ' + ${applicationDTO.getYearsOfExperience()}" >Years of experience: </li>
+                <li th:text="#{search-app.app.author} + ${applicationDTO.getAuthor()}" >Author: </li>
+                <li th:text="#{search-app.app.competence} + ${applicationDTO.getCompetence()}" >Competence: </li>
+                <li th:text="#{search-app.app.from-date} + ${applicationDTO.getFromDate()}" >Can work from: </li>
+                <li th:text="#{search-app.app.to-date} + ${applicationDTO.getToDate()}" >Can work to: </li>
+                <li th:text="#{search-app.app.exp} + ${applicationDTO.getYearsOfExperience()}" >Years of experience: </li>
             </div>
             <br>
         </ul>
