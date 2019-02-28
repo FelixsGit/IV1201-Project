@@ -81,7 +81,8 @@ public PersonDTO createPerson(String name, String surname, String ssn, String em
         return person;
     }
 ```
-By doing it like this one could easily add on more functionality in a quick and easy way.
+**This is one way to use our application and or add on more functionality.*
+**There are plenty more of functionality in the application, we recommend that you look through the code and the existing JavaDoc for a greater understanding**
 
 ### Contributing
 We perfer a dm if you are willing to contribute to this project.
