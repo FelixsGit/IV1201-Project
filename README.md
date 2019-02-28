@@ -14,12 +14,15 @@ functionality could be added, for example secruity, testing and logging.
 ### Installation
 To install this project one can simply clone or download it by clicking the green box with the text 'clone or download'.
 This project uses Spring with maven repositories and Travis CI for integration testing. Besides that the development 
-was conducted with a local mariaDB database. Therefore it is important for forking or cloning users to change the affected 
+was conducted with a local mariaDB database running MYSQL. Therefore it is important for forking or cloning users to change the affected 
 variables to match their own environment-configuration. This is done in the Travis.yml and in the Application.properties files. 
 
 ### Usage
+The webpage are straight forward to understand and could be understood by english and swedish reading users. The application are using
+the framework thymeleaf for generating views. Another framework that are beeing used are JPA for the server database communication. Authentication and Authorization are handled by spring security, and logging are handled by Spring logger. To fully understand the application one needs basic knowledge in these framework. 
+For simplification lets follow the register functionality throughout the system.
 
-
+-->The user visits the url /register. Here the user can fill out the form with the necessary information.
 
 ### Contributing
 
