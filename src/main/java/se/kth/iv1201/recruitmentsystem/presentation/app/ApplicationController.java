@@ -262,7 +262,7 @@ public class ApplicationController {
         try {
             applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
                      applicationForm.getYearsOfExperience(), request.getUserPrincipal().getName());
-        } catch (UserException | ApplicationException | ParseException exception) {
+        } catch (ApplicationException | ParseException exception) {
             applicationErrorHandling(exception, model);
         }
         model.addAttribute(new ApplicationForm());

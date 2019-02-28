@@ -64,7 +64,7 @@ public class ApplicationService {
      * @throws ParseException Exception of parsing fails
      * @throws ApplicationException Exception if the entered competence do not exist in the db, or if something goes wrong.
      */
-    public void createApplication(String chosenCompetence, String fromDate, String toDate, String yearsOfExperience, String username) throws ParseException, UserException, ApplicationException {
+    public void createApplication(String chosenCompetence, String fromDate, String toDate, String yearsOfExperience, String username) throws ParseException, ApplicationException {
         Person person = personRepository.findPersonByUsername(username);
         if(person == null) {
             throw new ApplicationException("Person with username " + username + " can not be found in database");
