@@ -26,7 +26,10 @@ For simplification lets follow the register functionality throughout the system.
 Here the user can fill out the form with the necessary information.
 ![register](https://user-images.githubusercontent.com/28272254/53576663-7fed1600-3b74-11e9-9846-65ec9039320c.PNG)
 
-If the validaton is passed the user is sent to the application using this form. 
+-->The information filled in by the user gets saved in an RegistrationForm Object
+Found here: https://github.com/FelixsGit/IV1201-Project/blob/master/src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/RegistrationForm.java
+
+-->The following method, seen below in the ApplicationController class will then be invoked.  
 
 ```Java
 @PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
@@ -47,12 +50,33 @@ If the validaton is passed the user is sent to the application using this form.
         return showLoginView(model);
     }
 ```
+-->This method makes the appropriate call to the ApplicationService class in the service layer which then calls the repository needed to enter the information into the database seen here:
 
--->The information filled in by the user gets saved in an RegistrationForm Object
-Found here: https://github.com/FelixsGit/IV1201-Project/blob/master/src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/RegistrationForm.java
+```Java
+public PersonDTO createPerson(String name, String surname, String ssn, String email,
+                                  String password, String roleName, String username) throws UserException {
+        Role role = roleRepository.findRoleByName(roleName);
+        if(role == null)
+            throw new UserException("Role name " + roleName + " does not exist in database.");
 
--->In the ApplicationController class there is a @PostMapping method that gets called when the user presses the button to register.
-This method makes the appropriate call to the applicationService class in the service layer which then calls the repository needed to enter the information into the database. 
+        if(personRepository.findPersonByUsername(username) != null)
+            throw new UserException("Username " + username + " is already taken.");
+
+        if(personRepository.findPersonByEmail(email) != null)
+            throw new UserException("Email " + email + " is already in use.");
+
+        if(personRepository.findPersonBySsn(ssn) != null)
+            throw new UserException("SSN " + ssn + " is already registered.");
+
+        Person person = new Person(name, surname, ssn, email, password, role, username);
+        try {
+            personRepository.save(person);
+        } catch (Exception exception) {
+            throw new UserException("Something went wrong when saving profile in database");
+        }
+        return person;
+    }
+```
 
 
 
