@@ -13,7 +13,7 @@ functionality could be added, for example secruity, testing and logging.
 
 ### Installation
 To install this project one can simply clone or download it by clicking the green box with the text 'clone or download'.
-This project uses Spring with maven repositories and Travis CI for integration testing. Besides that the development 
+This project uses Spring with maven dependencies and Travis CI for integration testing. Besides that the development 
 was conducted with a local mariaDB database running MYSQL. Therefore it is important for forking or cloning users to change the affected 
 variables to match their own environment-configuration. This is done in the Travis.yml and in the Application.properties files. 
 
