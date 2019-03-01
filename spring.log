@@ -1,116 +1,102 @@
-[1;32m2019-02-28 12:14:31,132[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 19728 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-01 12:58:22,697[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-IJMVNPD with PID 16376 (started by Joey in C:\Users\Joey\Documents\Skola\Kurser\Design of Global Applications (IV1201)\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:14:31,184[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-01 12:58:22,722[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:14:31,184[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-01 12:58:22,724[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:14:47,730[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 17.844 seconds (JVM running for 20.573)[0;39m 
+[1;32m2019-03-01 12:58:28,838[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 7.177 seconds (JVM running for 9.522)[0;39m 
  
-[1;32m2019-02-28 12:18:09,019[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [387] milliseconds.[0;39m 
+[1;32m2019-03-01 13:00:26,752[0;39m WARN [http-nio-8080-exec-2] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [203] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:18:09,107[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:61] [1;35mCall to default after login view.[0;39m 
+[1;32m2019-03-01 13:00:26,780[0;39m DEBUG [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 401[0;39m 
  
-[1;32m2019-02-28 12:19:23,107[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-01 13:01:10,381[0;39m WARN [http-nio-8080-exec-3] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:21:33,872[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
+[1;32m2019-03-01 13:01:53,711[0;39m WARN [http-nio-8080-exec-4] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:22:00,799[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:199] [1;35mPost of registration data.[0;39m 
+[1;32m2019-03-01 13:02:04,412[0;39m DEBUG [http-nio-8080-exec-5] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 404[0;39m 
  
-[1;32m2019-02-28 12:22:00,803[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:200] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.RegistrationForm@636eb76[0;39m 
+[1;32m2019-03-01 13:03:10,744[0;39m WARN [http-nio-8080-exec-9] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:22:00,927[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-01 13:03:33,539[0;39m WARN [http-nio-8080-exec-10] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:22:12,151[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:61] [1;35mCall to default after login view.[0;39m 
+[1;32m2019-03-01 13:03:44,951[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-IJMVNPD with PID 22896 (started by Joey in C:\Users\Joey\Documents\Skola\Kurser\Design of Global Applications (IV1201)\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:22:12,175[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 13:03:44,958[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:22:13,998[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-01 13:03:44,960[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:22:13,998[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@5eee2a94[0;39m 
+[1;32m2019-03-01 13:03:50,061[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 5.732 seconds (JVM running for 7.106)[0;39m 
  
-[1;32m2019-02-28 12:22:14,002[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 13:03:56,291[0;39m WARN [http-nio-8080-exec-2] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:22:21,811[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-01 14:10:11,143[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:50] [1;35mStarting ApplicationServiceTest on DESKTOP-IJMVNPD with PID 17120 (started by Joey in C:\Users\Joey\Documents\Skola\Kurser\Design of Global Applications (IV1201)\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:22:21,815[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@6a1251e7[0;39m 
+[1;32m2019-03-01 14:10:11,145[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:22:29,764[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:10:11,148[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:25:04,495[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:10:19,903[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.application.ApplicationServiceTest[0;39m [StartupInfoLogger.java:59] [1;35mStarted ApplicationServiceTest in 9.356 seconds (JVM running for 11.0)[0;39m 
  
-[1;32m2019-02-28 12:25:23,531[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 11568 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-01 14:10:39,296[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:83] [1;35mCall to context root.[0;39m 
  
-[1;32m2019-02-28 12:25:23,531[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-01 14:10:39,882[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:25:23,531[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-01 14:10:41,433[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
  
-[1;32m2019-02-28 12:25:33,721[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 11.054 seconds (JVM running for 15.382)[0;39m 
+[1;32m2019-03-01 14:10:42,693[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:199] [1;35mPost of registration data.[0;39m 
  
-[1;32m2019-02-28 12:25:43,877[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [735] milliseconds.[0;39m 
+[1;32m2019-03-01 14:10:42,694[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:200] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.RegistrationForm@71bbbb9f[0;39m 
  
-[1;32m2019-02-28 12:25:44,200[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-01 14:10:42,705[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:25:52,318[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-01 14:10:43,210[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:199] [1;35mPost of registration data.[0;39m 
  
-[1;32m2019-02-28 12:26:00,210[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
+[1;32m2019-03-01 14:10:43,211[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:200] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.RegistrationForm@489ec791[0;39m 
  
-[1;32m2019-02-28 12:26:31,061[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:199] [1;35mPost of registration data.[0;39m 
+[1;32m2019-03-01 14:10:59,359[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:160] [1;35mCall to handle application view.[0;39m 
  
-[1;32m2019-02-28 12:26:31,061[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:200] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.RegistrationForm@61381009[0;39m 
+[1;32m2019-03-01 14:11:00,684[0;39m TRACE [main] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
  
-[1;32m2019-02-28 12:26:31,293[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-01 14:13:05,287[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-IJMVNPD with PID 4368 (started by Joey in C:\Users\Joey\Documents\Skola\Kurser\Design of Global Applications (IV1201)\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:26:34,454[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:13:05,290[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:26:43,290[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-01 14:13:05,291[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:26:43,294[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@47dc4f3e[0;39m 
+[1;32m2019-03-01 14:13:10,164[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 5.515 seconds (JVM running for 7.041)[0;39m 
  
-[1;32m2019-02-28 12:35:06,526[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 12236 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-01 14:13:21,153[0;39m WARN [http-nio-8080-exec-2] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:35:06,526[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-01 14:13:45,020[0;39m WARN [http-nio-8080-exec-3] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [203] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:35:06,526[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-01 14:13:45,042[0;39m DEBUG [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 401[0;39m 
  
-[1;32m2019-02-28 12:35:15,881[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 10.12 seconds (JVM running for 14.417)[0;39m 
+[1;32m2019-03-01 14:14:10,583[0;39m WARN [http-nio-8080-exec-4] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:35:34,501[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [687] milliseconds.[0;39m 
+[1;32m2019-03-01 14:14:57,689[0;39m WARN [http-nio-8080-exec-5] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
-[1;32m2019-02-28 12:35:34,653[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-01 14:15:59,554[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-IJMVNPD with PID 26948 (started by Joey in C:\Users\Joey\Documents\Skola\Kurser\Design of Global Applications (IV1201)\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:35:46,187[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:15:59,557[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:35:53,100[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-01 14:15:59,558[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:35:53,100[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@50e72177[0;39m 
+[1;32m2019-03-01 14:16:03,762[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 5.632 seconds (JVM running for 7.611)[0;39m 
  
-[1;32m2019-02-28 12:35:56,983[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:16:08,931[0;39m WARN [http-nio-8080-exec-2] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [135] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:38:35,553[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-01 14:17:25,545[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-IJMVNPD with PID 3420 (started by Joey in C:\Users\Joey\Documents\Skola\Kurser\Design of Global Applications (IV1201)\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:38:35,557[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@2765930c[0;39m 
+[1;32m2019-03-01 14:17:25,552[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:38:38,148[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:17:25,553[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:51:43,377[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 9672 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-01 14:17:33,726[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 9.579 seconds (JVM running for 11.448)[0;39m 
  
-[1;32m2019-02-28 12:51:43,408[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-01 14:17:41,161[0;39m WARN [http-nio-8080-exec-2] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [227] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:51:43,408[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-01 14:17:41,182[0;39m DEBUG [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 401[0;39m 
  
-[1;32m2019-02-28 12:51:52,089[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 9.321 seconds (JVM running for 11.04)[0;39m 
- 
-[1;32m2019-02-28 12:52:04,164[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [691] milliseconds.[0;39m 
- 
-[1;32m2019-02-28 12:52:04,252[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
- 
-[1;32m2019-02-28 12:52:11,166[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:124] [1;35mCall to application view.[0;39m 
- 
-[1;32m2019-02-28 12:52:20,179[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:265] [1;35mPost user application data.[0;39m 
- 
-[1;32m2019-02-28 12:52:20,179[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:266] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@a5817c3[0;39m 
- 
-[1;32m2019-02-28 12:52:20,346[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:189] [1;35mUser posted application[0;39m 
- 
-[1;32m2019-02-28 12:52:22,138[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:124] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-01 14:17:50,098[0;39m WARN [http-nio-8080-exec-3] [1;31morg.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver[0;39m [AbstractHandlerExceptionResolver.java:194] [1;35mResolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported][0;39m 
  
