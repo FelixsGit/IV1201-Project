@@ -1,6 +1,7 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app.rest;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.security.web.savedrequest.RequestCache;
@@ -19,8 +20,14 @@ import java.io.IOException;
  * which does not make sense for the RESTful server.
  */
 @Component
-public class RestSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+public class RestSuccessHandler implements AuthenticationSuccessHandler {
 
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+        // We do not need to do anything extra on REST authentication success, because there is no page to redirect to
+    }
+
+    /*
     private RequestCache requestCache = new HttpSessionRequestCache();
 
     @Override
@@ -53,5 +60,7 @@ public class RestSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     public void setRequestCache(RequestCache requestCache) {
         this.requestCache = requestCache;
     }
+
+    */
 
 }

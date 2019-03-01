@@ -1,0 +1,42 @@
+<web-app metadata-complete="true" version="2.5"
+         xmlns:security="http://www.springframework.org/schema/security"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xmlns:beans="http://www.springframework.org/schema/beans">
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/api/*</url-pattern>
+    </filter-mapping>
+
+    <fglobal-method-security pre-post-annotations="enabled"/>
+    (1)
+
+    <http pattern="/api/login" security="none"/>
+    (2)
+    <http pattern="/api/signup" security="none"/>
+
+    <http pattern="/api/**" entry-point-ref="restAuthenticationEntryPoint" create-session="stateless">(3)
+        <csrf disabled="true"/>
+        (4)
+        <custom-filter before="FORM_LOGIN_FILTER" ref="jwtAuthenticationFilter"/>
+        (5)
+    </http>
+
+    <beans:bean id="jwtAuthenticationFilter" class="com.toptal.travelplanner.security.JwtAuthenticationFilter">(6)
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+        <beans:property name="authenticationSuccessHandler" ref="jwtAuthenticationSuccessHandler"/>
+        (7)
+    </beans:bean>
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider ref="jwtAuthenticationProvider"/>
+        (8)
+    </authentication-manager>
+
+</web-app>
