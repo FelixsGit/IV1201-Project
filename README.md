@@ -1,45 +1,126 @@
 [![Build Status](https://travis-ci.org/FelixsGit/IV1201-Project.svg?branch=master)](https://travis-ci.org/FelixsGit/IV1201-Project)
 
-## Github workflow
+## RecruitmentSystem
 
-### Getting started
+### Description
+RecruitmentSystem is a project developed for the KTH course Design of Global Application(IV1201). 
+In short this program is a 'recruitment-system' used by a 'amusementpark company'. 
+It is a full-stack application where the user interface is presented as a webpage. Here applicants can for example create accounts, login 
+and apply for jobs. Likewise the 'company employees' can login and review these applications.
 
-Clone the repository using an HTTPS or SSH URL obtained from the green button on the main page of the repo.
+This project was a mandatory requirement in passing the course. For higer grades additional options and 
+functionality could be added, for example secruity, testing and logging. 
 
-`git clone <URL>`
+### Installation
+To install this project one can simply clone or download it by clicking the green box with the text 'clone or download'.
+This project uses Spring with maven dependencies and Travis CI for integration testing. Besides that the development 
+was conducted with a local mariaDB database running MYSQL. Therefore it is important for forking or cloning users to change the affected 
+variables to match their own environment-configuration. This is done in the Travis.yml and in the Application.properties files. 
 
-You will probably only need to do this step once.
+### Usage
+The webpage are straight forward to understand and could be understood by english and swedish reading users. 
 
-### Creating a branch
+The application are using the framework thymeleaf for generating views. Another framework that are beeing used are JPA for the server database communication. Authentication and Authorization are handled by spring security, and logging are handled by Spring logger. To fully understand the application one needs basic knowledge in these framework.
 
-When you have decided what to start working on, it is time to make a new branch for your work. First, make sure you are on the master branch.
+**For simplification lets follow the register functionality throughout the system.**
 
-`git checkout master`
+-->The user visits the url /register.
+Here the user can fill out the form with the necessary information.
+![register](https://user-images.githubusercontent.com/28272254/53576663-7fed1600-3b74-11e9-9846-65ec9039320c.PNG)
 
-Second, fetch any remote changes that might have occurred since last time you fetched.
+-->The information filled in by the user gets saved in an RegistrationForm Object
+Found here: 
 
-`git fetch`
+https://github.com/FelixsGit/IV1201-Project/blob/master/src/main/java/se/kth/iv1201/recruitmentsystem/presentation/app/RegistrationForm.java
 
-`git status`
+-->The following method, seen below in the ApplicationController class will then be invoked.  
 
-If it turns out that your local master is behind the remote master, you should update your local master with the pull command.
+```Java
+@PostMapping(DEFAULT_PAGE_URL + REGISTER_PAGE_URL)
+    public String registerUser(@Valid @ModelAttribute RegistrationForm registrationForm, BindingResult bindingResult, Model model) {
+        LOGGER.trace("Post of registration data.");
+        LOGGER.trace("Form data: " + registrationForm);
+        if(bindingResult.hasErrors()) {
+            return REGISTER_PAGE_URL;
+        }
+        try {
+            applicationService.createPerson(registrationForm.getName(), registrationForm.getSurname(), registrationForm.getSsn(),
+                    registrationForm.getEmail(), registrationForm.getPassword(), Role.APPLICANT, registrationForm.getUsername());
+            model.addAttribute(new RegistrationForm());
+        } catch (UserException exception) {
+            registrationErrorHandling(exception, model);
+            return REGISTER_PAGE_URL;
+        }
+        return showLoginView(model);
+    }
+```
+-->This method makes the appropriate call to the ApplicationService class in the service layer which then calls the repository needed to enter the information into the database seen here:
 
-`git pull`
+```Java
+public PersonDTO createPerson(String name, String surname, String ssn, String email,
+                                  String password, String roleName, String username) throws UserException {
+        Role role = roleRepository.findRoleByName(roleName);
+        if(role == null)
+            throw new UserException("Role name " + roleName + " does not exist in database.");
 
-Third, create a new branch with a descriptive name and check it out. This can be done with a single command.
+        if(personRepository.findPersonByUsername(username) != null)
+            throw new UserException("Username " + username + " is already taken.");
 
-`git checkout -b <new branch name>`
+        if(personRepository.findPersonByEmail(email) != null)
+            throw new UserException("Email " + email + " is already in use.");
 
-As usual, you can use `git status` to make sure that everything worked correctly.
+        if(personRepository.findPersonBySsn(ssn) != null)
+            throw new UserException("SSN " + ssn + " is already registered.");
 
-### Working on a branch
+        Person person = new Person(name, surname, ssn, email, password, role, username);
+        try {
+            personRepository.save(person);
+        } catch (Exception exception) {
+            throw new UserException("Something went wrong when saving profile in database");
+        }
+        return person;
+    }
+```
+**This is one way to use our application and or add on more features on your own.**
 
-We have only one guideline so far for commits in this repo:
+**There are plenty of other functionality in the application, we recommend that you look through the code and the existing JavaDoc for a greater understanding**
 
-- Commit messages must be in english, present tense, and they should be short and descriptive.
+### Contributing
+We perfer a dm if you are willing to contribute to this project.
 
-Here is some general advice:
+### Credits
+The developers listed below all took part in this project.
 
-- Fetch often! Fetching is safe and does not change your branch, it just checks if changes have been made to the remote. Then you can decide if you want to merge/pull those changes into your local branch (you generally do).
-- Commit often! Commit messages are great for self documentation.
-- Avoid commiting irrelevant changes! I.e. try to only commit the files that you actually worked on. Use `git status` and follow the instructions to select which files to include in a commit.
+Adrian Zander 
+https://github.com/Acander
+
+Joey Öhman 
+https://github.com/JoeyOhman
+
+Felix Toppar
+https://github.com/FelixsGit
+
+### License
+MIT License
+
+Copyright (c) [2019] [RecruitmentSystem]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
