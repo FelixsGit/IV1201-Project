@@ -51,8 +51,16 @@ public class ApplicationService {
      * Finds a lists of competences from the db
      * @return a list of competences from the db
      */
-    public List<Competence> findCompetences(){
-        return competenceRepository.findAll();
+    public List<Competence> findCompetences(String lang){
+        List<Competence> competences = new ArrayList<>();
+        if (lang.equals("en")) {
+
+        } else if (lang.equals("sv")){
+
+        } else {
+
+        }
+        return competences;
     }
 
     /**
