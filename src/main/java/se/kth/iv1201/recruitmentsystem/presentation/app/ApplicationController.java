@@ -32,6 +32,7 @@ public class ApplicationController {
     public static final String APPLICATION_PAGE_URL = "apply";
     public static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
     public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication";
+//    public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication"
     public static final String LOGIN_OK_URL = "loginOk";
     public static final String UPDATE_ACCOUNT_URL = "updateAccount";
     public static final String APPLICATION_SENT_URL = "applicationSent";
@@ -133,11 +134,16 @@ public class ApplicationController {
             model.addAttribute(new UpdateAccountForm());
             model.addAttribute(new CompetenceForm());
         }
-        List<Competence> competences = applicationService.findCompetences();
+        String lang = request.getQueryString();
+        List<Competence> competences = applicationService.findCompetences(parseLang(lang));
         competenceForm.setCompetences(competences);
         model.addAttribute("competenceForm", competenceForm);
         checkForNullValues(updateAccountForm, model, request);
         return APPLICATION_PAGE_URL;
+    }
+
+    private String parseLang(String language) {
+        return language.substring(4, 6);
     }
 
     /**
