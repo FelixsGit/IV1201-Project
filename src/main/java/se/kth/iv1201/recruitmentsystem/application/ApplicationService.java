@@ -98,7 +98,7 @@ public class ApplicationService {
      * The data is stored in an DTO object.
      * @return A list of ApplicationDTO objects
      */
-    public List<ApplicationDTO> getAllApplications() {
+    public List<ApplicationDTO> getAllApplications(){
         /**if (personRepository.findAll() != null) {
             throw new UserException("Database is empty");
         }*/
