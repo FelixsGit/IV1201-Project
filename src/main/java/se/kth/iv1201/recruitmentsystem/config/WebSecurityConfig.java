@@ -1,24 +1,12 @@
 package se.kth.iv1201.recruitmentsystem.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-<<<<<<< HEAD
-import org.springframework.core.annotation.Order;
-=======
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
->>>>>>> feature/custom-login-error-msg
+import org.springframework.core.annotation.Order;;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
-import se.kth.iv1201.recruitmentsystem.security.CustomUserDetailsService;
 
 /**
  * This class is responsible for granting different authorities to different url's.
