@@ -64,6 +64,12 @@ public class ApplicationController {
         return "redirect:"+ SEARCH_APPLICATION_PAGE_URL;
     }
 
+    /**
+     * A get request for the updateAccount page. Used by users who either does not have a username
+     * or a password.
+     * @param model
+     * @return Update Account page url.
+     */
     @GetMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
     public String showUpdateAccountView(Model model){
         LOGGER.trace("Call to update account view.");
@@ -152,7 +158,7 @@ public class ApplicationController {
 
     /**
      * A get request for the application page.
-     * @return TODO  functionality on this page
+     * @return Handle application page url
      */
     @GetMapping(DEFAULT_PAGE_URL + HANDLE_APPLICATION_PAGE_URL)
     public String showHandleApplicationView(Model model){
@@ -169,12 +175,12 @@ public class ApplicationController {
      * @param searchApplicationForm Content of the searchApplicationForm
      * @param model Model object that is used in the searchApplication page.
      * @param request HttpServletRequest object provided by spring
-     * @return TODO
+     * @return Search application page url
      */
     @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
-    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplicationForm searchApplicationForm, Model model, HttpServletRequest request){
+    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplication searchApplicationForm, Model model, HttpServletRequest request){
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
-            model.addAttribute(new SearchApplicationForm());
+            model.addAttribute(new SearchApplication());
         }
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);

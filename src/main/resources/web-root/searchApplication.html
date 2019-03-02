@@ -23,7 +23,7 @@
     </div>
     <p th:text="#{search-app.applications}">These are all the applications!</p>
     <table th:field="*{applicationDTO}">
-        <ul th:each="applicationDTO : ${searchApplicationForm.applicationDTOList}">
+        <ul th:each="applicationDTO : ${searchApplication.applicationDTOList}">
             <br>
             <div>
                 <li th:text="#{search-app.app.author} + ${applicationDTO.getAuthor()}" >Author: </li>

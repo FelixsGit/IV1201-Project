@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import se.kth.iv1201.recruitmentsystem.domain.Person;
+import se.kth.iv1201.recruitmentsystem.domain.PersonDTO;
 import se.kth.iv1201.recruitmentsystem.repository.PersonRepository;
 
 /**

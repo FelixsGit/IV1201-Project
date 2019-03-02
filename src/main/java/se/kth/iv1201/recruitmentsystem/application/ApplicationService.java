@@ -1,6 +1,7 @@
 package se.kth.iv1201.recruitmentsystem.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -97,12 +98,22 @@ public class ApplicationService {
      * The data is stored in an DTO object.
      * @return A list of ApplicationDTO objects
      */
-    public List<ApplicationDTO> getAllApplications(){
+    public List<ApplicationDTO> getAllApplications() {
+        /**if (personRepository.findAll() != null) {
+            throw new UserException("Database is empty");
+        }*/
         List<Person> persons = personRepository.findAll();
         List<ApplicationDTO> applicationDTOS = new ArrayList<>();
         for(int i = 0; i < persons.size(); i++ ){
             Person person = persons.get(i);
+            /**if (availabilityRepository.findAvailabilityByPerson(person) != null) {
+                throw new ApplicationException("Person does not have an availability");
+            }*/
             List<Availability> availabilities = availabilityRepository.findAvailabilitiesByPerson(person);
+
+            /**if(competenceProfileRepository.findCompetenceProfilesByPerson(person) != null) {
+                throw new ApplicationException("Competence profile not found for " + person.getUsername() +"in database");
+            }*/
             List<CompetenceProfile> competenceProfiles = competenceProfileRepository.findCompetenceProfilesByPerson(person);
             for(int j = 0; j < availabilities.size(); j++){
                 Availability availability = availabilities.get(j);

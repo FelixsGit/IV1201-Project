@@ -13,15 +13,11 @@ public class CompetenceProfile implements CompetenceProfileDTO {
     @Column(name = "competence_profile_id")
     private long competence_profile_id;
 
-    //@Column(name = "person")
-    // TODO reference? name?
     @NotNull(message = "{competence-profile.person.missing}")
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
 
-    //@Column(name = "competence")
-    // TODO reference? name?
     @NotNull(message = "{competence-profile.competence.missing}")
     @ManyToOne
     @JoinColumn(name = "competence_id")
