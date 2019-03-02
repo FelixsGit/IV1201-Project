@@ -23,7 +23,7 @@
             </div>
             <div class="error" th:if="${param.error} "
                  th:with="errorMsg=${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
-                <span th:text="${errorMsg}"></span>
+                <span th:text="#{AbstractUserDetailsAuthenticationProvider.badCredentials}"></span>
             </div>
             <input type="submit" th:value="#{login.submit}" />
             <br>
