@@ -135,15 +135,18 @@ public class ApplicationController {
             model.addAttribute(new CompetenceForm());
         }
         String lang = request.getQueryString();
+        if(lang == null){
+            competenceForm.setLang("en");
+        }else{
+            lang = parseLang(lang);
+            if(lang.equals("en")) {
+                competenceForm.setLang("en");
+            }else if(lang.equals("sv")) {
+                competenceForm.setLang("sv");
+            }
+        }
         List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
-        if (lang.equals("en")) {
-            competenceForm.setLang("en");
-        } else if (lang.equals("sv")){
-            competenceForm.setLang("sv");
-        } else {
-            competenceForm.setLang("en");
-        }
         competenceForm.setCompetences(competences);
         model.addAttribute("competenceForm", competenceForm);
         checkForNullValues(updateAccountForm, model, request);
