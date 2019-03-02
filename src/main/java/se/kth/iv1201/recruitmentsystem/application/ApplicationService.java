@@ -12,6 +12,7 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -104,34 +105,37 @@ public class ApplicationService {
      * @return A list of ApplicationDTO objects
      */
     public List<ApplicationDTO> getAllApplications(){
-        /**if (personRepository.findAll() != null) {
-            throw new UserException("Database is empty");
-        }*/
-        List<Person> persons = personRepository.findAll();
-        List<ApplicationDTO> applicationDTOS = new ArrayList<>();
-        for(int i = 0; i < persons.size(); i++ ){
-            Person person = persons.get(i);
-            /**if (availabilityRepository.findAvailabilityByPerson(person) != null) {
-                throw new ApplicationException("Person does not have an availability");
-            }*/
-            List<Availability> availabilities = availabilityRepository.findAvailabilitiesByPerson(person);
 
-            /**if(competenceProfileRepository.findCompetenceProfilesByPerson(person) != null) {
-                throw new ApplicationException("Competence profile not found for " + person.getUsername() +"in database");
-            }*/
+        List<Person> persons = personRepository.findAll();
+        if(persons == null || persons.size() == 0)
+            return new LinkedList<>(); // Return empty list if no persons exist
+
+
+        return generateApplications(persons);
+    }
+
+    private List<ApplicationDTO> generateApplications(List<Person> persons) {
+        List<ApplicationDTO> applicationDTOS = new LinkedList<>();
+        for (Person person : persons) {
+            List<Availability> availabilities = availabilityRepository.findAvailabilitiesByPerson(person);
             List<CompetenceProfile> competenceProfiles = competenceProfileRepository.findCompetenceProfilesByPerson(person);
-            for(int j = 0; j < availabilities.size(); j++){
-                Availability availability = availabilities.get(j);
-                CompetenceProfile competenceProfile = competenceProfiles.get(j);
-                String author = person.getUsername();
-                String fromDate = availability.getFrom_date().toString().substring(0, 10);
-                String toDate = availability.getTo_date().toString().substring(0, 10);
-                String competence = competenceProfile.getCompetence().getName();
-                String yearsOfExperience = competenceProfile.getYears_of_experience().toString();
-                applicationDTOS.add(new ApplicationDTO(author, competence, fromDate, toDate, yearsOfExperience));
+
+            for (int i = 0; i < availabilities.size(); i++) {
+                Availability availability = availabilities.get(i);
+                CompetenceProfile competenceProfile = competenceProfiles.get(i);
+                applicationDTOS.add(generateApplication(person, availability, competenceProfile));
             }
         }
-        return applicationDTOS;
+        return  applicationDTOS;
+    }
+
+    private ApplicationDTO generateApplication(Person person, Availability availability, CompetenceProfile competenceProfile) {
+        String author = person.getUsername();
+        String fromDate = availability.getFrom_date().toString().substring(0, 10);
+        String toDate = availability.getTo_date().toString().substring(0, 10);
+        String competence = competenceProfile.getCompetence().getName();
+        String yearsOfExperience = competenceProfile.getYears_of_experience().toString();
+        return new ApplicationDTO(author, competence, fromDate, toDate, yearsOfExperience);
     }
 
     /**
