@@ -47,7 +47,8 @@ CREATE TABLE `availability` (
 
 CREATE TABLE `competence` (
   `competence_id` bigint(20) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `name` varchar(255) DEFAULT NULL,
+  `name_en` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
