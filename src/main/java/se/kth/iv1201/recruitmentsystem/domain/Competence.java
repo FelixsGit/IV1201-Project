@@ -34,8 +34,9 @@ public class Competence implements CompetenceDTO {
      * Creates new instance of Competence, reuse existing in database when possible!
      * @param name The name of the Competence.
      */
-    public Competence(String name) {
+    public Competence(String name, String nameEn) {
         this.name = name;
+        this.name = nameEn;
     }
 
     public long getCompetence_id() {

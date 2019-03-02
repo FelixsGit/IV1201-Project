@@ -78,7 +78,7 @@ public class CustomUserDetailsServiceTest implements TestExecutionListener {
                 .build();
         dbUtil.resetDB();
         Role role = roleRepository.findRoleByName(Role.APPLICANT);
-        roleRepository.save(role);
+        ///roleRepository.save(role);
         person = new Person("testName", "testSurname", "19950411-1111",
                 "test@te.se", "123", role, "testUsername");
         personRepository.save(person);

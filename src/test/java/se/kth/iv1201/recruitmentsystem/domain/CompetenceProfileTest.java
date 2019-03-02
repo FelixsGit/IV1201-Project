@@ -88,8 +88,7 @@ class CompetenceProfileTest implements TestExecutionListener {
     }
 
     private void createCompetence() {
-        competenceInstance = new Competence("Korv");
-        competenceRepository.save(competenceInstance);
+        competenceInstance = competenceRepository.findCompetenceByName("Korvgrillning");
     }
 
     private void createCompetenceProfile() {
