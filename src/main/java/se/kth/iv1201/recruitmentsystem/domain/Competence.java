@@ -18,6 +18,11 @@ public class Competence implements CompetenceDTO {
     @Column(name = "name")
     private String name;
 
+    @NotNull(message = "{competence.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{competence.name.invalid-char}")
+    @Column(name = "name_en")
+    private String name_en;
+
     /**
      * Required by JPA, do not use.
      */
@@ -47,5 +52,13 @@ public class Competence implements CompetenceDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getName_en() {
+        return name_en;
+    }
+
+    public void setName_en(String name_en) {
+        this.name_en = name_en;
     }
 }

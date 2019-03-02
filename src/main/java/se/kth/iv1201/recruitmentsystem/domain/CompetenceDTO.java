@@ -7,8 +7,13 @@ package se.kth.iv1201.recruitmentsystem.domain;
 public interface CompetenceDTO {
 
     /**
-     * @return The name of the competence.
+     * @return The name of the competence, in swedish.
      */
     String getName();
+
+    /**
+     * @return The name of the competence, in english.
+     */
+    String getName_en();
 
 }
