@@ -13,9 +13,20 @@ public class CompetenceForm {
         return competences;
     }
 
+
+
     public void setCompetences(List<Competence> competences) {
         this.competences = competences;
     }
 
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    private String lang;
     private List<Competence> competences;
 }

@@ -43,9 +43,13 @@
             <br>
             <p th:text="#{apply.field.expertise}">Choose the expertise you have the most of!</p>
             <select th:field="*{competence}">
-                <option th:each="competence : ${competenceForm.competences}"
+                <option th:if="${competenceForm.getLang() == 'sv'}" th:each="competence : ${competenceForm.competences}"
                         th:value="${competence.getName()}"
                         th:text="${competence.getName()}">
+                </option>
+                <option th:if="${competenceForm.getLang() == 'en'}" th:each="competence : ${competenceForm.competences}"
+                        th:value="${competence.getName_en()}"
+                        th:text="${competence.getName_en()}">
                 </option>
             </select>
             <br>
