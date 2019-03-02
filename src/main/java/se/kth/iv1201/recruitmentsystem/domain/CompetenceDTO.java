@@ -14,6 +14,6 @@ public interface CompetenceDTO {
     /**
      * @return The name of the competence, in english.
      */
-    String getName_en();
+    String getNameEn();
 
 }
