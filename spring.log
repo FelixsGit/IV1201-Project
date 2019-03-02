@@ -1,116 +1,1002 @@
-[1;32m2019-02-28 12:14:31,132[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 19728 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-02 12:04:51,990[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 11484 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:14:31,184[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-02 12:04:52,021[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:14:31,184[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-02 12:04:52,021[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:14:47,730[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 17.844 seconds (JVM running for 20.573)[0;39m 
+[1;32m2019-03-02 12:05:10,427[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 19.411 seconds (JVM running for 23.54)[0;39m 
  
-[1;32m2019-02-28 12:18:09,019[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [387] milliseconds.[0;39m 
+[1;32m2019-03-02 12:16:37,704[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 14304 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:18:09,107[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:61] [1;35mCall to default after login view.[0;39m 
+[1;32m2019-03-02 12:16:37,704[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:19:23,107[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-02 12:16:37,719[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:21:33,872[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
+[1;32m2019-03-02 12:16:48,486[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 11.662 seconds (JVM running for 17.293)[0;39m 
  
-[1;32m2019-02-28 12:22:00,799[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:199] [1;35mPost of registration data.[0;39m 
+[1;32m2019-03-02 12:16:57,230[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [761] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:22:00,803[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:200] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.RegistrationForm@636eb76[0;39m 
+[1;32m2019-03-02 12:16:57,278[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:82] [1;35mCall to context root.[0;39m 
  
-[1;32m2019-02-28 12:22:00,927[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-02 12:16:57,464[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:93] [1;35mCall to registration view.[0;39m 
  
-[1;32m2019-02-28 12:22:12,151[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:61] [1;35mCall to default after login view.[0;39m 
+[1;32m2019-03-02 12:17:03,167[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:22:12,175[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:17:15,899[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:22:13,998[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-02 12:17:59,296[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:22:13,998[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@5eee2a94[0;39m 
+[1;32m2019-03-02 12:21:20,333[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 9876 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:22:14,002[0;39m TRACE [http-nio-8080-exec-3] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:21:20,333[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:22:21,811[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-02 12:21:20,333[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:22:21,815[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@6a1251e7[0;39m 
+[1;32m2019-03-02 12:21:30,689[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 11.374 seconds (JVM running for 15.354)[0;39m 
  
-[1;32m2019-02-28 12:22:29,764[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:22:05,616[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [891] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:25:04,495[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:22:05,691[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:25:23,531[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 11568 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-02 12:22:13,486[0;39m TRACE [http-nio-8080-exec-5] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:25:23,531[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-02 12:25:04,091[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 4344 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:25:23,531[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-02 12:25:04,099[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:25:33,721[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 11.054 seconds (JVM running for 15.382)[0;39m 
+[1;32m2019-03-02 12:25:04,100[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:25:43,877[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [735] milliseconds.[0;39m 
+[1;32m2019-03-02 12:25:20,535[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 17.437 seconds (JVM running for 21.943)[0;39m 
  
-[1;32m2019-02-28 12:25:44,200[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-02 12:29:11,690[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [604] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:25:52,318[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-02 12:29:11,793[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:26:00,210[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:94] [1;35mCall to registration view.[0;39m 
+[1;32m2019-03-02 12:29:14,721[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:26:31,061[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:199] [1;35mPost of registration data.[0;39m 
+[1;32m2019-03-02 12:29:57,239[0;39m ERROR [http-nio-8080-exec-5] [1;31morg.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter[0;39m [AbstractAuthenticationProcessingFilter.java:221] [1;35mAn internal error occurred while trying to authenticate the user.[0;39m 
  
-[1;32m2019-02-28 12:26:31,061[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:200] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.RegistrationForm@61381009[0;39m 
+org.springframework.security.authentication.InternalAuthenticationServiceException: null
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:123)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:144)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:175)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:200)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:94)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.NullPointerException: null
+	at se.kth.iv1201.recruitmentsystem.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:39)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	... 42 common frames omitted
+[1;32m2019-03-02 12:29:57,254[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:26:31,293[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-02 12:30:00,399[0;39m ERROR [http-nio-8080-exec-9] [1;31morg.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter[0;39m [AbstractAuthenticationProcessingFilter.java:221] [1;35mAn internal error occurred while trying to authenticate the user.[0;39m 
  
-[1;32m2019-02-28 12:26:34,454[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+org.springframework.security.authentication.InternalAuthenticationServiceException: null
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:123)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:144)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:175)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:200)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:94)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.NullPointerException: null
+	at se.kth.iv1201.recruitmentsystem.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:39)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	... 42 common frames omitted
+[1;32m2019-03-02 12:30:00,433[0;39m TRACE [http-nio-8080-exec-10] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:26:43,290[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-02 12:30:40,935[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 17848 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:26:43,294[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@47dc4f3e[0;39m 
+[1;32m2019-03-02 12:30:40,950[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:35:06,526[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 12236 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-02 12:30:40,950[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:35:06,526[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-02 12:30:52,097[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 11.975 seconds (JVM running for 16.003)[0;39m 
  
-[1;32m2019-02-28 12:35:06,526[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-02 12:31:10,116[0;39m WARN [http-nio-8080-exec-2] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [678] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:35:15,881[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 10.12 seconds (JVM running for 14.417)[0;39m 
+[1;32m2019-03-02 12:31:10,186[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:35:34,501[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [687] milliseconds.[0;39m 
+[1;32m2019-03-02 12:31:13,086[0;39m ERROR [http-nio-8080-exec-2] [1;31morg.thymeleaf.TemplateEngine[0;39m [TemplateEngine.java:1136] [1;35m[THYMELEAF][http-nio-8080-exec-2] Exception processing template "login": Exception evaluating SpringEL expression: "session['SPRING_SECURITY_LAST_EXCEPTION'].message" (template: "login" - line 25, col 18)[0;39m 
  
-[1;32m2019-02-28 12:35:34,653[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:108] [1;35mCall to login view.[0;39m 
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session['SPRING_SECURITY_LAST_EXCEPTION'].message" (template: "login" - line 25, col 18)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardWithTagProcessor.doProcess(StandardWithTagProcessor.java:93)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'message' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 94 common frames omitted
+[1;32m2019-03-02 12:31:13,122[0;39m ERROR [http-nio-8080-exec-2] [1;31morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet][0;39m [DirectJDKLog.java:175] [1;35mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session['SPRING_SECURITY_LAST_EXCEPTION'].message" (template: "login" - line 25, col 18)] with root cause[0;39m 
  
-[1;32m2019-02-28 12:35:46,187[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'message' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardWithTagProcessor.doProcess(StandardWithTagProcessor.java:93)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[1;32m2019-03-02 12:31:13,156[0;39m DEBUG [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 500[0;39m 
  
-[1;32m2019-02-28 12:35:53,100[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-02 12:31:16,226[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:35:53,100[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@50e72177[0;39m 
+[1;32m2019-03-02 12:31:16,469[0;39m TRACE [http-nio-8080-exec-5] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:35:56,983[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:31:22,983[0;39m ERROR [http-nio-8080-exec-8] [1;31morg.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter[0;39m [AbstractAuthenticationProcessingFilter.java:221] [1;35mAn internal error occurred while trying to authenticate the user.[0;39m 
  
-[1;32m2019-02-28 12:38:35,553[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:260] [1;35mPost user application data.[0;39m 
+org.springframework.security.authentication.InternalAuthenticationServiceException: null
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:123)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:144)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:175)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:200)
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:94)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.NullPointerException: null
+	at se.kth.iv1201.recruitmentsystem.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:39)
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108)
+	... 42 common frames omitted
+[1;32m2019-03-02 12:31:23,000[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:38:35,557[0;39m TRACE [http-nio-8080-exec-7] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:261] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@2765930c[0;39m 
+[1;32m2019-03-02 12:32:20,722[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 15172 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:38:38,148[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:125] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:32:20,722[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:51:43,377[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 9672 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+[1;32m2019-03-02 12:32:20,722[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:51:43,408[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+[1;32m2019-03-02 12:32:37,706[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 17.976 seconds (JVM running for 21.776)[0;39m 
  
-[1;32m2019-02-28 12:51:43,408[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+[1;32m2019-03-02 12:39:33,576[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 17396 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:51:52,089[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 9.321 seconds (JVM running for 11.04)[0;39m 
+[1;32m2019-03-02 12:39:33,576[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
  
-[1;32m2019-02-28 12:52:04,164[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [691] milliseconds.[0;39m 
+[1;32m2019-03-02 12:39:33,576[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
  
-[1;32m2019-02-28 12:52:04,252[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+[1;32m2019-03-02 12:39:45,255[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 12.319 seconds (JVM running for 15.692)[0;39m 
  
-[1;32m2019-02-28 12:52:11,166[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:124] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:39:51,402[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [526] milliseconds.[0;39m 
  
-[1;32m2019-02-28 12:52:20,179[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:265] [1;35mPost user application data.[0;39m 
+[1;32m2019-03-02 12:39:51,549[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
  
-[1;32m2019-02-28 12:52:20,179[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:266] [1;35mForm data: se.kth.iv1201.recruitmentsystem.presentation.app.ApplicationForm@a5817c3[0;39m 
+[1;32m2019-03-02 12:47:13,480[0;39m DEBUG [background-preinit] [1;31morg.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator[0;39m [ResourceBundleMessageInterpolator.java:89] [1;35mLoaded expression factory via original TCCL[0;39m 
  
-[1;32m2019-02-28 12:52:20,346[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:189] [1;35mUser posted application[0;39m 
+[1;32m2019-03-02 12:47:13,668[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 2604 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
  
-[1;32m2019-02-28 12:52:22,138[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:124] [1;35mCall to application view.[0;39m 
+[1;32m2019-03-02 12:47:13,668[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-03-02 12:47:13,668[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-03-02 12:47:27,500[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 14.754 seconds (JVM running for 18.873)[0;39m 
+ 
+[1;32m2019-03-02 12:47:36,168[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [884] milliseconds.[0;39m 
+ 
+[1;32m2019-03-02 12:47:36,318[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:47:38,709[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:47:48,855[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:50:01,257[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 21500 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-03-02 12:50:01,257[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-03-02 12:50:01,257[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-03-02 12:50:07,617[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 7.36 seconds (JVM running for 11.541)[0;39m 
+ 
+[1;32m2019-03-02 12:50:24,525[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [450] milliseconds.[0;39m 
+ 
+[1;32m2019-03-02 12:50:24,577[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:50:26,304[0;39m ERROR [http-nio-8080-exec-1] [1;31morg.thymeleaf.TemplateEngine[0;39m [TemplateEngine.java:1136] [1;35m[THYMELEAF][http-nio-8080-exec-1] Exception processing template "login": Exception evaluating SpringEL expression: "session['SPRING_SECURITY_LAST_EXCEPTION'].message" (template: "login" - line 25, col 18)[0;39m 
+ 
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session['SPRING_SECURITY_LAST_EXCEPTION'].message" (template: "login" - line 25, col 18)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardWithTagProcessor.doProcess(StandardWithTagProcessor.java:93)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'message' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 94 common frames omitted
+[1;32m2019-03-02 12:50:26,313[0;39m ERROR [http-nio-8080-exec-1] [1;31morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet][0;39m [DirectJDKLog.java:175] [1;35mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "session['SPRING_SECURITY_LAST_EXCEPTION'].message" (template: "login" - line 25, col 18)] with root cause[0;39m 
+ 
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'message' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardWithTagProcessor.doProcess(StandardWithTagProcessor.java:93)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[1;32m2019-03-02 12:50:26,319[0;39m DEBUG [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 500[0;39m 
+ 
+[1;32m2019-03-02 12:50:28,952[0;39m TRACE [http-nio-8080-exec-4] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:50:29,171[0;39m TRACE [http-nio-8080-exec-5] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:50:33,345[0;39m TRACE [http-nio-8080-exec-9] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:52:31,640[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 6392 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-03-02 12:52:31,645[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-03-02 12:52:31,648[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-03-02 12:52:37,238[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 6.685 seconds (JVM running for 11.638)[0;39m 
+ 
+[1;32m2019-03-02 12:52:47,067[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [618] milliseconds.[0;39m 
+ 
+[1;32m2019-03-02 12:52:47,195[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:52:54,068[0;39m TRACE [http-nio-8080-exec-5] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 12:55:26,422[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 15600 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-03-02 12:55:26,437[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-03-02 12:55:26,437[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-03-02 12:55:27,437[0;39m WARN [main] [1;31morg.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext[0;39m [AbstractApplicationContext.java:554] [1;35mException encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'messageSource' defined in class path resource [se/kth/iv1201/recruitmentsystem/config/WebSecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=messageSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [se/kth/iv1201/recruitmentsystem/config/WebSecurityConfig.class]] for bean 'messageSource': There is already [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=recruitmentSystemConfig; factoryMethodName=messageSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [se/kth/iv1201/recruitmentsystem/config/RecruitmentSystemConfig.class]] bound.[0;39m 
+ 
+[1;32m2019-03-02 12:55:27,437[0;39m ERROR [main] [1;31morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m [LoggingFailureAnalysisReporter.java:42] [1;35m
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'messageSource', defined in class path resource [se/kth/iv1201/recruitmentsystem/config/WebSecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [se/kth/iv1201/recruitmentsystem/config/RecruitmentSystemConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+[0;39m 
+ 
+[1;32m2019-03-02 13:06:33,434[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 7044 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-03-02 13:06:33,439[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-03-02 13:06:33,441[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-03-02 13:06:42,974[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 10.531 seconds (JVM running for 14.274)[0;39m 
+ 
+[1;32m2019-03-02 13:06:49,631[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [676] milliseconds.[0;39m 
+ 
+[1;32m2019-03-02 13:06:49,679[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 13:06:52,566[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 13:06:55,607[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 13:46:17,173[0;39m WARN [HikariPool-1 housekeeper] [1;31mcom.zaxxer.hikari.pool.HikariPool[0;39m [HikariPool.java:766] [1;35mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m9s155ms679µs693ns).[0;39m 
+ 
+[1;32m2019-03-02 14:12:21,096[0;39m WARN [HikariPool-1 housekeeper] [1;31mcom.zaxxer.hikari.pool.HikariPool[0;39m [HikariPool.java:766] [1;35mHikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m3s921ms832µs56ns).[0;39m 
+ 
+[1;32m2019-03-02 14:32:24,386[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:50] [1;35mStarting RecruitmentSystemApplication on DESKTOP-1L7G4EE with PID 17720 (C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project\target\classes started by Felix in C:\Users\Felix\Documents\Arkitektur-och-design-av-globala-applikationer-IV1201\IV1201-Project)[0;39m 
+ 
+[1;32m2019-03-02 14:32:24,402[0;39m DEBUG [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:53] [1;35mRunning with Spring Boot v2.1.2.RELEASE, Spring v5.1.4.RELEASE[0;39m 
+ 
+[1;32m2019-03-02 14:32:24,402[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [SpringApplication.java:675] [1;35mNo active profile set, falling back to default profiles: default[0;39m 
+ 
+[1;32m2019-03-02 14:32:34,575[0;39m INFO [main] [1;31mse.kth.iv1201.recruitmentsystem.RecruitmentSystemApplication[0;39m [StartupInfoLogger.java:59] [1;35mStarted RecruitmentSystemApplication in 11.125 seconds (JVM running for 15.622)[0;39m 
+ 
+[1;32m2019-03-02 14:32:46,800[0;39m WARN [http-nio-8080-exec-1] [1;31morg.apache.catalina.util.SessionIdGeneratorBase[0;39m [DirectJDKLog.java:173] [1;35mCreation of SecureRandom instance for session ID generation using [SHA1PRNG] took [639] milliseconds.[0;39m 
+ 
+[1;32m2019-03-02 14:32:46,867[0;39m TRACE [http-nio-8080-exec-1] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 14:32:49,798[0;39m TRACE [http-nio-8080-exec-2] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 14:32:53,302[0;39m TRACE [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.app.ApplicationController[0;39m [ApplicationController.java:107] [1;35mCall to login view.[0;39m 
+ 
+[1;32m2019-03-02 14:32:53,386[0;39m ERROR [http-nio-8080-exec-6] [1;31morg.thymeleaf.TemplateEngine[0;39m [TemplateEngine.java:1136] [1;35m[THYMELEAF][http-nio-8080-exec-6] Exception processing template "login": Exception evaluating SpringEL expression: "AbstractUserDetailsAuthenticationProvider.badCredentials" (template: "login" - line 25, col 18)[0;39m 
+ 
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "AbstractUserDetailsAuthenticationProvider.badCredentials" (template: "login" - line 25, col 18)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardWithTagProcessor.doProcess(StandardWithTagProcessor.java:93)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:592)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'badCredentials' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 94 common frames omitted
+[1;32m2019-03-02 14:32:53,399[0;39m ERROR [http-nio-8080-exec-6] [1;31morg.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet][0;39m [DirectJDKLog.java:175] [1;35mServlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "AbstractUserDetailsAuthenticationProvider.badCredentials" (template: "login" - line 25, col 18)] with root cause[0;39m 
+ 
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'badCredentials' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:90)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:109)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:328)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:165)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125)
+	at org.thymeleaf.standard.processor.StandardWithTagProcessor.doProcess(StandardWithTagProcessor.java:93)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:592)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[1;32m2019-03-02 14:32:53,419[0;39m DEBUG [http-nio-8080-exec-6] [1;31mse.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers[0;39m [ExceptionHandlers.java:66] [1;35mHttp error handler gott Http status: 500[0;39m 
  
