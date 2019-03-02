@@ -1,11 +1,8 @@
 package se.kth.iv1201.recruitmentsystem.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -26,6 +23,7 @@ public class RestConfig extends WebSecurityConfigurerAdapter {
     private RestSuccessHandler restSuccessHandler;
 
     private SimpleUrlAuthenticationFailureHandler restFailureHandler = new SimpleUrlAuthenticationFailureHandler();
+    //private SimpleUrlAuthenticationFailureHandler restFailureHandler = new SimpleUrlAuthenticationFailureHandler();
 
     /**
      * This private class is responsible for supplying spring with a password encoder.
