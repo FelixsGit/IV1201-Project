@@ -33,7 +33,7 @@ public interface PersonRepository extends JpaRepository<Person, String> {
     /**
      * Returns the person with the specified email, or null if no person was found.
      * @param ssn The social security number of the person
-     * @return The specified person
+     * @return The specified person or null if no person has the specified ssn
      */
     Person findPersonBySsn(String ssn);
 

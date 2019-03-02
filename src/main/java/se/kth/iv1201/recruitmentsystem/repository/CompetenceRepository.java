@@ -25,7 +25,7 @@ public interface CompetenceRepository extends JpaRepository<Competence, String> 
 
     /**
      * Fetches a list of all the different competence.
-     * @return the list of all competence.
+     * @return the list of all competences.
      */
     @Override
     List<Competence> findAll();
