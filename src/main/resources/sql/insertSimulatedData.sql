@@ -9,9 +9,9 @@ VALUES (1, 2, '2014-02-23', '2014-05-25');
 INSERT INTO availability (availability_id, person_id, from_date, to_date)
 VALUES (2, 2, '2014-07-10', '2014-08-10');
 INSERT INTO competence (competence_id, name, name_en)
-VALUES (1, 'Korvgrillning', 'Hotdog chef');
-INSERT INTO competence (competence_id, name)
-VALUES (2, 'Karuselldrift', 'Carusell operator');
+VALUES (1, 'Korvgrillning', 'Hot dog chef');
+INSERT INTO competence (competence_id, name, name_en)
+VALUES (2, 'Karuselldrift', 'Carousel operator');
 INSERT INTO competence_profile (competence_profile_id, person_id,
 competence_id, years_of_experience)
 VALUES (1, 2, 1, 3.5);
