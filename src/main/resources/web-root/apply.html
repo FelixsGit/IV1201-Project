@@ -48,8 +48,8 @@
                         th:text="${competence.getName()}">
                 </option>
                 <option th:if="${competenceForm.getLang() == 'en'}" th:each="competence : ${competenceForm.competences}"
-                        th:value="${competence.getName_en()}"
-                        th:text="${competence.getName_en()}">
+                        th:value="${competence.getNameEn()}"
+                        th:text="${competence.getNameEn()}">
                 </option>
             </select>
             <br>

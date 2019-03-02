@@ -49,7 +49,6 @@ public class ApplicationService {
 
     /**
      * Finds a lists of competences from the db
-     * @param lang Language competences should be returned in
      * @return a list of competences from the db
      */
     public List<Competence> findCompetences(){
