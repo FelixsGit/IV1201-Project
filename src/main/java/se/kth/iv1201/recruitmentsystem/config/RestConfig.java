@@ -23,7 +23,6 @@ public class RestConfig extends WebSecurityConfigurerAdapter {
     private RestSuccessHandler restSuccessHandler;
 
     private SimpleUrlAuthenticationFailureHandler restFailureHandler = new SimpleUrlAuthenticationFailureHandler();
-    //private SimpleUrlAuthenticationFailureHandler restFailureHandler = new SimpleUrlAuthenticationFailureHandler();
 
     /**
      * This private class is responsible for supplying spring with a password encoder.
@@ -71,20 +70,4 @@ public class RestConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout();
     }
-
-    // **** Authentication server config
-    /*
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("joseph").password("123").roles("recruit", "USER");
-    }
-
-    @Override
-    @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
-    */
-    // ****
 }
