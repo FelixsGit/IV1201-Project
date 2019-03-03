@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -70,13 +69,16 @@ public class ApplicationService {
         if(person == null) {
             throw new ApplicationException("Person with username " + username + " can not be found in database");
         }
+
         Competence competence = competenceRepository.findCompetenceByName(chosenCompetence);
         if(competence == null){
             throw new ApplicationException("Competence " + chosenCompetence+ "could not be retrieved from database.");
         }
+
         Date from_date = convertToDate(fromDate);
         Date to_date = convertToDate(toDate);
         BigDecimal years_of_experience = new BigDecimal(yearsOfExperience);
+
         try {
             competenceProfileRepository.save(new CompetenceProfile(person, competence, years_of_experience));
             availabilityRepository.save(new Availability(person, from_date, to_date));
