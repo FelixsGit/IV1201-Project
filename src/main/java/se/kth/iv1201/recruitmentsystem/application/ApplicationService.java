@@ -72,7 +72,10 @@ public class ApplicationService {
 
         Competence competence = competenceRepository.findCompetenceByName(chosenCompetence);
         if(competence == null){
-            throw new ApplicationException("Competence " + chosenCompetence+ "could not be retrieved from database.");
+            competence = competenceRepository.findCompetenceByNameEn(chosenCompetence);
+            if (competence == null) {
+                throw new ApplicationException("Competence " + chosenCompetence + "could not be retrieved from database.");
+            }
         }
 
         Date from_date = convertToDate(fromDate);

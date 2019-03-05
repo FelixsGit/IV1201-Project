@@ -203,7 +203,7 @@ public class ApplicationController {
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
         model.addAttribute("updateAccountForm", updateAccountForm);
-        model.addAttribute("searchApplicationForm", searchApplicationForm);
+        model.addAttribute("searchApplication", searchApplicationForm);
         return SEARCH_APPLICATION_PAGE_URL;
     }
 
