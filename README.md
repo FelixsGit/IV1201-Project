@@ -18,7 +18,7 @@ was conducted with a local mariaDB database running MYSQL. Therefore it is impor
 variables to match their own environment-configuration. This is done in the Travis.yml and in the Application.properties files. 
 
 ### Usage
-The webpage are straight forward to understand and could be understood by english and swedish reading users. 
+The webpage are straight forward to understand and could be understood by english and swedish reading users. Can be found here : https://gentle-island-68059.herokuapp.com/
 
 The application are using the framework thymeleaf for generating views. Another framework that are beeing used are JPA for the server database communication. Authentication and Authorization are handled by spring security, and logging are handled by Spring logger. To fully understand the application one needs basic knowledge in these framework.
 
