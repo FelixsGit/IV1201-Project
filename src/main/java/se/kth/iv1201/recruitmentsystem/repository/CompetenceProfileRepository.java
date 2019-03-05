@@ -24,7 +24,6 @@ public interface CompetenceProfileRepository extends JpaRepository<CompetencePro
      */
     List<CompetenceProfile> findCompetenceProfilesByCompetence(Competence competence);
 
-
     /**
      * Fetches all competence profiles in the db from the entered person.
      * @param person The person object.

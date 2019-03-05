@@ -18,14 +18,21 @@ public interface CompetenceRepository extends JpaRepository<Competence, String> 
 
     /**
      * Fetches the Competence with the specified name.
-     * @param name The name of the competence.
+     * @param name The name of the competence, in swedish.
      * @return The Competence with the name, or null if none is found.
      */
     Competence findCompetenceByName(String name);
 
     /**
+     * Fetches the Competence with the specified name.
+     * @param nameEn The name of the competence, in english.
+     * @return The Competence with the name, or null if none is found.
+     */
+    Competence findCompetenceByNameEn(String nameEn);
+
+    /**
      * Fetches a list of all the different competence.
-     * @return the list of all competence.
+     * @return the list of all competences.
      */
     @Override
     List<Competence> findAll();

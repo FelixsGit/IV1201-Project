@@ -18,6 +18,11 @@ public class Competence implements CompetenceDTO {
     @Column(name = "name")
     private String name;
 
+    @NotNull(message = "{competence.name.missing}")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "{competence.name.invalid-char}")
+    @Column(name = "nameEn")
+    private String nameEn;
+
     /**
      * Required by JPA, do not use.
      */
@@ -29,8 +34,9 @@ public class Competence implements CompetenceDTO {
      * Creates new instance of Competence, reuse existing in database when possible!
      * @param name The name of the Competence.
      */
-    public Competence(String name) {
+    public Competence(String name, String nameEn) {
         this.name = name;
+        this.name = nameEn;
     }
 
     public long getCompetence_id() {
@@ -47,5 +53,13 @@ public class Competence implements CompetenceDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
     }
 }

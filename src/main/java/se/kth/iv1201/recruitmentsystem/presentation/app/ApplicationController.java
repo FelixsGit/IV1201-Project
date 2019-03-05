@@ -32,6 +32,7 @@ public class ApplicationController {
     public static final String APPLICATION_PAGE_URL = "apply";
     public static final String HANDLE_APPLICATION_PAGE_URL = "handleApplication";
     public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication";
+//    public static final String SEARCH_APPLICATION_PAGE_URL = "searchApplication"
     public static final String LOGIN_OK_URL = "loginOk";
     public static final String UPDATE_ACCOUNT_URL = "updateAccount";
     public static final String APPLICATION_SENT_URL = "applicationSent";
@@ -64,6 +65,12 @@ public class ApplicationController {
         return "redirect:"+ SEARCH_APPLICATION_PAGE_URL;
     }
 
+    /**
+     * A get request for the updateAccount page. Used by users who either does not have a username
+     * or a password.
+     * @param model
+     * @return Update Account page url.
+     */
     @GetMapping(DEFAULT_PAGE_URL + UPDATE_ACCOUNT_URL)
     public String showUpdateAccountView(Model model){
         LOGGER.trace("Call to update account view.");
@@ -127,11 +134,27 @@ public class ApplicationController {
             model.addAttribute(new UpdateAccountForm());
             model.addAttribute(new CompetenceForm());
         }
+        String lang = request.getQueryString();
+        if(lang == null){
+            competenceForm.setLang("en");
+        }else{
+            lang = parseLang(lang);
+            if(lang.equals("en")) {
+                competenceForm.setLang("en");
+            }else if(lang.equals("sv")) {
+                competenceForm.setLang("sv");
+            }
+        }
         List<Competence> competences = applicationService.findCompetences();
+        competenceForm.setCompetences(competences);
         competenceForm.setCompetences(competences);
         model.addAttribute("competenceForm", competenceForm);
         checkForNullValues(updateAccountForm, model, request);
         return APPLICATION_PAGE_URL;
+    }
+
+    private String parseLang(String language) {
+        return language.substring(4, 6);
     }
 
     /**
@@ -152,7 +175,7 @@ public class ApplicationController {
 
     /**
      * A get request for the application page.
-     * @return TODO  functionality on this page
+     * @return Handle application page url
      */
     @GetMapping(DEFAULT_PAGE_URL + HANDLE_APPLICATION_PAGE_URL)
     public String showHandleApplicationView(Model model){
@@ -169,12 +192,12 @@ public class ApplicationController {
      * @param searchApplicationForm Content of the searchApplicationForm
      * @param model Model object that is used in the searchApplication page.
      * @param request HttpServletRequest object provided by spring
-     * @return TODO
+     * @return Search application page url
      */
     @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
-    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplicationForm searchApplicationForm, Model model, HttpServletRequest request){
+    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplication searchApplicationForm, Model model, HttpServletRequest request){
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
-            model.addAttribute(new SearchApplicationForm());
+            model.addAttribute(new SearchApplication());
         }
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
@@ -244,6 +267,8 @@ public class ApplicationController {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.EMAIL_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("ROLE")){
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.ROLE_FAIL);
+        } else if (exception.getMessage().toUpperCase().contains("SSN")) {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.SSN_FAIL);
         } else {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
         }

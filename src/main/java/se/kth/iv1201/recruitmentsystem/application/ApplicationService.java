@@ -4,16 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.thymeleaf.util.StringUtils;
 import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.repository.*;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -71,13 +69,16 @@ public class ApplicationService {
         if(person == null) {
             throw new ApplicationException("Person with username " + username + " can not be found in database");
         }
+
         Competence competence = competenceRepository.findCompetenceByName(chosenCompetence);
         if(competence == null){
             throw new ApplicationException("Competence " + chosenCompetence+ "could not be retrieved from database.");
         }
+
         Date from_date = convertToDate(fromDate);
         Date to_date = convertToDate(toDate);
         BigDecimal years_of_experience = new BigDecimal(yearsOfExperience);
+
         try {
             competenceProfileRepository.save(new CompetenceProfile(person, competence, years_of_experience));
             availabilityRepository.save(new Availability(person, from_date, to_date));
@@ -98,24 +99,37 @@ public class ApplicationService {
      * @return A list of ApplicationDTO objects
      */
     public List<ApplicationDTO> getAllApplications(){
+
         List<Person> persons = personRepository.findAll();
-        List<ApplicationDTO> applicationDTOS = new ArrayList<>();
-        for(int i = 0; i < persons.size(); i++ ){
-            Person person = persons.get(i);
+        if(persons == null || persons.size() == 0)
+            return new LinkedList<>(); // Return empty list if no persons exist
+
+
+        return generateApplications(persons);
+    }
+
+    private List<ApplicationDTO> generateApplications(List<Person> persons) {
+        List<ApplicationDTO> applicationDTOS = new LinkedList<>();
+        for (Person person : persons) {
             List<Availability> availabilities = availabilityRepository.findAvailabilitiesByPerson(person);
             List<CompetenceProfile> competenceProfiles = competenceProfileRepository.findCompetenceProfilesByPerson(person);
-            for(int j = 0; j < availabilities.size(); j++){
-                Availability availability = availabilities.get(j);
-                CompetenceProfile competenceProfile = competenceProfiles.get(j);
-                String author = person.getUsername();
-                String fromDate = availability.getFrom_date().toString().substring(0, 10);
-                String toDate = availability.getTo_date().toString().substring(0, 10);
-                String competence = competenceProfile.getCompetence().getName();
-                String yearsOfExperience = competenceProfile.getYears_of_experience().toString();
-                applicationDTOS.add(new ApplicationDTO(author, competence, fromDate, toDate, yearsOfExperience));
+
+            for (int i = 0; i < availabilities.size(); i++) {
+                Availability availability = availabilities.get(i);
+                CompetenceProfile competenceProfile = competenceProfiles.get(i);
+                applicationDTOS.add(generateApplication(person, availability, competenceProfile));
             }
         }
-        return applicationDTOS;
+        return  applicationDTOS;
+    }
+
+    private ApplicationDTO generateApplication(Person person, Availability availability, CompetenceProfile competenceProfile) {
+        String author = person.getUsername();
+        String fromDate = availability.getFrom_date().toString().substring(0, 10);
+        String toDate = availability.getTo_date().toString().substring(0, 10);
+        String competence = competenceProfile.getCompetence().getName();
+        String yearsOfExperience = competenceProfile.getYears_of_experience().toString();
+        return new ApplicationDTO(author, competence, fromDate, toDate, yearsOfExperience);
     }
 
     /**

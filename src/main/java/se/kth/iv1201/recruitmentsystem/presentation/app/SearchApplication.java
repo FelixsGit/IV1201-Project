@@ -5,9 +5,9 @@ import se.kth.iv1201.recruitmentsystem.domain.ApplicationDTO;
 import java.util.List;
 
 /**
- * A bean for the search application form.
+ * A bean for the search application.
  */
-public class SearchApplicationForm {
+public class SearchApplication {
 
     public List<ApplicationDTO> getApplicationDTOList() {
         return applicationDTOList;

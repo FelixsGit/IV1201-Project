@@ -1,32 +1,28 @@
 package se.kth.iv1201.recruitmentsystem.config;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-/**
- * This class is responsible for granting different authorities to different url's.
- * By restricting access to certain pages depending on the users authority, aka the users role.
- */
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import se.kth.iv1201.recruitmentsystem.presentation.app.rest.RestAuthenticationEntryPoint;
+import se.kth.iv1201.recruitmentsystem.presentation.app.rest.RestSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
-@Order(2)
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@Order(1)
+public class RestConfig extends WebSecurityConfigurerAdapter {
 
-    /**
-     * This method creates a new passwordEncoderTest object
-     *
-     * @return PasswordEncoderTest object
-     */
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new PasswordEncoderTest();
-    }
+    @Autowired
+    private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+
+    @Autowired
+    private RestSuccessHandler restSuccessHandler;
+
+    private SimpleUrlAuthenticationFailureHandler restFailureHandler = new SimpleUrlAuthenticationFailureHandler();
 
     /**
      * This private class is responsible for supplying spring with a password encoder.
@@ -54,25 +50,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable();
-        http.authorizeRequests().antMatchers("/login", "/register", "/updateAccount").permitAll();
-        http.authorizeRequests().antMatchers("/apply", "/searchApplication", "/handleApplication", "/applicationSent").fullyAuthenticated();
-
-        http.authorizeRequests().antMatchers("/apply", "/applicationSent").access("hasRole('applicant')");
-        http.authorizeRequests().antMatchers("/searchApplication", "/handleApplication").access("hasRole('recruit')");
-        http.authorizeRequests().antMatchers("/loginOk").access("hasAnyRole('recruit', 'applicant')");
-
-        // Config for Login/Logout
-        http.authorizeRequests()
+        // *** Rest config ***
+        http
+                .antMatcher("/api/**")
+                .csrf().disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(restAuthenticationEntryPoint)
+                .and()
+                .authorizeRequests()
+                .antMatchers("/api/applications").hasRole("recruit")
+                .antMatchers("/api/login").permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/loginOk")
+                .loginPage("/api/login")
                 .usernameParameter("username")
                 .passwordParameter("password")
+                .successHandler(restSuccessHandler)
+                .failureHandler(restFailureHandler)
                 .and()
-                .logout()
-                .permitAll();
+                .logout();
     }
 }
-
