@@ -134,27 +134,18 @@ public class ApplicationController {
             model.addAttribute(new UpdateAccountForm());
             model.addAttribute(new CompetenceForm());
         }
-        String lang = request.getQueryString();
-        if(lang == null){
-            competenceForm.setLang("en");
-        }else{
-            lang = parseLang(lang);
-            if(lang.equals("en")) {
-                competenceForm.setLang("en");
-            }else if(lang.equals("sv")) {
-                competenceForm.setLang("sv");
-            }
-        }
+        
+        String lang = request.getParameter("lang");
+        if(lang == null || lang.equals(""))
+            lang = "en";
+        competenceForm.setLang(lang);
+
         List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
         competenceForm.setCompetences(competences);
         model.addAttribute("competenceForm", competenceForm);
         checkForNullValues(updateAccountForm, model, request);
         return APPLICATION_PAGE_URL;
-    }
-
-    private String parseLang(String language) {
-        return language.substring(4, 6);
     }
 
     /**
@@ -201,17 +192,11 @@ public class ApplicationController {
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
-        String lang = request.getQueryString();
-        if(lang == null){
-            searchApplicationForm.setLang("en");
-        }else{
-            lang = parseLang(lang);
-            if(lang.equals("en")) {
-                searchApplicationForm.setLang("en");
-            }else if(lang.equals("sv")) {
-                searchApplicationForm.setLang("sv");
-            }
-        }
+        String lang = request.getParameter("lang");
+        if(lang == null || lang.equals(""))
+            lang = "en";
+        searchApplicationForm.setLang(lang);
+
         model.addAttribute("updateAccountForm", updateAccountForm);
         model.addAttribute("searchApplication", searchApplicationForm);
         return SEARCH_APPLICATION_PAGE_URL;
