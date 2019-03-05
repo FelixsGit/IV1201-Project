@@ -27,7 +27,8 @@
             <br>
             <div>
                 <li th:text="#{search-app.app.author} + ${applicationDTO.getAuthor()}" >Author: </li>
-                <li th:text="#{search-app.app.competence} + ${applicationDTO.getCompetence()}" >Competence: </li>
+                <li th:if="${searchApplication.getLang() == 'sv'}" th:text="#{search-app.app.competence} + ${applicationDTO.getCompetence()}" >Competence: </li>
+                <li th:if="${searchApplication.getLang() == 'en'}" th:text="#{search-app.app.competence} + ${applicationDTO.getCompetenceEn()}" >CompetenceEn: </li>
                 <li th:text="#{search-app.app.from-date} + ${applicationDTO.getFromDate()}" >Can work from: </li>
                 <li th:text="#{search-app.app.to-date} + ${applicationDTO.getToDate()}" >Can work to: </li>
                 <li th:text="#{search-app.app.exp} + ${applicationDTO.getYearsOfExperience()}" >Years of experience: </li>

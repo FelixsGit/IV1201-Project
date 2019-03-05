@@ -9,6 +9,16 @@ public class ApplicationDTO {
     private String author;
     private String competence;
 
+    public String getCompetenceEn() {
+        return competenceEn;
+    }
+
+    public void setCompetenceEn(String competenceEn) {
+        this.competenceEn = competenceEn;
+    }
+
+    private String competenceEn;
+
     public String getAuthor() {
         return author;
     }
@@ -53,12 +63,14 @@ public class ApplicationDTO {
     private String toDate;
     private String yearsOfExperience;
 
-    public ApplicationDTO(String author, String competence, String fromDate, String toDate, String yearsOfExperience){
+    public ApplicationDTO(String author, String competence, String competenceEn, String fromDate, String toDate, String yearsOfExperience){
         this.author = author;
         this.competence = competence;
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.yearsOfExperience = yearsOfExperience;
+        this.competenceEn = competenceEn;
+
     }
 
 }

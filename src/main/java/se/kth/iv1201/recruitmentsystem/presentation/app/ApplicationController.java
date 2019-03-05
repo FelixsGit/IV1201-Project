@@ -185,7 +185,6 @@ public class ApplicationController {
         }
         return HANDLE_APPLICATION_PAGE_URL;
     }
-
     /**
      * A get request for the searchApplication page.
      * @param updateAccountForm Content of the updateAccountForm
@@ -202,6 +201,17 @@ public class ApplicationController {
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
+        String lang = request.getQueryString();
+        if(lang == null){
+            searchApplicationForm.setLang("en");
+        }else{
+            lang = parseLang(lang);
+            if(lang.equals("en")) {
+                searchApplicationForm.setLang("en");
+            }else if(lang.equals("sv")) {
+                searchApplicationForm.setLang("sv");
+            }
+        }
         model.addAttribute("updateAccountForm", updateAccountForm);
         model.addAttribute("searchApplication", searchApplicationForm);
         return SEARCH_APPLICATION_PAGE_URL;

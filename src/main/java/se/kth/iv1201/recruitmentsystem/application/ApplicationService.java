@@ -130,9 +130,10 @@ public class ApplicationService {
         String author = person.getUsername();
         String fromDate = availability.getFrom_date().toString().substring(0, 10);
         String toDate = availability.getTo_date().toString().substring(0, 10);
+        String competenceEn = competenceProfile.getCompetence().getNameEn();
         String competence = competenceProfile.getCompetence().getName();
         String yearsOfExperience = competenceProfile.getYears_of_experience().toString();
-        return new ApplicationDTO(author, competence, fromDate, toDate, yearsOfExperience);
+        return new ApplicationDTO(author, competence, competenceEn, fromDate, toDate, yearsOfExperience);
     }
 
     /**
