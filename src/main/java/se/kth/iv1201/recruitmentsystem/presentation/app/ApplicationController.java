@@ -267,6 +267,8 @@ public class ApplicationController {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.EMAIL_FAIL);
         } else if (exception.getMessage().toUpperCase().contains("ROLE")){
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.ROLE_FAIL);
+        } else if (exception.getMessage().toUpperCase().contains("SSN")) {
+            model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.SSN_FAIL);
         } else {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
         }
