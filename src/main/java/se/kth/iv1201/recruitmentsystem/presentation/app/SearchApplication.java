@@ -16,6 +16,15 @@ public class SearchApplication {
     public void setApplicationDTOList(List<ApplicationDTO> applicationDTOList) {
         this.applicationDTOList = applicationDTOList;
     }
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    private String lang;
 
     private List<ApplicationDTO> applicationDTOList;
 
