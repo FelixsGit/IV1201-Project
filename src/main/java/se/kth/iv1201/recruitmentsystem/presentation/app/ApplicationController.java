@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
