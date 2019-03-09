@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.text.ParseException;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -127,18 +129,18 @@ public class ApplicationController {
      * @return the apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request) {
+    public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request, Locale locale) {
         LOGGER.trace("Call to application view.");
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
             model.addAttribute(new UpdateAccountForm());
             model.addAttribute(new CompetenceForm());
         }
-        
-        String lang = request.getParameter("lang");
+
+        /**String lang = request.getParameter("lang");
         if(lang == null || lang.equals(""))
-            lang = "en";
-        competenceForm.setLang(lang);
+            lang = "en";*/
+        competenceForm.setLang(locale.toString());
 
         List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
@@ -185,17 +187,18 @@ public class ApplicationController {
      * @return Search application page url
      */
     @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
-    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplication searchApplicationForm, Model model, HttpServletRequest request){
+    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplication searchApplicationForm, Model model, HttpServletRequest request, Locale locale){
+        LOGGER.trace("Call to searchApplication view");
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
             model.addAttribute(new SearchApplication());
         }
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
-        String lang = request.getParameter("lang");
+        /**String lang = request.getParameter("lang");
         if(lang == null || lang.equals(""))
-            lang = "en";
-        searchApplicationForm.setLang(lang);
+            lang = "en";*/
+        searchApplicationForm.setLang(locale.toString());
 
         model.addAttribute("updateAccountForm", updateAccountForm);
         model.addAttribute("searchApplication", searchApplicationForm);
@@ -281,11 +284,11 @@ public class ApplicationController {
      * @return The app page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request) {
+    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request, Locale locale) {
         LOGGER.trace("Post user application data.");
         LOGGER.trace("Form data: " + applicationForm);
         if (bindingResult.hasErrors()) {
-            return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request );
+            return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request,locale);
         }
         try {
             applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
