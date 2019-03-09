@@ -1,12 +1,9 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
-import org.apache.tomcat.util.descriptor.LocalResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Scope;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,10 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.text.ParseException;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *This controller class handles all http request to content root.
@@ -129,7 +128,7 @@ public class ApplicationController {
      * @return the apply page url.
      */
     @GetMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request) {
+    public String showApplyView(final UpdateAccountForm updateAccountForm, final CompetenceForm competenceForm, Model model, HttpServletRequest request, Locale locale) {
         LOGGER.trace("Call to application view.");
         if(!model.containsAttribute(APPLICATION_FORM_OBJ_NAME)) {
             model.addAttribute(new ApplicationForm());
@@ -137,7 +136,8 @@ public class ApplicationController {
             model.addAttribute(new CompetenceForm());
         }
 
-        String lang = getLangNameFromRequestSession(request);
+        //String lang = getLangNameFromRequestSession(request);
+        String lang = locale.getLanguage();
         competenceForm.setLang(lang);
         List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
@@ -184,7 +184,7 @@ public class ApplicationController {
      * @return Search application page url
      */
     @GetMapping(DEFAULT_PAGE_URL + SEARCH_APPLICATION_PAGE_URL)
-    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplication searchApplicationForm, Model model, HttpServletRequest request){
+    public String showSearchApplicationView(final UpdateAccountForm updateAccountForm, final SearchApplication searchApplicationForm, Model model, HttpServletRequest request, Locale locale){
         if(!model.containsAttribute(SEARCH_APPLICATION_OBJ_NAME)){
             model.addAttribute(new SearchApplication());
         }
@@ -192,7 +192,8 @@ public class ApplicationController {
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
 
-        String lang = getLangNameFromRequestSession(request);
+        //String lang = getLangNameFromRequestSession(request);
+        String lang = locale.getLanguage();
         searchApplicationForm.setLang(lang);
 
         model.addAttribute("updateAccountForm", updateAccountForm);
@@ -279,11 +280,11 @@ public class ApplicationController {
      * @return The app page url.
      */
     @PostMapping(DEFAULT_PAGE_URL + APPLICATION_PAGE_URL)
-    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request) {
+    public String applyUser(@Valid @ModelAttribute ApplicationForm applicationForm, BindingResult bindingResult, Model model, HttpServletRequest request, Locale locale) {
         LOGGER.trace("Post user application data.");
         LOGGER.trace("Form data: " + applicationForm);
         if (bindingResult.hasErrors()) {
-            return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request );
+            return showApplyView(new UpdateAccountForm(), new CompetenceForm(), model, request, locale);
         }
         try {
             applicationService.createApplication(applicationForm.getCompetence(), applicationForm.getFromDate(), applicationForm.getToDate(),
@@ -305,18 +306,30 @@ public class ApplicationController {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
         }
     }
-
+    /*
     // Returns default language "en" if none present
     private String getLangNameFromRequestSession(HttpServletRequest request) {
-        String lang;
-        try {
-            lang = request.getSession().getAttribute("org.springframework.web.servlet.i18n.SessionLocaleResolver.LOCALE").toString();
-        } catch(Exception e) {
-            lang = "en";
+        String lang = null;
+        String getParam = request.getParameter("lang");
+        if(getParam != null) {
+            lang = getParam;
+        } else {
+            try {
+                //lang = request.getSession().getAttribute("org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE").toString();
+                Cookie[] cookies = request.getCookies();
+                for (Cookie c : cookies) {
+                    if (c.getName().equals("org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE")) {
+                        lang = c.getValue();
+                        System.out.println(lang);
+                    }
+                }
+            } catch (Exception e) {
+                lang = "en";
+            }
         }
         if(lang == null || lang.equals(""))
             lang = "en";
         return lang;
     }
-
+    */
 }

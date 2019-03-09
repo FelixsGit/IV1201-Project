@@ -110,14 +110,14 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
     /**
      * Create a <code>org.springframework.web.servlet.i18n
      * .SessionLocaleResolver</code> that stores the user's current locale in
-     * the session object.
+     * a cookie.
      */
     @Bean
     public CookieLocaleResolver localeResolver()
     {
-        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("en"));
-        return new CookieLocaleResolver();
+        CookieLocaleResolver cookieLocaleResolver = new CookieLocaleResolver();
+        cookieLocaleResolver.setDefaultLocale(new Locale("en"));
+        return cookieLocaleResolver;
     }
 
     /**
