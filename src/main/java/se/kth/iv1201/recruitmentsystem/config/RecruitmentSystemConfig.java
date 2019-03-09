@@ -109,7 +109,7 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
 
     /**
      * Create a <code>org.springframework.web.servlet.i18n
-     * .SessionLocaleResolver</code> that stores the user's current locale in
+     * .CookieLocaleResolver</code> that stores the user's current locale in
      * a cookie.
      */
     @Bean
