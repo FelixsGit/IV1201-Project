@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.resource.PathResourceResolver;
@@ -112,11 +113,11 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
      * the session object.
      */
     @Bean
-    public LocaleResolver localeResolver()
+    public CookieLocaleResolver localeResolver()
     {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
         localeResolver.setDefaultLocale(new Locale("en"));
-        return localeResolver;
+        return new CookieLocaleResolver();
     }
 
     /**

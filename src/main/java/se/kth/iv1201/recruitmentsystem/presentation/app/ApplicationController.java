@@ -1,16 +1,18 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
+import org.apache.tomcat.util.descriptor.LocalResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import se.kth.iv1201.recruitmentsystem.application.ApplicationService;
 import se.kth.iv1201.recruitmentsystem.domain.*;
 import se.kth.iv1201.recruitmentsystem.presentation.error.ExceptionHandlers;
@@ -18,7 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.text.ParseException;
 import java.util.List;
-
 
 /**
  *This controller class handles all http request to content root.
@@ -135,13 +136,10 @@ public class ApplicationController {
             model.addAttribute(new UpdateAccountForm());
             model.addAttribute(new CompetenceForm());
         }
-        
         String lang = request.getParameter("lang");
-        System.out.println(lang);
         if(lang == null || lang.equals(""))
             lang = "en";
         competenceForm.setLang(lang);
-
         List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
         competenceForm.setCompetences(competences);
@@ -194,8 +192,8 @@ public class ApplicationController {
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
+
         String lang = request.getParameter("lang");
-        System.out.println(lang);
         if(lang == null || lang.equals(""))
             lang = "en";
         searchApplicationForm.setLang(lang);
