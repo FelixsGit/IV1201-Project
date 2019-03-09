@@ -113,11 +113,10 @@ public class RecruitmentSystemConfig implements WebMvcConfigurer, ApplicationCon
      * the session object.
      */
     @Bean
-    public CookieLocaleResolver localeResolver()
-    {
-        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("en"));
-        return new CookieLocaleResolver();
+    public LocaleResolver localeResolver() {
+        CookieLocaleResolver cookieLocaleResolver = new CookieLocaleResolver();
+        cookieLocaleResolver.setDefaultLocale(new Locale("en"));
+        return cookieLocaleResolver;
     }
 
     /**
