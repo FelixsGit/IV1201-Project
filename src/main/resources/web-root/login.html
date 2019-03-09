@@ -19,7 +19,7 @@
             <input type="password" th:field="*{password}" />
             <br>
             <div class="error" th:if="${param.logout} ">
-                <span th:text="${'You have been logged out!'}"></span>
+                <span th:text="#{login.logout}"></span>
             </div>
             <div class="error" th:if="${param.error} "
                  th:with="errorMsg=${session['SPRING_SECURITY_LAST_EXCEPTION'].message}">
