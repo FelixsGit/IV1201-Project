@@ -1,9 +1,12 @@
 package se.kth.iv1201.recruitmentsystem.presentation.app;
 
+import org.apache.tomcat.util.descriptor.LocalResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.text.ParseException;
 import java.util.List;
-
 
 /**
  *This controller class handles all http request to content root.
@@ -137,7 +139,6 @@ public class ApplicationController {
 
         String lang = getLangNameFromRequestSession(request);
         competenceForm.setLang(lang);
-
         List<Competence> competences = applicationService.findCompetences();
         competenceForm.setCompetences(competences);
         competenceForm.setCompetences(competences);

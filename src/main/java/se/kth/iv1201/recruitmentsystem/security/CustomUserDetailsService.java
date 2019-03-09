@@ -46,4 +46,5 @@ public class CustomUserDetailsService implements UserDetailsService {
         grantList.add(authority);
         return new User(person.getUsername(), person.getPassword(), grantList);
     }
+
 }
