@@ -134,10 +134,8 @@ public class ApplicationController {
             model.addAttribute(new UpdateAccountForm());
             model.addAttribute(new CompetenceForm());
         }
-        
-        String lang = request.getParameter("lang");
-        if(lang == null || lang.equals(""))
-            lang = "en";
+
+        String lang = getLangNameFromRequestSession(request);
         competenceForm.setLang(lang);
 
         List<Competence> competences = applicationService.findCompetences();
@@ -192,9 +190,8 @@ public class ApplicationController {
         List<ApplicationDTO> applicationDTOList = applicationService.getAllApplications();
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
-        String lang = request.getParameter("lang");
-        if(lang == null || lang.equals(""))
-            lang = "en";
+
+        String lang = getLangNameFromRequestSession(request);
         searchApplicationForm.setLang(lang);
 
         model.addAttribute("updateAccountForm", updateAccountForm);
@@ -306,6 +303,19 @@ public class ApplicationController {
         } else {
             model.addAttribute(ExceptionHandlers.ERROR_TYPE_KEY, ExceptionHandlers.GENERIC_ERROR);
         }
+    }
+
+    // Returns default language "en" if none present
+    private String getLangNameFromRequestSession(HttpServletRequest request) {
+        String lang;
+        try {
+            lang = request.getSession().getAttribute("org.springframework.web.servlet.i18n.SessionLocaleResolver.LOCALE").toString();
+        } catch(Exception e) {
+            lang = "en";
+        }
+        if(lang == null || lang.equals(""))
+            lang = "en";
+        return lang;
     }
 
 }
