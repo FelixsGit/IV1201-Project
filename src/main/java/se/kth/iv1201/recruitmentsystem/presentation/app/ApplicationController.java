@@ -136,6 +136,7 @@ public class ApplicationController {
         }
         
         String lang = request.getParameter("lang");
+        System.out.println(lang);
         if(lang == null || lang.equals(""))
             lang = "en";
         competenceForm.setLang(lang);
@@ -193,6 +194,7 @@ public class ApplicationController {
         searchApplicationForm.setApplicationDTOList(applicationDTOList);
         checkForNullValues(updateAccountForm, model, request);
         String lang = request.getParameter("lang");
+        System.out.println(lang);
         if(lang == null || lang.equals(""))
             lang = "en";
         searchApplicationForm.setLang(lang);
